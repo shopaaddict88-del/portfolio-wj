@@ -504,6 +504,38 @@
   .resume-foot{padding:40px 0 0; font-family:var(--mono); font-size:11px; color:var(--muted-2); text-align:center;}
 
 
+  /* ---------- Why Me : key figures + scale chart ---------- */
+  .why-kpis{display:grid; grid-template-columns:repeat(4,1fr); background:#fff; border:1px solid var(--line); border-radius:16px; padding:6px 0; margin:0 0 40px;}
+  .why-kpis > div{padding:20px 26px; border-left:1px solid var(--line);}
+  .why-kpis > div:first-child{border-left:0;}
+  .why-kpis b{display:block; font-size:clamp(1.45rem,2.7vw,2rem); font-weight:800; letter-spacing:-.03em; line-height:1.1; font-variant-numeric:tabular-nums;}
+  .why-kpis b em{font-style:normal; color:var(--gold-bright);}
+  .why-kpis span{display:block; margin-top:9px; font-size:12px; line-height:1.6; color:var(--muted); word-break:keep-all;}
+  .why-scale{margin-top:26px; background:#fff; border:1px solid var(--line); border-radius:16px; padding:24px 26px 22px;}
+  .why-scale .ws-h{font-family:var(--mono); font-size:10.5px; font-weight:700; letter-spacing:.06em; color:var(--muted-2); margin-bottom:18px;}
+  .why-scale .ws-grid{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+  .why-scale .ws-card{background:var(--ink); border-radius:12px; padding:16px 18px 14px;}
+  .why-scale h6{margin:0 0 14px; font-size:12px; font-weight:700; color:var(--muted);}
+  .why-scale .ws-cols{display:flex; align-items:flex-end; gap:18px; height:128px; border-bottom:1px solid var(--muted-2);}
+  .why-scale .ws-c{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%; gap:6px;}
+  .why-scale .ws-c b{display:block; width:100%; max-width:54px; border-radius:8px 8px 0 0; background:var(--gold-bright);}
+  .why-scale .ws-c.is-base b{background:#c4c8d2;}
+  .why-scale .ws-c.is-range b{background:linear-gradient(to top, var(--gold-bright) 66.7%, #f2a99f 66.7%);}
+  .why-scale .ws-c span{font-family:var(--mono); font-size:11.5px; font-weight:700; white-space:nowrap;}
+  .why-scale .ws-l{display:flex; gap:18px; margin-top:8px; font-size:11.5px; line-height:1.4; color:var(--muted); text-align:center;}
+  .why-scale .ws-l span{flex:1; word-break:keep-all;}
+  .why-scale .ws-sub{margin:8px 0 0; font-size:11.5px; line-height:1.5; color:var(--muted); text-align:center; word-break:keep-all;}
+  .why-scale .ws-note{margin:14px 0 0; font-size:11.5px; line-height:1.6; color:var(--muted-2); word-break:keep-all;}
+  @media (max-width:900px){
+    .why-kpis{grid-template-columns:repeat(2,1fr);}
+    .why-kpis > div:nth-child(3){border-left:0;}
+    .why-kpis > div:nth-child(n+3){border-top:1px solid var(--line);}
+  }
+  @media (max-width:640px){
+    .why-scale{padding:20px 16px 18px;}
+    .why-scale .ws-grid{grid-template-columns:1fr;}
+  }
+
   /* ---------- CASE STUDY TRIGGER (on work-card) ---------- */
   .case-trigger{cursor:pointer;}
   .case-cta{
@@ -918,6 +950,13 @@
     <p class="t-body" style="margin-top:14px;">저는 2012년부터 디자인·콘텐츠 분야에서 일해 왔습니다. 위메프에서는 약 30인 규모의 디자인 조직을 이끌었고, 2020년부터는 와디즈 공식파트너사에서 기획, 촬영, 디자인, 제작을 한 흐름으로 총괄하며 1,000건 이상의 크라우드펀딩 프로젝트를 수행했습니다. 아래 네 가지 기준으로 제가 일하는 방식을 설명드립니다.</p>
   </div>
 
+  <div class="why-kpis" role="list" aria-label="핵심 이력 요약">
+    <div role="listitem"><b>14<em>년</em></b><span>2012년부터<br>디자인·콘텐츠 분야</span></div>
+    <div role="listitem"><b>약 30<em>인</em></b><span>위메프 디자인 조직 리딩<br>(약 4년 3개월)</span></div>
+    <div role="listitem"><b>1,000<em>건+</em></b><span>와디즈 공식파트너사<br>크라우드펀딩 프로젝트 수행</span></div>
+    <div role="listitem"><b>1억<em>+</em></b><span>4주 안에 단일 프로젝트 1억 원 이상<br>달성 사례 다수</span></div>
+  </div>
+
   <div class="state-list">
     <div class="state-row">
       <span class="axis">기획 ↔ 실행</span>
@@ -936,6 +975,28 @@
       <p class="claim">30인 조직을 이끌면서도, 손으로 직접 만듭니다.</p>
       <p class="contrast">손이 빠른 실무자와 조직을 이끄는 리더는 보통 다른 역량으로 여겨집니다.</p>
       <p class="desc t-body">조직을 맡으면 실무에서 멀어지는 경우가 많지만, 저는 위메프에서 디자인 파트장과 팀장으로 약 4년 3개월 동안 약 30인 규모의 디자인 조직을 이끌며 사업부의 매출 KPI를 팀의 목표와 우선순위에 연결했습니다. 이후 와디즈 공식파트너사에서는 크리에이티브 제작 총괄로서 기획·촬영·디자인 전 과정을 직접 디렉팅하며 매월 20~30개 프로젝트를 동시에 스케줄링하고 업체를 핸들링했습니다. 부서 간 언어 차이를 조율하는 가이드라인을 직접 설계해 일정 지연 없이 완성도를 지켰고, 내부 조직과 외부 대행사·프리랜서를 함께 운영하는 구조도 만들었습니다.</p>
+      <div class="why-scale" role="img" aria-label="위메프에서는 파트장 시기 파트원 5명에서 팀장 시기 약 30인 조직으로 이끄는 규모가 커졌고, 와디즈 공식파트너사에서는 매월 20에서 30개 프로젝트를 동시에 스케줄링했습니다.">
+        <div class="ws-h">이끄는 규모</div>
+        <div class="ws-grid">
+          <div class="ws-card">
+            <h6>위메프 · 이끈 인원</h6>
+            <div class="ws-cols">
+              <div class="ws-c is-base"><span>5명</span><b style="height:17%"></b></div>
+              <div class="ws-c"><span>약 30인</span><b style="height:100%"></b></div>
+            </div>
+            <div class="ws-l"><span>파트장 시기<br>(파트원)</span><span>팀장 시기<br>(5개 파트)</span></div>
+          </div>
+          <div class="ws-card">
+            <h6>와디즈 공식파트너사 · 동시 진행</h6>
+            <div class="ws-cols">
+              <div class="ws-c is-base"><span>20개</span><b style="height:66.7%"></b></div>
+              <div class="ws-c"><span>30개</span><b style="height:100%"></b></div>
+            </div>
+            <div class="ws-l"><span>최소</span><span>최대</span></div>
+            <p class="ws-sub">매월 프로젝트 동시 스케줄링·업체 핸들링</p>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="state-row">
       <span class="axis">깊이 ↔ 넓이</span>
