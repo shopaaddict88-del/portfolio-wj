@@ -849,6 +849,15 @@
   @media (max-width:900px){ .bx-three{grid-template-columns:1fr;} .nav__links{display:none;} }
   @media (max-width:760px){ .dw-edu{grid-template-columns:1fr; gap:32px;} .dw-pages{grid-template-columns:1fr;} }
   @media (max-width:700px){ .kv-grid{grid-template-columns:repeat(2,minmax(0,1fr));} .kv-band{padding:48px 20px 56px;} }
+  .dw-wel{display:grid; grid-template-columns:minmax(0,1.02fr) minmax(0,1fr); gap:28px; margin-top:24px; align-items:start;}
+  .dw-wel .dw-pages{margin-top:0;}
+  .dw-detail{margin:0; min-width:0;} .dw-detail img{width:100%; display:block; border:1px solid var(--line);}
+  .dw-roll{cursor:default;} .roll-win{height:560px; overflow:hidden; border:1px solid var(--line); background:#fff;}
+  .roll-track{animation:rollup 80s linear infinite;} .roll-track img{width:100%; display:block; border:0;}
+  .roll-win:hover .roll-track{animation-play-state:paused;}
+  @keyframes rollup{from{transform:translateY(0);} to{transform:translateY(-50%);}}
+  @media (prefers-reduced-motion:reduce){ .roll-track{animation:none;} }
+  @media (max-width:760px){ .dw-wel{grid-template-columns:1fr;} .roll-win{height:460px;} }
   @media (max-width:560px){ .dw-print img{height:230px;} }
 </style>
 </head>
@@ -897,9 +906,9 @@
     <h2 class="t-title">운동의 시작부터 회복까지,<br>브랜드 경험을 하나의 언어로.</h2>
   </div>
   <div class="bx-body t-body">
-    <p>런포트는 러닝, 트레이닝, 회복과 휴식이 하나의 루틴으로 이어지도록 설계한 공간이라고 이해했습니다. 이런 브랜드의 경험은 로고나 포스터 한 장이 아니라, 공간과 화면, 인쇄물, 협업 캠페인이 같은 언어로 이어질 때 완성된다고 생각합니다.</p>
+    <p>런포트는 러닝, 트레이닝, 회복과 휴식이 하나의 루틴으로 이어지도록 설계한 공간이라는 점을 이해하고 있습니다. 이런 브랜드의 경험은 로고나 포스터 한 장이 아니라, 공간과 화면, 인쇄물, 협업 캠페인이 같은 언어로 이어질 때 완성됩니다.</p>
     <p>저는 브랜드를 맡을 때마다 이름과 로고, 컬러와 톤 같은 기준을 먼저 세우고, 그 기준을 상세페이지와 대표 이미지, 인쇄물, 설명서, 협업 캠페인까지 이어 왔습니다. 협업에서는 팀과 외부 제작자가 같은 결과물을 만들 수 있도록 디자인 가이드라인을 세우고 비주얼을 컨펌했습니다.</p>
-    <p>비티와이플러스에서는 디자이너에게 디자인 기준점과 영역 구분, 텍스트 크기와 비율의 고정값을 전달하는 교육을 이어 왔습니다. 런포트와 팀버핏, 버핏그라운드, 그리고 협업 브랜드가 한 사람의 취향이 아니라 하나의 기준으로 이어지게 하는 일에 이 경험을 쓰고 싶습니다.</p>
+    <p>비티와이플러스에서는 디자이너에게 디자인 기준점과 영역 구분, 텍스트 크기와 비율의 고정값을 전달하는 교육을 이어 왔습니다. 런포트와 팀버핏, 버핏그라운드, 그리고 협업 브랜드가 한 사람의 취향이 아니라 하나의 기준으로 이어지게 하는 일에 이 경험을 쓰겠습니다.</p>
   </div>
   <div class="kk-step" style="margin-top:44px;">
     <h3 class="t-sub">그래서, 이렇게 일하겠습니다</h3>
@@ -960,14 +969,15 @@
 
   <div class="kv-band">
     <div class="dw-h"><span class="no">01</span><h3>한 장으로 먼저 말하는 키비주얼</h3></div>
-    <p class="dw-n">제품이 가진 이유를 첫 화면의 비주얼 한 장으로 먼저 전달하도록 기획하고 디자인했습니다. 긴 상세페이지에서 대표 장면만 골랐고, 누르면 전체를 볼 수 있습니다.</p>
-    <div class="kv-grid"><figure data-title="수피어 · 상세페이지 전체" data-set="d10,d11,d12"><img src="work/img/k01.jpg" alt="수피어" loading="lazy"><div class="kvc"><b>01 · 수피어</b> · 스포츠 신발</div></figure><figure data-title="얼티브 플랜트유 · 상세페이지 전체" data-set="d03"><img src="work/img/k02.jpg" alt="얼티브 플랜트유" loading="lazy"><div class="kvc"><b>02 · 얼티브 플랜트유</b> · CJ제일제당</div></figure><figure class="is-static"><img src="work/img/k03.jpg" alt="로지텍 MX Mechanical × 드래곤볼 Z" loading="lazy"><div class="kvc"><b>03 · 로지텍 × 드래곤볼 Z</b> · IP 콜라보 에디션</div></figure><figure class="is-static"><img src="work/img/k04.jpg" alt="락포트" loading="lazy"><div class="kvc"><b>04 · 락포트</b> · 슈즈 브랜드</div></figure><figure data-title="센트룸 · 상세페이지 전체" data-set="d08"><img src="work/img/k05.jpg" alt="센트룸" loading="lazy"><div class="kvc"><b>05 · 센트룸</b> · 건강기능식품</div></figure><figure class="is-static"><img src="work/img/k06.jpg" alt="로지텍 K380 · M350" loading="lazy"><div class="kvc"><b>06 · 로지텍 K380 · M350</b> · 컬러 신제품</div></figure></div>
+    <p class="dw-n">키비주얼은 상세페이지의 첫 화면에서 제품이 선택받는 이유를 한 장으로 먼저 전하는 장면입니다. 제품의 핵심을 고르고 구도와 문구까지 함께 기획해 디자인했습니다.</p>
+    <div class="kv-grid"><figure class="is-static"><img src="work/img/k01.jpg" alt="수피어" loading="lazy"><div class="kvc"><b>01 · 수피어</b> · 스포츠 신발</div></figure><figure class="is-static"><img src="work/img/k02.jpg" alt="얼티브 플랜트유" loading="lazy"><div class="kvc"><b>02 · 얼티브 플랜트유</b> · CJ제일제당</div></figure><figure class="is-static"><img src="work/img/k03.jpg" alt="로지텍 MX Mechanical × 드래곤볼 Z" loading="lazy"><div class="kvc"><b>03 · 로지텍 × 드래곤볼 Z</b> · IP 콜라보 에디션</div></figure><figure class="is-static"><img src="work/img/k04.jpg" alt="락포트" loading="lazy"><div class="kvc"><b>04 · 락포트</b> · 슈즈 브랜드</div></figure><figure class="is-static"><img src="work/img/k05.jpg" alt="센트룸" loading="lazy"><div class="kvc"><b>05 · 센트룸</b> · 건강기능식품</div></figure><figure class="is-static"><img src="work/img/k06.jpg" alt="로지텍 K380 · M350" loading="lazy"><div class="kvc"><b>06 · 로지텍 K380 · M350</b> · 컬러 신제품</div></figure></div>
   </div>
 
   <div class="dw-sec">
     <div class="dw-h"><span class="no">02</span><h3>콘텐츠가 곧 소개서가 됩니다</h3></div>
-    <p class="dw-n">웰썸의 콘텐츠 제작 내용을 그대로 제품 소개서(국문·영문 25쪽)로 쓸 수 있을 만큼, 소비자가 이해하기 쉬운 순서로 정리했습니다. 누르면 25쪽 전체를 볼 수 있습니다.</p>
-    <div class="dw-pages"><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p03.jpg" alt="웰썸 제품 소개서 3쪽" loading="lazy"><figcaption class="dw-cap"><b>03</b> · 질문으로 시작</figcaption></figure><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p09.jpg" alt="웰썸 제품 소개서 9쪽" loading="lazy"><figcaption class="dw-cap"><b>09</b> · 수치로 근거</figcaption></figure><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p11.jpg" alt="웰썸 제품 소개서 11쪽" loading="lazy"><figcaption class="dw-cap"><b>11</b> · 소비자 후기</figcaption></figure><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p14.jpg" alt="웰썸 제품 소개서 14쪽" loading="lazy"><figcaption class="dw-cap"><b>14</b> · 체크포인트</figcaption></figure></div>
+    <p class="dw-n">웰썸의 콘텐츠 제작 내용을 상세페이지(왼쪽)에 담고, 그대로 제품 소개서(오른쪽, 국문·영문 25쪽)로 쓸 수 있을 만큼 소비자가 이해하기 쉬운 순서로 정리했습니다. 소개서는 누르면 25쪽 전체를 볼 수 있습니다.</p>
+    <div class="dw-wel"><figure class="dw-detail"><img src="work/img/wel_detail.jpg" alt="웰썸 반려견 사료 상세페이지 전체 구성" loading="lazy"><figcaption class="dw-cap"><b>상세페이지</b> · 웰썸 반려견 사료 (전체 구성)</figcaption></figure>
+    <div class="dw-pages"><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p03.jpg" alt="웰썸 제품 소개서 3쪽" loading="lazy"><figcaption class="dw-cap"><b>03</b> · 질문으로 시작</figcaption></figure><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p09.jpg" alt="웰썸 제품 소개서 9쪽" loading="lazy"><figcaption class="dw-cap"><b>09</b> · 수치로 근거</figcaption></figure><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p11.jpg" alt="웰썸 제품 소개서 11쪽" loading="lazy"><figcaption class="dw-cap"><b>11</b> · 소비자 후기</figcaption></figure><figure data-title="웰썸 제품 소개서 (국문 25쪽)" data-set="mA,mB,mC,mD,mE"><img src="work/img/p14.jpg" alt="웰썸 제품 소개서 14쪽" loading="lazy"><figcaption class="dw-cap"><b>14</b> · 체크포인트</figcaption></figure></div></div>
   </div>
 
   <div class="dw-sec" id="direct-guide">
@@ -976,13 +986,13 @@
     <div class="dw-edu">
       <ol>
         <li><b>디자인 기준점</b><span>좋고 나쁨을 판단하는 기준을 먼저 맞춥니다.</span></li>
-        <li><b>영역과 섹션 구분</b><span>정보를 어떤 덩어리로 나눌지 정하는 방법.</span></li>
-        <li><b>덩어리감 표현</b><span>시선이 흐르는 순서와 무게를 만드는 방법.</span></li>
-        <li><b>디테일한 효과</b><span>완성도를 높이는 마감 처리.</span></li>
+        <li><b>영역과 섹션 구분</b><span>정보를 어떤 덩어리로 나눌지 먼저 정합니다.</span></li>
+        <li><b>덩어리감 표현</b><span>시선이 흐르는 순서와 덩어리의 무게를 잡습니다.</span></li>
+        <li><b>디테일한 효과</b><span>마감 처리로 완성도를 높입니다.</span></li>
         <li><b>텍스트 크기와 비율 고정값 전달</b><span>느낌이 아니라 숫자로 전달합니다.</span></li>
         <li><b>레이아웃·레퍼런스 스크랩북 동기화</b><span>같은 레퍼런스를 보고 같은 방향으로 만듭니다.</span></li>
       </ol>
-<figure class="dw-fig" data-title="G마켓 G9 쿡앤지구 · 외부 제작용 디자인 가이드" data-set="g01"><img src="work/img/g01_s.jpg" alt="G9 쿡앤지구 디자인 가이드" loading="lazy"><figcaption><b>G9 쿡앤지구</b> · 외부 제작용 디자인 가이드 (누르면 전체)</figcaption></figure>
+<figure class="dw-fig dw-roll"><div class="roll-win"><div class="roll-track"><img src="work/img/g01.jpg" alt="G9 쿡앤지구 디자인 가이드" loading="lazy"><img src="work/img/g01.jpg" alt="" aria-hidden="true" loading="lazy"></div></div><figcaption><b>G9 쿡앤지구</b> · 외부 제작용 디자인 가이드</figcaption></figure>
     </div>
   </div>
 
@@ -990,9 +1000,8 @@
     <div class="dw-h"><span class="no">04</span><h3>온라인 콘텐츠를 인쇄물로</h3></div>
     <p class="dw-n">온라인용으로 만든 콘텐츠를 오프라인 인쇄물 규격에 맞춰 다시 구성한 사례입니다. 누르면 크게 볼 수 있습니다.</p>
     <div class="dw-print">
-      <figure data-title="태평양물산 소프라움 · 시즌 신상품 POP" data-set="o01"><img src="work/img/o01.jpg" alt="소프라움 시즌 신상품 POP" loading="lazy"><figcaption class="dw-cap"><b>소프라움</b> · 시즌 신상품 POP</figcaption></figure>
       <figure data-title="태평양물산 소프라움 · 3단 접지 쿠폰북" data-set="c01,c02"><img src="work/img/c01.jpg" alt="소프라움 3단 접지 쿠폰북" loading="lazy"><figcaption class="dw-cap"><b>소프라움</b> · 3단 접지 쿠폰북</figcaption></figure>
-      <figure data-title="플럼아이웨어 · 3개 국어 브로슈어 (20쪽)" data-set="bA,bB,bC,bD"><img src="work/img/bt.jpg" alt="플럼아이웨어 3개 국어 브로슈어" loading="lazy"><figcaption class="dw-cap"><b>플럼아이웨어</b> · 3개 국어 브로슈어 20쪽</figcaption></figure>
+      <figure data-title="플럼아이웨어 · 3개 국어 브로슈어 (20쪽)" data-set="bA,bB,bC,bD"><img src="work/img/bt2.jpg" alt="플럼아이웨어 3개 국어 브로슈어" loading="lazy"><figcaption class="dw-cap"><b>플럼아이웨어</b> · 3개 국어 브로슈어 20쪽</figcaption></figure>
     </div>
   </div>
 </section>
@@ -1867,7 +1876,7 @@
     </details>
     <details class="faq-item">
       <summary class="t-sub">조직을 대표해 외부에 나설 만큼 신뢰받은 경험이 있나요?</summary>
-      <div class="a t-body">Coloso 공식 강사, Kmong 연사로 활동했습니다. 브랜드 디렉팅 클래스의 커리큘럼을 기획·촬영·디자인 파트로 나눠 직접 설계하고 강의 자료를 제작했으며, 웨비나 현장에서는 실시간 질의응답까지 대응했습니다. 대표가 아닌 실무 책임자가 회사를 대표해 나섰다는 것 자체가, 업무 전반에 대한 이해도와 조직 내 신뢰의 근거라고 생각합니다.</div>
+      <div class="a t-body">Coloso 공식 강사, Kmong 연사로 활동했습니다. 브랜드 디렉팅 클래스의 커리큘럼을 기획·촬영·디자인 파트로 나눠 직접 설계하고 강의 자료를 제작했으며, 웨비나 현장에서는 실시간 질의응답까지 대응했습니다. 대표가 아닌 실무 책임자가 회사를 대표해 나섰다는 것 자체가, 업무 전반에 대한 이해도와 조직 내 신뢰의 근거입니다.</div>
     </details>
   </div>
 </section>
