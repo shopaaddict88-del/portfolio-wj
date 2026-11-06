@@ -83,6 +83,10 @@
   #why-ohouse .bx-body{max-width:900px;}
   .dw-sec .dw-n{max-width:900px;}
   .hero .hero__desc{max-width:none; text-wrap:balance;}
+  #career{border-top:none; padding-top:44px; padding-bottom:48px;}
+  /* 같은 묶음의 섹션이 이어질 때 아래·위 여백이 합쳐져 과하게 벌어지지 않도록 */
+  section:has(+ section.sub), section.tight{padding-bottom:28px;}
+  @media (max-width:560px){ section:has(+ section.sub), section.tight{padding-bottom:20px;} }
   .hero__desc{max-width:64ch;}
   p, dd, li{text-wrap:pretty;}
   .t-title, .t-display, .t-sub, h3, h4{text-wrap:balance;}
@@ -90,7 +94,7 @@
 
 
   /* ---------- HERO ---------- */
-  .hero{min-height:92vh; display:flex; flex-direction:column; justify-content:center; padding-top:100px;}
+  .hero{min-height:0; display:flex; flex-direction:column; justify-content:flex-start; padding-top:100px; padding-bottom:0;}
   .hero__label{font-family:var(--mono); font-weight:700; font-size:13px; color:var(--gold); letter-spacing:.08em; margin-bottom:22px;}
   .hero h1{text-wrap:balance; max-width:20ch;}
   .hero__desc{margin-top:28px; max-width:52ch;}
@@ -1044,7 +1048,7 @@
 </section>
 
 
-<section class="r" id="career" style="border-top:none; padding-top:8px; padding-bottom:48px;">
+<section class="r" id="career">
   <div class="eyebrow" style="margin:0 0 14px;">Career · 14년</div>
   <div class="stats-grid stats-grid--3 career-grid">
     <div class="stat-cell">
@@ -1448,7 +1452,7 @@
   </div>
 </section>
 
-<section class="sub stats r" id="stats">
+<section class="sub stats r tight" id="stats">
   <div class="proof-grid">
     <div class="proof-cell">
       <div class="no">01</div>
@@ -1477,7 +1481,7 @@
   <symbol id="pg-ad" viewBox="0 0 16 22"><rect x="1" y="1" width="14" height="20" rx="2.5"/><path d="M6 7.2v7.6l6-3.8z" fill="#fff" opacity=".85"/></symbol>
 </svg>
 
-<section class="sub r">
+<section class="sub r tight">
   <div class="spotlight-box">
     <b>오픈 첫날 1억 · 4주 3억</b>
     <p class="t-body">신제품을 처음 선보이는 자리에서, 처음 보는 사람이 짧은 시간 안에 구매를 결정하도록 구성한 결과입니다.<br>소비자 심리를 기준으로 대표와 함께 단계별 스텝업 BM을 설계했고, 단일 프로젝트 1억 원 이상 달성 사례도 다수 만들었습니다.</p>
