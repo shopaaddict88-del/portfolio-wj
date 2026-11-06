@@ -82,6 +82,7 @@
   .sec-head{max-width:900px;}
   #why-ohouse .bx-body{max-width:900px;}
   .dw-sec .dw-n{max-width:900px;}
+  .hero .hero__desc{max-width:none; text-wrap:balance;}
   .hero__desc{max-width:64ch;}
   p, dd, li{text-wrap:pretty;}
   .t-title, .t-display, .t-sub, h3, h4{text-wrap:balance;}
@@ -928,6 +929,12 @@
   .work-grid.fill > .work-card{flex:1 1 calc(25% - 1px); min-width:0;}
   #ip .work-grid.fill > .work-card{flex-basis:calc(33.333% - 1px);}
   .work-grid.fill .thumb{aspect-ratio:auto; height:360px;}
+  /* 사람이 나오는 카드는 얼굴이 잘리지 않도록 위쪽 기준으로 자른다 */
+  .work-grid.fill .work-card[data-case="caseNepa"] .thumb img,
+  .work-grid.fill .work-card[data-case="caseRockport"] .thumb img,
+  .work-grid.fill .work-card[data-case="caseSimpsons"] .thumb img,
+  .work-grid.fill .work-card[data-case="caseLoL"] .thumb img{object-position:center 8%;}
+
   .work-grid.fill.tall .thumb{height:600px;}
   .work-grid.fill.tall .thumb video,.work-grid.fill.tall .thumb img{object-position:center 20%;}
   .sp-bleed{width:100vw; margin-left:calc(50% - 50vw); margin-top:28px;}
@@ -1036,6 +1043,24 @@
   </div>
 </section>
 
+
+<section class="r" id="career" style="border-top:none; padding-top:8px; padding-bottom:48px;">
+  <div class="eyebrow" style="margin:0 0 14px;">Career · 14년</div>
+  <div class="stats-grid stats-grid--3 career-grid">
+    <div class="stat-cell">
+      <b>2012 – 2017</b>
+      <div class="label">위메프 · 디자인 팀장</div>
+      <div class="why">5개 디자인 파트, 약 30인 규모의 디자인 조직을 리딩했습니다. 패션사업부 소속으로 사업부의 성과와 목표 달성을 위해 상세페이지, 기획전, 프로모션 행사 페이지 제작을 직접 진행했고, 대형 업데이트와 정기 점검, 라이브 반응형 프로모션 같은 서비스 운영도 함께 책임졌습니다.</div>
+      <ul class="proof-tags"><li>5개 디자인 파트 · 약 30인</li><li>상세페이지</li><li>기획전 · 프로모션 페이지</li><li>사업부 매출 KPI 기반 운영</li><li>라이브 서비스 운영 · 업데이트 · 점검 · 반응형 프로모션</li></ul>
+    </div>
+    <div class="stat-cell">
+      <b>2017 – 2026</b>
+      <div class="label">비티와이플러스 · 디자이너 → 크리에이티브 디렉터</div>
+      <div class="why">2017년 합류해 센트룸, 로지텍, 집꾸미기 등 브랜드와 G마켓 G9 신선지구의 상세페이지를 기획부터 제작까지 맡았고(G9에서는 1년 동안 200건 이상), 이후 와디즈 공식파트너사의 크리에이티브 디렉터로 기획, 촬영, 디자인, 제작 전 과정을 총괄했습니다. 타깃 분석부터 광고 소재까지 하나의 흐름으로 설계하고, 외부 대행사와 프리랜서까지 함께 운영했습니다.</div>
+      <ul class="proof-tags"><li>상세페이지 기획 · 제작</li><li>센트룸 · 로지텍 · 집꾸미기</li><li>G마켓 G9 신선지구 · 1년 200건+</li><li>기획 · 촬영 · 디자인 · 제작 총괄</li><li>신규 브랜드 론칭 참여</li><li>메타 광고 소재 기획·운영</li><li>Coloso · Kmong 강연</li></ul>
+    </div>
+  </div>
+</section>
 
 <section class="r" id="why-ohouse">
   <div class="sec-head">
@@ -2006,25 +2031,6 @@
     </div>
   </div>
 </section>
-
-<section class="sub r" id="career">
-  <div class="eyebrow" style="margin:0 0 14px;">Career · 14년</div>
-  <div class="stats-grid stats-grid--3 career-grid">
-    <div class="stat-cell">
-      <b>2012 – 2017</b>
-      <div class="label">위메프 · 디자인 팀장</div>
-      <div class="why">5개 디자인 파트, 약 30인 규모의 디자인 조직을 리딩했습니다. 패션사업부 소속으로 사업부의 성과와 목표 달성을 위해 상세페이지, 기획전, 프로모션 행사 페이지 제작을 직접 진행했고, 대형 업데이트와 정기 점검, 라이브 반응형 프로모션 같은 서비스 운영도 함께 책임졌습니다.</div>
-      <ul class="proof-tags"><li>5개 디자인 파트 · 약 30인</li><li>상세페이지</li><li>기획전 · 프로모션 페이지</li><li>사업부 매출 KPI 기반 운영</li><li>라이브 서비스 운영 · 업데이트 · 점검 · 반응형 프로모션</li></ul>
-    </div>
-    <div class="stat-cell">
-      <b>2017 – 2026</b>
-      <div class="label">비티와이플러스 · 디자이너 → 크리에이티브 디렉터</div>
-      <div class="why">2017년 합류해 센트룸, 로지텍, 집꾸미기 등 브랜드와 G마켓 G9 신선지구의 상세페이지를 기획부터 제작까지 맡았고(G9에서는 1년 동안 200건 이상), 이후 와디즈 공식파트너사의 크리에이티브 디렉터로 기획, 촬영, 디자인, 제작 전 과정을 총괄했습니다. 타깃 분석부터 광고 소재까지 하나의 흐름으로 설계하고, 외부 대행사와 프리랜서까지 함께 운영했습니다.</div>
-      <ul class="proof-tags"><li>상세페이지 기획 · 제작</li><li>센트룸 · 로지텍 · 집꾸미기</li><li>G마켓 G9 신선지구 · 1년 200건+</li><li>기획 · 촬영 · 디자인 · 제작 총괄</li><li>신규 브랜드 론칭 참여</li><li>메타 광고 소재 기획·운영</li><li>Coloso · Kmong 강연</li></ul>
-    </div>
-  </div>
-</section>
-
 
 <section class="contact r" id="closing">
   <p class="bx-final">오늘의집 PB 브랜드가 각자의 얼굴을 가지면서도 같은 품질로 보이도록,<br>중요한 결과물은 직접 만들고, 기준과 팀을 함께 키우겠습니다.</p>
