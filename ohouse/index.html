@@ -761,7 +761,7 @@
   .case-result p + p{margin-top:12px;}
   .case-gallery.is-single{margin-top:22px;}
   .case-gallery.is-single figure{height:520px;}
-  .brand-grid{display:grid; grid-template-columns:1fr; gap:28px; padding:28px; margin-top:30px; background:var(--line); border:1px solid var(--line);}
+  .brand-grid{display:grid; grid-template-columns:1fr; gap:1px; margin-top:14px; background:var(--line); border:1px solid var(--line);}
   .work-card.is-wide{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); align-items:stretch;}
   .work-card.is-wide .thumb{aspect-ratio:1800/1521;}
   /* keep the image inside its column even when the text column makes the row taller */
@@ -812,8 +812,7 @@
     section{padding:64px 20px;}
     .work-grid, .work-grid[style]{grid-template-columns:repeat(2,minmax(0,1fr)) !important;}
     .work-card.is-wide{grid-column:1/-1;}
-    .work-grid > .work-card:last-child:nth-child(odd){grid-column:1/-1;}
-    .work-grid > .work-card:last-child:nth-child(odd) .thumb{aspect-ratio:16/10;}
+
     .work-card .cap{padding:12px 12px 14px;}
     .work-card .cap > b{font-size:.82rem; line-height:1.4;}
     .work-card .cap > span{font-size:10px;}
@@ -821,7 +820,6 @@
     .work-card .case-cta{margin-top:8px; font-size:10px;}
     .work-card .thumb{aspect-ratio:4/5;}
     .work-card .cap{padding:16px 18px 20px;}
-    .brand-grid{padding:14px; gap:14px;}
     .ai-grid{padding:14px;}
     .spotlight-box{padding:24px 20px;}
     .case-wrap{padding-left:20px; padding-right:20px;}
@@ -917,18 +915,47 @@
   .oh-gallery img{display:block; width:100%; height:auto; border:1px solid var(--line);}
   .sh-head .t-sub{margin:0 0 6px;}
   .sh-head{margin-top:48px; max-width:62ch;}
-  .sp-roll{--h:280px; --sp:6s; overflow:hidden; margin-top:12px; -webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent); mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);}
+  .work-grid.fill{display:flex; flex-wrap:wrap; gap:1px;}
+  .work-grid.fill > .work-card{flex:1 1 calc(25% - 1px); min-width:0;}
+  #ip .work-grid.fill > .work-card{flex-basis:calc(33.333% - 1px);}
+  .work-grid.fill .thumb{aspect-ratio:auto; height:360px;}
+  .sp-bleed{width:100vw; margin-left:calc(50% - 50vw); margin-top:28px;}
+  .sp-note{margin-top:10px; font-family:var(--mono); font-size:10px; color:var(--muted-2);}
+  @media (max-width:760px){ .work-grid.fill > .work-card, #ip .work-grid.fill > .work-card{flex-basis:calc(50% - 1px);} .work-grid.fill .thumb{height:240px;} }
+  .ed2{margin-top:34px; --cw:calc(min(100vw,1120px) - 80px);}
+  .ed2 figure{margin:0; min-width:0; overflow:hidden; background:var(--ink-soft);}
+  .ed2 img{display:block; width:100%; height:100%; object-fit:cover;}
+  .ed2-a{display:grid; grid-template-columns:1fr 1fr 1.08fr; grid-template-rows:1fr 1fr; gap:6px; height:clamp(240px,36vw,400px);}
+  .ed2-a .tall{grid-column:3; grid-row:1 / span 2;}
+  .ed2-b{display:grid; grid-template-columns:210px 450px; justify-content:center; grid-template-rows:1fr 1fr; gap:10px; height:560px; margin-top:64px;}
+  .ed2-b .sa{grid-column:1; grid-row:1;} .ed2-b .sb{grid-column:1; grid-row:2;}
+  .ed2-b .big{grid-column:2; grid-row:1 / span 2;}
+  .fade{position:relative; overflow:hidden; background:var(--ink-soft);}
+  .fade img{position:absolute; inset:0; opacity:0; transition:opacity 1.1s ease;}
+  .fade img.on{opacity:1;}
+  .ed2-roll{overflow:hidden; margin-top:64px;}
+  .ed2-track{display:flex; width:max-content; animation:ed2-roll calc(var(--n) * 6.5s) linear infinite;}
+  .ed2-roll:hover .ed2-track{animation-play-state:paused;}
+  .ed2-track img{flex:none; width:calc((var(--cw) - 12px) / 3); aspect-ratio:4/5; height:auto; margin-right:6px; object-fit:cover;}
+  @keyframes ed2-roll{to{transform:translateX(-50%);}}
+  @media (max-width:760px){
+    .ed2{--cw:calc(min(100vw,1120px) - 40px);}
+    .ed2-b{grid-template-columns:1fr 1fr; grid-template-rows:auto auto; height:auto; margin-top:40px;}
+    .ed2-b .sa{grid-column:1; grid-row:1; aspect-ratio:1/1;} .ed2-b .sb{grid-column:2; grid-row:1; aspect-ratio:1/1;}
+    .ed2-b .big{grid-column:1 / -1; grid-row:2; aspect-ratio:4/5;}
+    .ed2-roll{margin-top:40px;}
+    .ed2-track img{width:calc((var(--cw) - 6px) / 2);}
+  }
+  @media (prefers-reduced-motion:reduce){ .ed2-roll{overflow-x:auto;} .ed2-track{animation:none;} .fade img{transition:none;} }
+  .sp-roll{--h:240px; --sp:6s; overflow:hidden; margin-top:12px; -webkit-mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent); mask-image:linear-gradient(90deg,transparent,#000 3%,#000 97%,transparent);}
   .sp-track{display:flex; width:max-content; animation:sp-roll calc(var(--n) * var(--sp)) linear infinite;}
   .sp-track.is-rev{animation-direction:reverse;}
   .sp-roll:hover .sp-track{animation-play-state:paused;}
   .sp-track img{flex:none; display:block; height:var(--h); width:auto; margin-right:10px; background:var(--ink-soft);}
   @keyframes sp-roll{to{transform:translateX(-50%);}}
-  @media (max-width:760px){ .sp-roll{--h:240px; --sp:5s;} }
+  @media (max-width:760px){ .sp-roll{--h:190px;} }
   @media (prefers-reduced-motion:reduce){ .sp-roll{overflow-x:auto; -webkit-mask-image:none; mask-image:none;} .sp-track{animation:none;} }
   .oh-gallery figcaption{margin-top:8px; font-family:var(--mono); font-size:10px; line-height:1.5; color:var(--muted-2);}
-  .oh-point{margin:26px 0 0;}
-  .oh-point img{display:block; width:100%; max-width:760px; height:auto; border:1px solid var(--line);}
-  .oh-point figcaption{margin-top:9px; font-family:var(--mono); font-size:10px; line-height:1.5; color:var(--muted-2);}
   .oh-more{border-top:1px solid var(--line);}
   .oh-more > summary{cursor:pointer; list-style:none; padding:26px clamp(16px,5vw,64px); font-size:1.05rem; font-weight:600; color:var(--paper);}
   .oh-more > summary::-webkit-details-marker{display:none;}
@@ -982,7 +1009,7 @@
     <h2 class="t-title">브랜드가 늘어날수록,<br>각자의 얼굴과 공통의 품질이 함께 필요합니다.</h2>
   </div>
   <div class="bx-body t-body">
-    <p>오늘의집 PB는 2024년 레이어를 시작으로 브랜드를 넓혀 가고 있다고 읽었습니다. 브랜드가 늘어나면 각 브랜드가 달라 보이는 이유와, 어느 브랜드에서나 지켜야 할 품질 기준을 함께 정해야 합니다. 제가 해 온 일과 가장 가까운 과제입니다.</p>
+    <p>오늘의집 PB는 2024년 레이어로 시작해 확장을 준비하고 있습니다. 브랜드가 둘, 셋으로 늘어나는 순간부터 필요한 것은 두 가지입니다. 브랜드마다 달라 보이는 이유와, 모든 브랜드가 지켜야 할 품질 기준입니다. 이 자리는 두 가지를 정하면서 중요한 결과물은 직접 만들어야 하는 자리이고, 제가 해 온 일과 가장 가깝습니다.</p>
     <p>브랜드를 처음부터 만든 경험, G9와 11번가에서 서비스에 따라 접근을 달리한 경험, 약 30인 조직의 품질을 맞춘 경험을 아래에 순서대로 정리했습니다. 리빙 분야 경험으로는 집꾸미기 상세페이지와 소프라움 침구 POP·쿠폰북 디자인이 있습니다.</p>
   </div>
   <div class="kk-step" style="margin-top:44px;">
@@ -999,8 +1026,23 @@
 <section class="work r" id="brand">
   <div class="sec-head">
     <div class="eyebrow">Brand Identity</div>
-    <h2 class="t-title">너리싱: 브랜드를 처음부터 만들었습니다</h2>
-    <p class="t-body" style="margin-top:18px;">팀과 함께 진행한 신규 보정속옷 브랜드 프로젝트입니다. 직접 맡은 부분과 함께 맡은 부분을 아래에 나눠 적었습니다.</p>
+    <h2 class="t-title">신규 브랜드를 처음부터 만들었습니다</h2>
+    <p class="t-body" style="margin-top:18px;">브랜드의 방향을 정하고, 이름과 로고, 컬러 시스템, 촬영 방향으로 구체화해 왔습니다. 대표 사례는 보정속옷 브랜드 너리싱과 디저트 브랜드 스쿱당입니다.</p>
+  </div>
+  <div class="sh-head" style="margin-top:0;">
+    <h3 class="t-sub">너리싱 · 보정속옷 신규 브랜드</h3>
+    <p class="t-body">팀과 함께 진행한 프로젝트입니다. 직접 맡은 부분과 함께 맡은 부분을 나눠 적었습니다.</p>
+  </div>
+  <div class="brand-grid">
+    <figure class="work-card is-wide case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseNourishing">
+      <div class="thumb"><img src="../assets/9531a6e252eeee1d3cd5fb5f301162ee.jpg" alt="너리싱 보정속옷 브랜드 촬영 컷" loading="lazy"></div>
+      <div class="cap">
+        <b>너리싱 브랜드 런칭</b>
+        <span>네이밍 · 브랜드 아이덴티티 · 촬영 콘셉트 · 광고 소재</span>
+        <p class="ctx">이름과 로고 방향에서 홈페이지와 광고 소재까지 하나의 크리에이티브 방향 안에서 기획했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
   </div>
   <div class="oh-steps">
     <div><span class="no">01 · 고객 인식</span><h4>보정속옷은 몸을 억압한다는 인식</h4><p>기존 시장의 메시지는 결점을 가리는 데 머물러 있었고, 착용할 때의 통증과 몸을 숨겨야 한다는 위축감이 함께 있었습니다.</p></div>
@@ -1014,16 +1056,10 @@
     <li><span>촬영 콘셉트, 모델 선정, 상세페이지, 홈페이지, 광고 소재</span><em>팀과 공동</em></li>
   </ul>
   <p class="oh-note">이후 너리싱의 운영과 저작권은 타사로 이전되었습니다.</p>
+  <div class="sh-head" style="margin-top:64px;">
+    <h3 class="t-sub">스쿱당 · 디저트 브랜드 리브랜딩</h3>
+  </div>
   <div class="brand-grid">
-    <figure class="work-card is-wide case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseNourishing">
-      <div class="thumb"><img src="../assets/9531a6e252eeee1d3cd5fb5f301162ee.jpg" alt="너리싱 보정속옷 브랜드 촬영 컷" loading="lazy"></div>
-      <div class="cap">
-        <b>너리싱 브랜드 런칭</b>
-        <span>네이밍 · 브랜드 아이덴티티 · 촬영 콘셉트 · 광고 소재</span>
-        <p class="ctx">이름과 로고 방향에서 홈페이지와 광고 소재까지 하나의 크리에이티브 방향 안에서 기획했습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
     <figure class="work-card is-wide case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseScoopdang">
       <div class="thumb"><img src="../assets/11c305dc904d56cc21bad427f742338d.jpg" alt="스쿱당 리브랜딩" loading="lazy"></div>
       <div class="cap">
@@ -1070,7 +1106,6 @@
       </ol>
       <figure class="dw-fig dw-roll"><div class="roll-win"><div class="roll-track"><img src="work/img/g01.jpg" alt="G9 신선지구 디자인 가이드" loading="lazy"><img src="work/img/g01.jpg" alt="" aria-hidden="true" loading="lazy"></div></div><figcaption><b>G9 신선지구</b> · 디자인 가이드 원본</figcaption></figure>
     </div>
-    <figure class="oh-point"><img src="work/img/g02.jpg" alt="제목 줄 수별 레이아웃 옵션과 여백 수치를 적은 가이드" loading="lazy"><figcaption><b>포인트 페이지 가이드</b> · 제목 줄 수별 옵션과 여백 수치</figcaption></figure>
     <p class="oh-note">내부에서 쓰는 장면이나 이용률은 직접 확인하지 못했습니다. 이후 게시된 페이지에서 같은 디자인 값이 적용된 것을 확인했습니다.</p>
   </div>
   <div class="dw-sec">
@@ -1098,58 +1133,37 @@
   <div class="sec-head">
     <div class="eyebrow">Shoot Direction</div>
     <h2 class="t-title">촬영은 콘셉트부터 현장까지 이끌었습니다</h2>
-    <p class="t-body" style="margin-top:18px;">연출 촬영, 제품 촬영, 광고 영상, 패션 시즌 룩북까지 종류가 다른 촬영을 기획하고 디렉팅했습니다. 패션 시즌 룩북(호카, LF패션, 라푸마, 네파)에서는 시즌 콘셉트, 포토그래퍼와 모델 선정, 착장 방향, 현장 디렉팅을 맡았습니다. 아래 카드에는 직접 한 일과 외주 제작사가 한 일을 구분해 적었습니다.</p>
+    <p class="t-body" style="margin-top:18px;">연출 촬영, 제품 촬영, 광고 영상, 패션 시즌 룩북까지 종류가 다른 촬영을 기획하고 디렉팅했습니다. 룩북에서는 시즌 콘셉트, 포토그래퍼와 모델 선정, 착장 방향, 현장 디렉팅을 맡았습니다. 광고 영상 카드에는 직접 한 일과 외주 제작사가 한 일을 구분해 적었습니다.</p>
   </div>
-  <div class="work-grid" style="grid-template-columns:repeat(auto-fit,minmax(240px,1fr));">
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="casePlaymobil">
-      <div class="thumb"><img src="../assets/99a877ce89b685ef5f8b471c58774835.jpg" alt="플레이모빌 세종대왕 피규어 연출 촬영" loading="lazy"></div>
-      <div class="cap">
-        <b>플레이모빌 세종대왕 피규어</b>
-        <span>연출 촬영 디렉팅 · 직접 수행</span>
-        <p class="ctx">스튜디오가 아니라 광화문과 경복궁 같은 실제 장소에서, 피규어의 1인칭 시점으로 연출 촬영을 디렉팅했습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="casePokemon">
-      <div class="thumb"><img src="../assets/561c826452911371367c45033decb4b6.jpg" alt="레노바 포켓몬 에디션 화장지 연출 촬영" loading="lazy"></div>
-      <div class="cap">
-        <b>레노바 × 포켓몬스터</b>
-        <span>촬영 기획 · 연출 소품 제공</span>
-        <p class="ctx">까다로운 검수를 고려해 디자인보다 촬영물에서 임팩트를 만들도록 기획하고, 연출 소품을 직접 제공했습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseNepa">
-      <div class="thumb"><img src="../assets/a9f916a510d1c2000f0a28b974cd01b4.jpg" alt="네파 사나래 등산화 제품 촬영" loading="lazy"></div>
-      <div class="cap">
-        <b>네파 사나래 등산화</b>
-        <span>촬영 콘셉트·이미지 톤 기획, 촬영 디렉팅 · 직접 수행</span>
-        <p class="ctx">등산화의 기능과 일상 착용 장면이 함께 읽히도록 촬영 콘셉트와 이미지 톤을 잡았습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseRockport">
-      <div class="thumb"><img src="../assets/e7de489964d237d33eb6089e4b84782f.jpg" alt="락포트 50주년 기념 캠페인 연출컷" loading="lazy"></div>
-      <div class="cap">
-        <b>락포트 50주년 기념 캠페인</b>
-        <span>연출컷 방향 기획 · 직접 수행</span>
-        <p class="ctx">젊은 층부터 중장년층까지 떠올리게 하는 모델 구성과 코디, 계절감 있는 연출컷 방향을 기획했습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
+    <div class="ed2" aria-label="제품 연출컷과 룩북">
+    <div class="ed2-a">
+      <figure class="t1"><img src="work/img/sp_54.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"></figure><figure class="t2"><img src="work/img/sp_15.jpg" width="840" height="840" alt="촬영 컷" loading="lazy"></figure>
+      <figure class="t3"><img src="work/img/lk_44.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"></figure><figure class="t4"><img src="work/img/sp_45.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"></figure>
+      <figure class="tall"><img src="work/img/lk_18.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"></figure>
+    </div>
+    <div class="ed2-b">
+      <div class="fade sa"><img src="work/img/sp_02.jpg" width="840" height="560" alt="촬영 컷" loading="lazy" class="on"><img src="work/img/sp_35.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/sp_40.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/lk_16.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/sp_32.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/sp_10.jpg" width="840" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_11.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/lk_05.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/lk_01.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"></div>
+      <div class="fade sb"><img src="work/img/sp_36.jpg" width="840" height="560" alt="촬영 컷" loading="lazy" class="on"><img src="work/img/sp_59.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/sp_37.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/sp_09.jpg" width="840" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_18.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/lk_15.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/lk_04.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"><img src="work/img/sp_47.jpg" width="840" height="560" alt="촬영 컷" loading="lazy"></div>
+      <div class="fade big"><img src="work/img/sp_48.jpg" width="560" height="840" alt="촬영 컷" loading="lazy" class="on"><img src="work/img/sp_01.jpg" width="600" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_39.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_28.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_24.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_58.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_17.jpg" width="672" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_07.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_19.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_42.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_22.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_26.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_48.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_22.jpg" width="672" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_14.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_49.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"></div>
+    </div>
+    <div class="ed2-roll" style="--n:71;"><div class="ed2-track"><img src="work/img/lk_23.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_21.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_46.jpg" width="600" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_50.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_47.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_32.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_38.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_12.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_06.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_42.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_28.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_02.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_13.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_43.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_06.jpg" width="600" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_44.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_60.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_16.jpg" width="600" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_05.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_10.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_43.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_21.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_36.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_20.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_23.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_04.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_56.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_51.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_61.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_29.jpg" width="672" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_08.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_08.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_27.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_24.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_17.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_25.jpg" width="672" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_12.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_03.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_53.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_52.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_37.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_30.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_14.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_31.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_29.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_25.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_27.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_33.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_34.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_26.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_19.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_41.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_38.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_07.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_11.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_45.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_09.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_33.jpg" width="672" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_03.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_31.jpg" width="672" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_40.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_46.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_30.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_35.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_55.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_39.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_20.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_57.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_34.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_13.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/sp_41.jpg" width="560" height="840" alt="촬영 컷" loading="lazy"><img src="work/img/lk_23.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_21.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_46.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_50.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_47.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_32.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_38.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_12.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_06.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_42.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_28.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_02.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_13.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_43.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_06.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_44.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_60.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_16.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_05.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_10.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_43.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_21.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_36.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_20.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_23.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_04.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_56.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_51.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_61.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_29.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_08.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_08.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_27.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_24.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_17.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_25.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_12.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_03.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_53.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_52.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_37.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_30.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_14.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_31.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_29.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_25.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_27.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_33.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_34.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_26.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_19.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_41.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_38.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_07.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_11.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_45.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_09.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_33.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_03.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_31.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_40.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_46.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_30.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_35.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_55.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_39.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_20.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_57.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_34.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_13.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_41.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"></div></div>
   </div>
-    <div class="sh-head">
-    <h3 class="t-sub">제품 연출컷</h3>
-    <p class="t-body">촬영을 이끈 제품 연출컷입니다. 마우스를 올리면 멈춥니다.</p>
-  </div>
-  <div class="sp-roll" style="--n:31;"><div class="sp-track"><img src="work/img/sp_01.jpg" width="600" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_03.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_05.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_07.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_09.jpg" width="840" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_11.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_13.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_15.jpg" width="840" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_17.jpg" width="672" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_19.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_21.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_23.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_25.jpg" width="672" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_27.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_29.jpg" width="672" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_31.jpg" width="672" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_33.jpg" width="672" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_35.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_37.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_39.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_41.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_43.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_45.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_47.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_49.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_51.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_53.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_55.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_57.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_59.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_61.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_01.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_03.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_05.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_07.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_09.jpg" width="840" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_11.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_13.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_15.jpg" width="840" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_17.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_19.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_21.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_23.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_25.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_27.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_29.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_31.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_33.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_35.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_37.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_39.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_41.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_43.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_45.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_47.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_49.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_51.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_53.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_55.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_57.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_59.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_61.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"></div></div>
-  <div class="sp-roll" style="--n:30;"><div class="sp-track is-rev"><img src="work/img/sp_02.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_04.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_06.jpg" width="600" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_08.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_10.jpg" width="840" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_12.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_14.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_16.jpg" width="600" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_18.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_20.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_22.jpg" width="672" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_24.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_26.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_28.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_30.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_32.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_34.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_36.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_38.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_40.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_42.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_44.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_46.jpg" width="600" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_48.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_50.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_52.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_54.jpg" width="840" height="560" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_56.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_58.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_60.jpg" width="560" height="840" alt="제품 연출컷" loading="lazy"><img src="work/img/sp_02.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_04.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_06.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_08.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_10.jpg" width="840" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_12.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_14.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_16.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_18.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_20.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_22.jpg" width="672" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_24.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_26.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_28.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_30.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_32.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_34.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_36.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_38.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_40.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_42.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_44.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_46.jpg" width="600" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_48.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_50.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_52.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_54.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_56.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_58.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/sp_60.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"></div></div>
-  <div class="sh-head" style="margin-top:56px;">
-    <h3 class="t-sub">룩북</h3>
-    <p class="t-body">시즌 콘셉트에 맞춰 촬영한 룩북 컷입니다.</p>
-  </div>
-  <div class="sp-roll" style="--n:24;"><div class="sp-track"><img src="work/img/lk_01.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_03.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_05.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_07.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_09.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_11.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_13.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_15.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_17.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_19.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_21.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_23.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_25.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_27.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_29.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_31.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_33.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_35.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_37.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_39.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_41.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_43.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_45.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_47.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_01.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_03.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_05.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_07.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_09.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_11.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_13.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_15.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_17.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_19.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_21.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_23.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_25.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_27.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_29.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_31.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_33.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_35.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_37.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_39.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_41.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_43.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_45.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_47.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"></div></div>
-  <div class="sp-roll" style="--n:24;"><div class="sp-track is-rev"><img src="work/img/lk_02.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_04.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_06.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_08.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_10.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_12.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_14.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_16.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_18.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_20.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_22.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_24.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_26.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_28.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_30.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_32.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_34.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_36.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_38.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_40.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_42.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_44.jpg" width="840" height="560" alt="룩북" loading="lazy"><img src="work/img/lk_46.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_48.jpg" width="560" height="840" alt="룩북" loading="lazy"><img src="work/img/lk_02.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_04.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_06.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_08.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_10.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_12.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_14.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_16.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_18.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_20.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_22.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_24.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_26.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_28.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_30.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_32.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_34.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_36.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_38.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_40.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_42.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_44.jpg" width="840" height="560" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_46.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"><img src="work/img/lk_48.jpg" width="560" height="840" alt="" aria-hidden="true" loading="lazy"></div></div>
+  <script>
+  (function(){
+    var slots=document.querySelectorAll('.ed2 .fade');
+    if(!slots.length||!window.IntersectionObserver)return;
+    var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if(reduce)return;
+    slots.forEach(function(s,k){
+      var im=s.querySelectorAll('img'); if(im.length<2)return;
+      var i=0,t=null;
+      function step(){im[i].classList.remove('on'); i=(i+1)%im.length; im[i].classList.add('on');}
+      function start(){if(!t)t=setInterval(step,3600+k*500);}
+      function stop(){clearInterval(t); t=null;}
+      new IntersectionObserver(function(e){e[0].isIntersecting?start():stop();}).observe(s);
+    });
+  })();
+  </script>
   <div class="sh-head" style="margin-top:56px;">
     <h3 class="t-sub">광고 영상</h3>
   </div>
@@ -1212,7 +1226,7 @@
     <div class="eyebrow">Campaign &amp; Detail Pages</div>
     <h2 class="t-title">상세페이지와 캠페인 사례</h2>
   </div>
-  <div class="work-grid">
+  <div class="work-grid fill">
     <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseK380">
       <div class="thumb"><img src="../assets/2e47fa12b75cca3a69fbd6a99239dcd2.jpg" alt="로지텍 K380 & Pebble M350" loading="lazy"></div>
       <div class="cap">
@@ -1286,6 +1300,24 @@
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
+    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseNepa">
+      <div class="thumb"><img src="../assets/a9f916a510d1c2000f0a28b974cd01b4.jpg" alt="네파 사나래 등산화 제품 촬영" loading="lazy"></div>
+      <div class="cap">
+        <b>네파 사나래 등산화</b>
+        <span>촬영 콘셉트·이미지 톤 기획, 촬영 디렉팅 · 직접 수행</span>
+        <p class="ctx">등산화의 기능과 일상 착용 장면이 함께 읽히도록 촬영 콘셉트와 이미지 톤을 잡았습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseRockport">
+      <div class="thumb"><img src="../assets/e7de489964d237d33eb6089e4b84782f.jpg" alt="락포트 50주년 기념 캠페인 연출컷" loading="lazy"></div>
+      <div class="cap">
+        <b>락포트 50주년 기념 캠페인</b>
+        <span>연출컷 방향 기획 · 직접 수행</span>
+        <p class="ctx">젊은 층부터 중장년층까지 떠올리게 하는 모델 구성과 코디, 계절감 있는 연출컷 방향을 기획했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
   </div>
 </section>
 
@@ -1295,7 +1327,7 @@
     <h2 class="t-title">IP·브랜드 협업에서 기획부터 가이드라인과 컨펌까지 맡았습니다</h2>
     <p class="t-body" style="margin-top:18px;">게임·애니메이션·캐릭터 IP와의 협업 제품에서 방향과 촬영을 기획하고, 팀이 같은 기준으로 만들 수 있도록 내부 디자인 가이드라인을 세우고, 비주얼을 컨펌했습니다. 라이선스사의 까다로운 디자인 가이드라인 검수에도 대응했습니다.</p>
   </div>
-  <div class="work-grid">
+  <div class="work-grid fill">
     <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseDBZ">
       <div class="thumb"><img src="../assets/5ba57203c5408c82adeeecb363fc3a19.jpg" alt="로지텍 x 드래곤볼Z 콜라보 키보드 데스크 셋업" loading="lazy"></div>
       <div class="cap">
@@ -1320,6 +1352,24 @@
         <b>리그 오브 레전드 × VIXUM</b>
         <span>촬영·디자인 기획</span>
         <p class="ctx">게임 IP와 기능성 인테리어를 함께 전하기 위해, 게임 자체의 느낌을 살린 디자인과 게이밍 룸 연출 촬영으로 팬의 덕질 공간을 표현</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="casePlaymobil">
+      <div class="thumb"><img src="../assets/99a877ce89b685ef5f8b471c58774835.jpg" alt="플레이모빌 세종대왕 피규어 연출 촬영" loading="lazy"></div>
+      <div class="cap">
+        <b>플레이모빌 세종대왕 피규어</b>
+        <span>연출 촬영 디렉팅 · 직접 수행</span>
+        <p class="ctx">스튜디오가 아니라 광화문과 경복궁 같은 실제 장소에서, 피규어의 1인칭 시점으로 연출 촬영을 디렉팅했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="casePokemon">
+      <div class="thumb"><img src="../assets/561c826452911371367c45033decb4b6.jpg" alt="레노바 포켓몬 에디션 화장지 연출 촬영" loading="lazy"></div>
+      <div class="cap">
+        <b>레노바 × 포켓몬스터</b>
+        <span>촬영 기획 · 연출 소품 제공</span>
+        <p class="ctx">까다로운 검수를 고려해 디자인보다 촬영물에서 임팩트를 만들도록 기획하고, 연출 소품을 직접 제공했습니다.</p>
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
@@ -1685,7 +1735,7 @@
     <div class="dl-row is-res"><dt>결과</dt><dd>소재와 상세페이지를 같은 기준(체형 고민)으로 확장하는 방향이 정해졌습니다.</dd></div>
 </summary>
     <div class="dl-row"><dt>데이터</dt><dd>상세페이지를 끝까지 보는 경향, 리뷰를 확인한 뒤 다시 사이즈 가이드로 돌아와 오래 머무는 행동, 채널톡의 체중 기준 사이즈 문의</dd></div>
-    <div class="dl-row"><dt>판단</dt><dd>구매 결정의 핵심은 제품 효과보다 <b>나에게 맞는 사이즈인지 확신하는 단계</b>라고 읽었습니다.</dd></div>
+    <div class="dl-row"><dt>판단</dt><dd>구매 결정의 핵심은 제품 효과보다 <b>나에게 맞는 사이즈인지 확신하는 단계</b>라고 판단했습니다.</dd></div>
     <div class="dl-row is-act"><dt>반영</dt><dd>체중 기준 사이즈 가이드로의 확장을 제안하고, 체형 고민을 직접 건드리는 메시지로 신규 소재 기획을 시작했습니다.</dd></div>
 </details>
   </div><div class="dl-step">
