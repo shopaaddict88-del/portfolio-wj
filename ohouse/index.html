@@ -967,6 +967,14 @@
   @keyframes sp-roll{to{transform:translateX(-50%);}}
   @media (max-width:760px){ .sp-roll{--h:190px;} }
   @media (prefers-reduced-motion:reduce){ .sp-roll{overflow-x:auto; -webkit-mask-image:none; mask-image:none;} .sp-track{animation:none;} }
+  .wp-pair{display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:12px; margin-top:26px; align-items:start;}
+  .wp-pair figure{margin:0; min-width:0;}
+  .wp-scroll{height:640px; overflow-y:auto; border:1px solid var(--line); background:#fff; -webkit-overflow-scrolling:touch;}
+  .wp-three{grid-template-columns:repeat(3,minmax(0,1fr)); margin-top:12px;}
+  .wp-scroll:focus-visible{outline:2px solid var(--gold-bright); outline-offset:2px;}
+  .wp-scroll img{display:block; width:100%; height:auto;}
+  .wp-pair figcaption{margin-top:9px; font-family:var(--mono); font-size:10px; line-height:1.5; color:var(--muted-2);}
+  @media (max-width:760px){ .wp-pair, .wp-three{grid-template-columns:1fr;} .wp-scroll{height:480px;} }
   .wp-row{display:flex; gap:12px; align-items:flex-start; margin-top:26px;}
   .wp-row figure{flex:var(--ar) 1 0; min-width:0; margin:0;}
   .wp-row img{display:block; width:100%; height:auto; border:1px solid var(--line);}
@@ -1131,11 +1139,29 @@
         <li><b>룩북 제안</b><span>컬렉션별 모델컷을 다양하게 쓸 수 있다면 상단에 룩북 비주얼 영역을 두는 방안을 제안합니다.</span></li>
       </ol>
     </div>
-    <div class="wp-row">
-      <figure style="--ar:0.9850"><img src="work/img/wp_plan.jpg" width="721" height="732" alt="브랜드 스토리와 시즌 소개 영역의 콘텐츠 기획안" loading="lazy"><figcaption><b>콘텐츠 기획안</b> · 영역별 구성</figcaption></figure>
-      <figure style="--ar:0.5722"><img src="work/img/wp_story.jpg" width="721" height="1260" alt="브랜드 스토리 영역 디자인 시안" loading="lazy"><figcaption><b>디자인 시안</b> · 브랜드 스토리</figcaption></figure>
-      <figure style="--ar:0.4543"><img src="work/img/wp_cover.jpg" width="721" height="1587" alt="S/S 시즌 소개 영역 디자인 시안" loading="lazy"><figcaption><b>디자인 시안</b> · S/S 시즌 소개</figcaption></figure>
-      <figure style="--ar:0.2951"><img src="work/img/wp_coll.jpg" width="721" height="2443" alt="컬렉션 소개 영역 디자인 시안" loading="lazy"><figcaption><b>디자인 시안</b> · 컬렉션 소개</figcaption></figure>
+    <div class="wp-pair">
+      <figure>
+        <div class="wp-scroll" tabindex="0" aria-label="콘텐츠 기획안 전체, 위아래로 스크롤"><img src="work/img/wp_plan_full.jpg" width="902" height="6519" alt="브랜드 스토리, S/S 시즌 소개, 컬렉션 소개 영역별 콘텐츠 기획안 전체" loading="lazy"></div>
+        <figcaption><b>콘텐츠 기획안</b> · 영역별 구성 (스크롤해서 전체 보기)</figcaption>
+      </figure>
+      <figure>
+        <div class="wp-scroll" tabindex="0" aria-label="영역별 디자인 레이아웃과 레퍼런스, 위아래로 스크롤"><img src="work/img/wp_plan_ref.jpg" width="1050" height="2324" alt="영역별 기획안 옆에 붙인 디자인 레이아웃과 톤앤매너 레퍼런스" loading="lazy"></div>
+        <figcaption><b>디자인 레이아웃 · 톤앤매너</b> · 영역별 레퍼런스 (스크롤)</figcaption>
+      </figure>
+    </div>
+    <div class="wp-pair wp-three">
+      <figure>
+        <div class="wp-scroll" tabindex="0" aria-label="디자인 시안 브랜드 스토리, 위아래로 스크롤"><img src="work/img/wp_story.jpg" width="721" height="1260" alt="브랜드 스토리 영역 디자인 시안" loading="lazy"></div>
+        <figcaption><b>디자인 시안</b> · 브랜드 스토리</figcaption>
+      </figure>
+      <figure>
+        <div class="wp-scroll" tabindex="0" aria-label="디자인 시안 S/S 시즌 소개, 위아래로 스크롤"><img src="work/img/wp_cover.jpg" width="721" height="1587" alt="S/S 시즌 소개 영역 디자인 시안" loading="lazy"></div>
+        <figcaption><b>디자인 시안</b> · S/S 시즌 소개</figcaption>
+      </figure>
+      <figure>
+        <div class="wp-scroll" tabindex="0" aria-label="디자인 시안 컬렉션 소개, 위아래로 스크롤"><img src="work/img/wp_coll.jpg" width="721" height="2443" alt="컬렉션 소개 영역 디자인 시안" loading="lazy"></div>
+        <figcaption><b>디자인 시안</b> · 컬렉션 소개</figcaption>
+      </figure>
     </div>
   </div>
 </section>
