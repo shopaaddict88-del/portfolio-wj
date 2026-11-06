@@ -83,6 +83,7 @@
   #why-ohouse .bx-body{max-width:900px;}
   .dw-sec .dw-n{max-width:900px;}
   .hero .hero__desc{max-width:none; text-wrap:balance;}
+
   #career{border-top:none; padding-top:44px; padding-bottom:48px;}
   /* 같은 묶음의 섹션이 이어질 때 아래·위 여백이 합쳐져 과하게 벌어지지 않도록 */
   section:has(+ section.sub), section.tight{padding-bottom:28px;}
@@ -932,18 +933,20 @@
   .work-grid.fill{display:flex; flex-wrap:wrap; gap:1px;}
   .work-grid.fill > .work-card{flex:1 1 calc(25% - 1px); min-width:0;}
   #ip .work-grid.fill > .work-card{flex-basis:calc(33.333% - 1px);}
-  .work-grid.fill .thumb{aspect-ratio:auto; height:360px;}
+  #work .work-grid.fill > .work-card:nth-child(-n+4){flex-basis:calc(25% - 1px);}
+  #work .work-grid.fill > .work-card:nth-child(n+5){flex-basis:calc(33.333% - 1px);}
+  .work-grid.fill .thumb{aspect-ratio:4/5; width:100%; height:auto; max-height:600px;}
   /* 사람이 나오는 카드는 얼굴이 잘리지 않도록 위쪽 기준으로 자른다 */
   .work-grid.fill .work-card[data-case="caseNepa"] .thumb img,
-  .work-grid.fill .work-card[data-case="caseRockport"] .thumb img,
+  .work-grid.fill .work-card[data-case="caseRockport"] .thumb img{object-position:center 34%;}
   .work-grid.fill .work-card[data-case="caseSimpsons"] .thumb img,
-  .work-grid.fill .work-card[data-case="caseLoL"] .thumb img{object-position:center 8%;}
+  .work-grid.fill .work-card[data-case="caseLoL"] .thumb img{object-position:center 12%;}
 
   .work-grid.fill.tall .thumb{height:600px;}
   .work-grid.fill.tall .thumb video,.work-grid.fill.tall .thumb img{object-position:center 20%;}
   .sp-bleed{width:100vw; margin-left:calc(50% - 50vw); margin-top:28px;}
   .sp-note{margin-top:10px; font-family:var(--mono); font-size:10px; color:var(--muted-2);}
-  @media (max-width:760px){ .work-grid.fill > .work-card, #ip .work-grid.fill > .work-card{flex-basis:calc(50% - 1px);} .work-grid.fill .thumb{height:240px;} .work-grid.fill.tall .thumb{height:340px;} }
+  @media (max-width:760px){ .work-grid.fill > .work-card, #ip .work-grid.fill > .work-card, #work .work-grid.fill > .work-card:nth-child(n){flex-basis:calc(50% - 1px);} .work-grid.fill .thumb{height:auto; max-height:none;} .work-grid.fill.tall .thumb{height:340px;} }
   .ed2{margin-top:34px; --cw:calc(min(100vw,1120px) - 80px);}
   .ed2 figure{margin:0; min-width:0; overflow:hidden; background:var(--ink-soft);}
   .ed2 img{display:block; width:100%; height:100%; object-fit:cover;}
@@ -998,6 +1001,21 @@
   .oh-more > summary::after{content:" ＋"; color:var(--gold-bright);}
   .oh-more[open] > summary::after{content:" －";}
   @media (max-width:760px){ .oh-steps{grid-template-columns:1fr;} .oh-gallery{grid-template-columns:repeat(2,minmax(0,1fr));} .oh-roles li{grid-template-columns:1fr; gap:4px;} }
+  /* 모바일: 읽기 쉬운 글자 크기(11px 이상), 누르기 쉬운 링크, 메뉴에 가리지 않는 앵커 이동 */
+  @media (max-width:560px){
+    .work-card .cap > span, .work-card .case-cta, .oh-steps .no, .kvc, .dl-h .when, .aio-case__roles div em,
+    .wadiz-card .amt, .wadiz-card .maker, .ai-own, .ai-list .tools, .pstep figcaption, .pstep figcaption b,
+    .ai-sample dt, .kp .br, .rf-assets figcaption, .dw-fig figcaption, .dw-cap, .wp-pair figcaption,
+    .wp-row figcaption, .oh-gallery figcaption, .filmstrip figcaption, .sp-note, .why-scale .ws-h{font-size:11px;}
+    .bx-three a{display:inline-block; padding:11px 0;}
+    .ai-more{display:inline-block; padding:11px 8px 11px 0;}
+    .nav__links a{display:inline-block; padding:12px 3px;}
+    section[id]{scroll-margin-top:28px;}
+    .dw-h{flex-direction:column; align-items:flex-start; gap:6px;}
+    .ai-pipeline{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; align-items:start;}
+    .ai-pipeline .pstep{width:auto; min-width:0;}
+    .ai-pipeline .pstep img, .ai-pipeline .pstep video{width:100%; height:auto; display:block;}
+  }
 </style>
 </head>
 <body>
