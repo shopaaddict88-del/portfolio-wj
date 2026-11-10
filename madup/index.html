@@ -1018,6 +1018,37 @@
     .ai-pipeline .pstep img, .ai-pipeline .pstep video{width:100%; height:auto; display:block;}
   }
 </style>
+<style>
+  .spk-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .spk-card{background:var(--ink-soft); display:flex; flex-direction:column; min-width:0;}
+  .spk-banner{display:block; aspect-ratio:16/9; overflow:hidden; background:#111;}
+  .spk-banner img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .5s ease;}
+  .spk-banner:hover img{transform:scale(1.03);}
+  .spk-body{padding:28px 28px 30px; display:flex; flex-direction:column; flex:1;}
+  .spk-meta{display:flex; gap:10px; align-items:baseline; font-family:var(--mono); font-size:11px; margin-bottom:12px;}
+  .spk-meta b{color:var(--gold-bright); font-weight:700;}
+  .spk-meta span{color:var(--muted);}
+  .spk-body h3{margin:0 0 12px; font-size:1.15rem; font-weight:800; letter-spacing:-.015em; line-height:1.45; word-break:keep-all;}
+  .spk-body > p{margin:0; font-size:.92rem; line-height:1.75; color:var(--muted); word-break:keep-all;}
+  .spk-yt{display:grid; grid-template-columns:150px 1fr; gap:14px; align-items:center; margin-top:20px; padding:12px; border:1px solid var(--line); background:var(--ink); color:inherit; text-decoration:none;}
+  .spk-yt__th{position:relative; display:block; aspect-ratio:16/9; overflow:hidden;}
+  .spk-yt__th img{width:100%; height:100%; object-fit:cover; display:block;}
+  .spk-yt__th i{position:absolute; left:50%; top:50%; width:34px; height:24px; margin:-12px 0 0 -17px; background:#e0251b; border-radius:6px;}
+  .spk-yt__th i::after{content:""; position:absolute; left:13px; top:6px; border-left:10px solid #fff; border-top:6px solid transparent; border-bottom:6px solid transparent;}
+  .spk-yt__tx{font-size:.9rem; font-weight:700; line-height:1.5; word-break:keep-all;}
+  .spk-yt__tx em{display:block; font-style:normal; font-family:var(--mono); font-size:10px; font-weight:400; color:var(--muted); margin-bottom:4px;}
+  .spk-film{display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; margin-top:20px;}
+  .spk-film figure{margin:0; min-width:0;}
+  .spk-film img{width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border:1px solid var(--line);}
+  .spk-film figcaption{font-family:var(--mono); font-size:10px; color:var(--muted); margin-top:5px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+  .spk-ch{list-style:none; margin:14px 0 0; padding:0; border-top:1px solid var(--line);}
+  .spk-ch li{display:grid; grid-template-columns:48px 1fr auto; gap:10px; align-items:center; padding:11px 0; border-bottom:1px solid var(--line); font-size:.88rem;}
+  .spk-ch span{font-family:var(--mono); font-size:11px; color:var(--gold-bright);}
+  .spk-ch a{font-family:var(--mono); font-size:11px; color:var(--muted);}
+  .spk-links{margin-top:auto !important; padding-top:20px;}
+  @media (max-width:900px){ .spk-grid{grid-template-columns:1fr;} #stakeholders .proof-grid{grid-template-columns:1fr !important;} }
+  @media (max-width:760px){ .spk-body{padding:22px 18px 24px;} .spk-yt{grid-template-columns:110px 1fr;} .spk-meta{font-size:11px;} .spk-film figcaption{white-space:normal;} }
+</style>
 </head>
 <body>
 
@@ -1895,7 +1926,7 @@
     <h2 class="t-title">여러 조직의 우선순위를 맞추고, 회사를 대표해 설명해 왔습니다</h2>
     <p class="t-body" style="margin-top:18px;">사업부, 개발, 디자인·제작, 외부 업체와 기관이 한 프로젝트에 동시에 들어올 때 요청의 순서와 기준을 정해 업무 누락 없이 끝냈고, 회사의 실무 책임자로서 외부 무대에서 직접 업무를 설명해 왔습니다.</p>
   </div>
-  <div class="proof-grid">
+  <div class="proof-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));">
     <div class="proof-cell">
       <div class="no">01</div>
       <h3>사업부 · 개발 · 디자인 사이의 우선순위 조율</h3>
@@ -1908,15 +1939,53 @@
       <p>와디즈 공식파트너사에서 매월 20~30개 프로젝트를 동시에 스케줄링하고 업체를 핸들링했습니다.<br>부서 간 언어 차이를 조율하는 가이드라인을 직접 설계했고, 정부기관 지원사업에서는 기관·참여기업 담당자와 내부 제작 인력이 함께 들어오는 일정, 요청사항, 검수 과정을 Monday, Slack, Allo로 관리해 정해진 일정 안에 과업을 완료했습니다.</p>
       <ul class="proof-tags"><li>월 20~30개 동시 진행</li><li>조율 가이드라인 설계</li><li>어촌어항공단 · SBDC · 기후테크</li></ul>
     </div>
-    <div class="proof-cell">
-      <div class="no">03</div>
-      <h3>회사를 대표해 연사로 나선 실무 책임자</h3>
-      <p>Coloso 공식 클래스(브랜드 디렉팅)의 커리큘럼 기획, 강의 자료 제작, 실제 강연까지 전 과정을 직접 수행했습니다.<br>크몽 공식 웨비나에서는 대표가 아닌 실무 책임자(실장)로서 회사를 대표해 연사로 나서 소비자 심리, 소비자의 언어, 톤앤매너, 실전 사례를 발표했습니다.</p>
-      <ul class="proof-tags"><li>Coloso 공식 클래스 총괄 기획·강연</li><li>Kmong 공식 웨비나 연사</li></ul>
-      <p style="margin-top:14px;"><a class="ai-more" href="https://coloso.co.kr/products/snack-branding-btyplus-free" target="_blank" rel="noopener">Coloso 클래스 ↗</a> &nbsp; <a class="ai-more" href="https://event-us.kr/kmongmarket/event/116256" target="_blank" rel="noopener">Kmong 웨비나 ↗</a> &nbsp; <a class="ai-more" href="https://www.youtube.com/watch?v=YHaARYQ38FM" target="_blank" rel="noopener">인터뷰 영상 ↗</a></p>
-    </div>
   </div>
 </section>
+
+<section class="sub r" id="speaking">
+  <div class="sec-head">
+    <div class="eyebrow">Speaking &amp; Education</div>
+    <h2 class="t-title">실무를 지식으로 정리해,<br>회사를 대표해 직접 가르쳤습니다</h2>
+    <p class="t-body" style="margin-top:18px;">대표가 아닌 실무 책임자(실장)로서 회사를 대표해 공식 클래스와 웨비나에 나섰습니다.</p>
+  </div>
+  <div class="spk-grid">
+    <article class="spk-card">
+      <a class="spk-banner" href="https://coloso.co.kr/products/snack-branding-btyplus-free" target="_blank" rel="noopener"><img src="work/img/spk_coloso.jpg" alt="Coloso 비티와이플러스 클래스 배너" loading="lazy"></a>
+      <div class="spk-body">
+        <div class="spk-meta"><b>Coloso</b><span>공식 클래스 총괄 기획 · 강연</span></div>
+        <h3>클래스의 커리큘럼부터 강연까지 직접 맡았습니다</h3>
+        <p>커리큘럼을 기획·촬영·디자인 파트로 나눠 설계했고,<br>강의 자료 제작부터 실제 강연까지 맡았습니다.</p>
+        <a class="spk-yt" href="https://www.youtube.com/watch?v=YHaARYQ38FM" target="_blank" rel="noopener">
+          <span class="spk-yt__th"><img src="work/img/spk_yt.jpg" alt="Coloso 인터뷰 영상 썸네일" loading="lazy"><i></i></span>
+          <span class="spk-yt__tx"><em>인터뷰 영상 · 직접 출연</em>기획력 있는 올라운더 디자이너가 더 큰 돈을 벌거든요</span>
+        </a>
+        <ul class="spk-ch">
+          <li><span>0:11</span>디자이너가 가져야 할 새로운 시선<a href="https://www.youtube.com/watch?v=YHaARYQ38FM&amp;t=11s" target="_blank" rel="noopener">바로가기 ↗</a></li>
+          <li><span>3:27</span>넓은 시야의 중요성<a href="https://www.youtube.com/watch?v=YHaARYQ38FM&amp;t=207s" target="_blank" rel="noopener">바로가기 ↗</a></li>
+        </ul>
+        <p class="spk-links"><a class="ai-more" href="https://coloso.co.kr/products/snack-branding-btyplus-free" target="_blank" rel="noopener">Coloso 클래스 ↗</a> &nbsp; <a class="ai-more" href="https://www.youtube.com/watch?v=YHaARYQ38FM" target="_blank" rel="noopener">인터뷰 영상 ↗</a></p>
+      </div>
+    </article>
+    <article class="spk-card">
+      <a class="spk-banner" href="https://event-us.kr/kmongmarket/event/116256" target="_blank" rel="noopener"><img src="work/img/spk_kmong.jpg" alt="Kmong 웨비나 배너: AI로는 못 하는, 사람심리 설계" loading="lazy"></a>
+      <div class="spk-body">
+        <div class="spk-meta"><b>Kmong</b><span>공식 웨비나 연사</span></div>
+        <h3>상세페이지로 구매욕구를 만드는 방법을 발표했습니다</h3>
+        <p>소비자 심리, 소비자의 언어, 톤앤매너를 발표했고,<br>실전 사례는 기획안부터 광고 소재까지 보여 줬습니다.<br>현장 질의응답에도 직접 답했습니다.</p>
+        <div class="spk-film">
+          <figure><img src="work/img/spk_km01.jpg" alt="웨비나 슬라이드 인트로" loading="lazy"><figcaption>Intro</figcaption></figure>
+          <figure><img src="work/img/spk_km02.jpg" alt="웨비나 슬라이드 소비자 심리" loading="lazy"><figcaption>소비자 심리</figcaption></figure>
+          <figure><img src="work/img/spk_km03.jpg" alt="웨비나 슬라이드 소비자의 언어" loading="lazy"><figcaption>소비자의 언어</figcaption></figure>
+          <figure><img src="work/img/spk_km04.jpg" alt="웨비나 슬라이드 톤앤매너" loading="lazy"><figcaption>톤앤매너</figcaption></figure>
+          <figure><img src="work/img/spk_km05.jpg" alt="웨비나 슬라이드 실전 사례 킬로리" loading="lazy"><figcaption>실전 사례 · 킬로리</figcaption></figure>
+          <figure><img src="work/img/spk_km06.jpg" alt="웨비나 슬라이드 실전 사례 플로럴피즈" loading="lazy"><figcaption>실전 사례 · 플로럴피즈</figcaption></figure>
+        </div>
+        <p class="spk-links"><a class="ai-more" href="https://event-us.kr/kmongmarket/event/116256" target="_blank" rel="noopener">Kmong 웨비나 ↗</a></p>
+      </div>
+    </article>
+  </div>
+</section>
+
 
 <section class="contact r" id="closing">
   <p class="bx-final">AI로 만드는 소재가 많아질수록,<br>그 소재가 같은 기준으로 고객의 구매 이유에 닿도록 팀과 함께 만들겠습니다.</p>
