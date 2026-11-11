@@ -1050,6 +1050,15 @@
   @media (max-width:760px){ .spk-body{padding:22px 18px 24px;} .spk-yt{grid-template-columns:110px 1fr;} .spk-meta{font-size:11px;} .spk-film figcaption{white-space:normal;} }
 </style>
 <style>.case-contrib-row .detail, .case-contrib-row .area, .cell .v, .cell .k, .dl-row dd, .case-meta .v{text-wrap:pretty;}</style>
+<style>
+  .dpg-strip{display:grid; grid-auto-flow:column; grid-auto-columns:280px; gap:14px; overflow-x:auto; scroll-snap-type:x mandatory; padding-bottom:10px; -webkit-overflow-scrolling:touch;}
+  .dpg-strip figure{margin:0; scroll-snap-align:start; min-width:0;}
+  .dpg-frame{height:560px; overflow-y:auto; border:1px solid var(--line); background:#fff; overscroll-behavior:contain;}
+  .dpg-frame img{display:block; width:100%; height:auto;}
+  .dpg-strip figcaption{margin-top:8px; font-family:var(--mono); font-size:10px; color:var(--muted-2);}
+  .dpg-hint{margin:-6px 0 16px; font-family:var(--mono); font-size:10px; color:var(--muted-2);}
+  @media (max-width:760px){ .dpg-strip{grid-auto-columns:74vw;} .dpg-frame{height:480px;} }
+</style>
 </head>
 <body>
 
@@ -1602,7 +1611,7 @@
     <!-- .wadiz-track cards are auto-duplicated by script below for a seamless loop; keep only ONE real set here -->
   </div>
   <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('[data-aislider]').forEach(function(box){
     var track=box.querySelector('.ai-track'), tabs=box.querySelectorAll('.ai-dots button');
     var n=track.children.length, i=0, timer=null, hold=false;
@@ -1624,10 +1633,10 @@
     var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     mark(0); restart();
   });
-})();
+});
 </script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('[data-slider]').forEach(function(box){
     var track=box.querySelector('.track'), dots=box.querySelectorAll('.dots i');
     var slides=track.children, n=slides.length, i=0;
@@ -1644,7 +1653,7 @@
     if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ visible=es[0].isIntersecting; }).observe(box); }
     setInterval(function(){ if(document.hidden||!visible) return; go(i+1); }, 3200);
   });
-})();
+});
 </script>
 <script>
     (function(){
@@ -2177,20 +2186,20 @@
   <div class="resume-wrap">
     <div class="resume-head">
       <h1 class="t-display">정우종</h1>
-      <div class="role">크리에이티브 기획 리드 | USP·메시지 기획 · 상세페이지 · 광고 소재 · AI 제작 · 팀 리딩</div>
+      <div class="role">크리에이티브 기획 리드 | <span style="white-space:nowrap">USP·메시지·카피</span> 기획&nbsp;· 상세페이지&nbsp;· 광고 소재&nbsp;· AI 제작&nbsp;· 팀 리딩</div>
       <p class="t-body" style="margin:10px 0 18px;"><b>Portfolio</b> &nbsp;<a href="https://shopaaddict88-del.github.io/portfolio-wj/madup/" target="_blank" rel="noopener" style="color:var(--gold-bright); text-decoration:underline; text-underline-offset:3px; font-family:var(--mono); font-size:.9rem;">https://shopaaddict88-del.github.io/portfolio-wj/madup/</a></p>
-      <p class="t-body">이커머스와 크라우드펀딩 분야에서 약 14년간 제품의 구매 이유를 찾고, 그 이유를 메시지와 콘텐츠로 옮겨 왔습니다.</p>
-      <p class="t-body">와디즈 프로젝트 1,000건 이상의 콘텐츠를 총괄하며 USP와 타깃을 정하고, 상세페이지와 광고 소재까지 하나의 흐름으로 기획했습니다. 광고에서는 클릭률과 전환율을 보고 반응 없는 소재를 멈추고 변형 소재를 더해, 광고비 증액 없이 알림신청자 2,997명(최종 누적)을 모았습니다. 신규 브랜드 너리싱은 네이밍과 브랜드 스타일을 직접 기획했습니다.</p>
-      <p class="t-body">위메프에서는 약 30인, 5개 파트 디자인 조직의 팀장으로 주간 리뷰, 교육, 보상을 운영했습니다. 비티와이플러스에서는 기획자·디자이너·포토그래퍼 6~8명과 매월 20~30개 프로젝트를 이끌며 주요 프로젝트를 직접 기획·디자인했고, 디자이너 교육도 이어 갔습니다.</p>
-      <p class="t-body">최근에는 생성형 AI로 모델·제품 이미지와 영상을 만드는 방법을 직접 테스트해 포토그래퍼에게 전달했고, 모델·스타일리스트 섭외가 필요한 컷이나 촬영 후 제품 컬러 변경을 AI로 해결해 제작 시간과 비용을 줄였습니다. 팀 전체의 공통 규칙으로 만드는 단계까지는 가지 못했습니다.</p>
+      <p class="t-body">이커머스와 크라우드펀딩 분야에서 약 14년간 제품의 구매 이유를 찾아 메시지로 만들고, 카피와 키비주얼, 상세페이지, 광고 소재로 옮겨 왔습니다.</p>
+      <p class="t-body">와디즈 프로젝트 1,000건 이상의 콘텐츠를 총괄하며 USP와 타깃을 정하고, 기획부터 광고 소재까지 하나의 흐름으로 설계했습니다. 고가 제품 펀딩에서는 목표 수량에서 거꾸로 광고 계획을 세우고, 반응 없는 소재는 멈추고 변형 소재를 더해 광고비 증액 없이 알림신청자 2,997명(최종 누적, 계획 대비 <span style="white-space:nowrap">약 2.1배</span>)을 모았습니다. 신규 브랜드 너리싱은 네이밍과 브랜드 스타일을 직접 기획했습니다.</p>
+      <p class="t-body">위메프에서는 약 30인, 5개 파트 디자인 조직의 팀장으로 주간 <span style="white-space:nowrap">리뷰·교육·보상을</span> 운영했고, 비티와이플러스에서는 <span style="white-space:nowrap">기획자·디자이너·포토그래퍼</span> 6~8명과 매월 20~30개 프로젝트를 이끌며 주요 프로젝트를 직접 <span style="white-space:nowrap">기획·디자인했습니다.</span> 포토그래퍼, 영상 외주 제작사, <span style="white-space:nowrap">유통사·와디즈</span> 광고 담당자, 라이선스사와 함께 결과물을 완성했습니다.</p>
+      <p class="t-body">생성형 AI로 모델 컷과 영상을 만드는 방법을 직접 찾아 포토그래퍼에게 전달했고, 이후 생성 이미지는 그 방법으로 제작했습니다. <span style="white-space:nowrap">모델·스타일리스트</span> 섭외가 필요한 컷과 촬영 후 제품 컬러 변경도 AI로 해결해 제작 시간과 비용을 줄였습니다. 리서치와 페르소나 정리에는 <span style="white-space:nowrap">Claude·ChatGPT·Gemini를</span>, 이 포트폴리오와 이력서 제작에는 Claude의 에이전트형 도구를 썼습니다.</p>
     </div>
 
     <div class="resume-sec" style="break-inside:avoid;">
       <div class="eyebrow">Career Highlights</div>
       <div class="resume-highlight-grid">
-        <div class="resume-highlight"><b>14 Years</b><span>콘텐츠 기획·크리에이티브 분야 경력</span></div>
-        <div class="resume-highlight"><b>1,000+</b><span>와디즈 크라우드펀딩 콘텐츠 기획·총괄</span></div>
-        <div class="resume-highlight"><b>월 20~30개</b><span>동시 진행 프로젝트 리딩</span></div>
+        <div class="resume-highlight"><b>14 Years</b><span>콘텐츠 <span style="white-space:nowrap">기획·크리에이티브</span> 분야 경력</span></div>
+        <div class="resume-highlight"><b>1,000+</b><span>와디즈 크라우드펀딩 콘텐츠 <span style="white-space:nowrap">기획·총괄</span></span></div>
+        <div class="resume-highlight"><b>2,997명</b><span>광고비 증액 없이 모은 알림신청자 (최종 누적, 계획 대비 약 2.1배)</span></div>
         <div class="resume-highlight"><b>30인 규모</b><span>위메프 디자인 조직 리딩</span></div>
       </div>
     </div>
@@ -2198,16 +2207,16 @@
     <div class="resume-sec">
       <div class="eyebrow">Core Competencies</div>
       <div class="resume-comp-grid">
-        <div class="resume-comp"><h4>USP &amp; Message Planning</h4><p>제품 USP와 타깃 정의, 메시지·후킹·상세페이지 구조 기획, 와디즈 1,000건+ 프로젝트 총괄, 너리싱 네이밍·브랜드 스타일 기획</p></div>
-        <div class="resume-comp"><h4>Performance Creative</h4><p>메타 광고 소재 기획·운영, 클릭률·전환율 기준 소재 중단과 변형 소재 추가, 소재 반응과 구매 병목에 따른 개선 항목 정의</p></div>
-        <div class="resume-comp"><h4>AI-Assisted Production</h4><p>모델·제품 합성과 영상 제작 방법 직접 테스트와 포토그래퍼 전달, 모델·스타일리스트 섭외와 재촬영을 AI로 대체해 시간·비용 절감</p></div>
-        <div class="resume-comp"><h4>AI Research &amp; Planning</h4><p>Claude·ChatGPT·Gemini로 키워드·검색 의도·페르소나·제품 접점 우선순위 정리, 에이전트형 도구로 포트폴리오 페이지 제작</p></div>
-        <div class="resume-comp"><h4>Team Leading</h4><p>위메프 약 30인·5개 파트 주간 리뷰·교육·보상 운영, 비티와이플러스 기획자·디자이너·포토그래퍼 6~8명 프로젝트 매니징</p></div>
-        <div class="resume-comp"><h4>Visual Persuasion</h4><p>클라이언트와 방향이 달랐을 때 기획안과 디자인 예시로 시각적으로 설득, 삼국지 프로젝트 후속 외주 수주</p></div>
+        <div class="resume-comp"><h4>USP, Message &amp; Copy</h4><p>제품 USP와 타깃 정의, <span style="white-space:nowrap">메시지·카피·후킹</span> 기획, 상세페이지 구조 기획, 키비주얼 문구 기획, 와디즈 1,000건+ 프로젝트 총괄, 너리싱 <span style="white-space:nowrap">네이밍·브랜드</span> 스타일 기획</p></div>
+        <div class="resume-comp"><h4>Performance Creative</h4><p>메타 광고 소재 <span style="white-space:nowrap">기획·운영</span>, <span style="white-space:nowrap">클릭률·전환율</span> 기준 소재 중단과 변형 소재 추가, 소재 반응과 구매 병목에 따른 개선 항목 정의</p></div>
+        <div class="resume-comp"><h4>AI-Assisted Production</h4><p><span style="white-space:nowrap">모델·제품</span> 합성과 영상 제작 방법 직접 테스트와 포토그래퍼 전달, <span style="white-space:nowrap">모델·스타일리스트</span> 섭외와 재촬영을 AI로 대체해 <span style="white-space:nowrap">시간·비용</span> 절감</p></div>
+        <div class="resume-comp"><h4>AI Research &amp; Planning</h4><p><span style="white-space:nowrap">Claude·ChatGPT·Gemini로</span> <span style="white-space:nowrap">키워드·검색</span> <span style="white-space:nowrap">의도·페르소나·제품</span> 접점 우선순위 정리, 에이전트형 도구로 포트폴리오 페이지 제작</p></div>
+        <div class="resume-comp"><h4>Team Leading</h4><p>위메프 약 <span style="white-space:nowrap">30인·5개</span> 파트 주간 <span style="white-space:nowrap">리뷰·교육·보상</span> 운영, 비티와이플러스 <span style="white-space:nowrap">기획자·디자이너·포토그래퍼</span> 6~8명 프로젝트 매니징</p></div>
+        <div class="resume-comp"><h4>Collaboration &amp; Persuasion</h4><p><span style="white-space:nowrap">포토그래퍼·영상</span> 외주 <span style="white-space:nowrap">제작사·유통사·와디즈</span> 광고 <span style="white-space:nowrap">담당자·라이선스사와</span> 결과물 완성, 클라이언트와 방향이 다를 때 기획안과 디자인 예시로 설득(삼국지 2차 작업 수주)</p></div>
         <div class="resume-comp resume-comp--feature">
           <span class="tag">Core Strength</span>
           <h4>Reason to Buy → Message → Creative → Data</h4>
-          <p>구매 이유를 먼저 정하고, 메시지와 상세페이지·광고 소재로 옮긴 뒤, 반응 데이터로 다시 고칩니다. 같은 판단을 팀이 반복할 수 있도록 기준과 교육으로 남깁니다.</p>
+          <p>구매 이유를 먼저 정하고, 메시지와 <span style="white-space:nowrap">상세페이지·광고</span> 소재로 옮긴 뒤, 반응 데이터로 다시 고칩니다. 같은 판단을 팀이 반복할 수 있도록 기준과 교육으로 남깁니다.</p>
         </div>
       </div>
     </div>
@@ -2218,21 +2227,21 @@
         <div class="resume-company__head">
           <div>
             <h3 class="t-sub">비티와이플러스</h3>
-            <span class="resume-company__role">실장 / 크리에이티브 제작 총괄 · 와디즈 공식파트너사 크라우드펀딩 콘텐츠 1,000건+ 제작</span>
+            <span class="resume-company__role">실장 / 크리에이티브 제작 총괄&nbsp;· 와디즈 공식파트너사 크라우드펀딩 콘텐츠 1,000건+ 제작</span>
           </div>
           <span class="resume-entry__date">2017.04 ~ 2026.08</span>
         </div>
         <div class="resume-entry">
-          <div class="resume-entry__meta">수행직무 — 콘텐츠 기획 · 디자인 · 크리에이티브 디렉팅</div>
+          <div class="resume-entry__meta">수행직무 — 콘텐츠 기획&nbsp;· 디자인&nbsp;· 크리에이티브 디렉팅</div>
           <ul class="resume-bullets">
-            <li class="t-body">2017년부터 콘텐츠 디렉터로 디자인 전반을 총괄했고, 2021년부터 2026년까지는 외주 디자인 프로젝트 전체를 맡아 6~8명 규모의 기획자·디자이너·포토그래퍼와 함께 운영했습니다.</li>
+            <li class="t-body">2017년부터 콘텐츠 디렉터로 디자인 전반을 총괄했고, 2021년부터 2026년까지는 외주 디자인 프로젝트 전체를 맡아 6~8명 규모의 <span style="white-space:nowrap">기획자·디자이너·포토그래퍼와</span> 함께 운영했습니다.</li>
             <li class="t-body">대표와 함께 회사를 이끄는 운영진(실장)으로 크리에이티브 제작 전반을 총괄했습니다.</li>
             <li class="t-body">와디즈 파트너사업팀 출범 초기부터 공식파트너사 사업화 과정에 참여해 현재까지 파트너십을 유지하고 있으며, 1,000건 이상의 크라우드펀딩 프로젝트 콘텐츠 제작을 총괄했습니다.</li>
-            <li class="t-body">대기업부터 소상공인까지 다양한 클라이언트와 직접 커뮤니케이션하며 프로젝트 방향성을 수립하고, 기획부터 촬영, 디자인, 최종 제작, 크리에이티브 디렉팅까지 전 과정을 관리하는 All-in-One 콘텐츠 제작 서비스를 구축·운영했습니다.</li>
+            <li class="t-body">대기업부터 소상공인까지 다양한 클라이언트와 직접 커뮤니케이션하며 프로젝트 방향성을 수립하고, 기획부터 촬영, 디자인, 최종 제작, 크리에이티브 디렉팅까지 전 과정을 관리하는 All-in-One 콘텐츠 제작 서비스를 <span style="white-space:nowrap">구축·운영했습니다.</span></li>
             <li class="t-body">기획 단계에서는 타깃 소비자의 니즈와 구매 동기, 제품의 시장가치와 경쟁력을 분석해 프로젝트별 콘텐츠 전략을 수립했습니다.</li>
             <li class="t-body">'무엇을 판매할 것인가'보다 '누가 왜 필요로 하는가', '어떤 가치에 공감하여 구매하는가'에 집중해 타깃 페르소나 관점에서 메시지와 콘텐츠 구조를 설계하고, 구매 전환을 유도하는 스토리텔링을 구축했습니다.</li>
             <li class="t-body">제품과 타깃 특성에 맞는 촬영 콘셉트와 비주얼 방향을 기획하고, 정보 전달력과 가독성을 고려한 상세페이지 디자인과 콘텐츠 구성을 디렉팅했습니다.</li>
-            <li class="t-body">기획·촬영·디자인 각 단계의 일관성을 유지하며 핵심 구매 포인트가 효과적으로 전달되도록 전체 크리에이티브 품질을 관리했습니다.</li>
+            <li class="t-body"><span style="white-space:nowrap">기획·촬영·디자인</span> 각 단계의 일관성을 유지하며 핵심 구매 포인트가 효과적으로 전달되도록 전체 크리에이티브 품질을 관리했습니다.</li>
             <li class="t-body">프로젝트 오픈 첫날 펀딩액 1억 원 달성, 판매 4주 만에 3억 원 달성 등의 성과를 만들었습니다.</li>
             <li class="t-body">2020년부터 2026년까지 1,000건 이상의 프로젝트를 수행해 회사 기준 누적 펀딩 달성액 150억 원 이상, 그중 직접 진행한 프로젝트 기준 50억 원 이상의 성과를 만들어냈습니다.</li>
           </ul>
@@ -2242,27 +2251,27 @@
             <h4>외주 디자인 프로젝트 전체 매니징</h4>
             
           </div>
-          <div class="resume-entry__meta">수행직무 — 상담·견적 · 프로젝트 PM · 일정·리소스 관리 · 방향·스토리라인 검토 · 촬영 기획 · 디자인 퀄리티 검토 | 2021 ~ 2026</div>
+          <div class="resume-entry__meta">수행직무 — <span style="white-space:nowrap">상담·견적</span>&nbsp;· 프로젝트 PM&nbsp;· <span style="white-space:nowrap">일정·리소스</span> 관리&nbsp;· <span style="white-space:nowrap">방향·스토리라인</span> 검토&nbsp;· 촬영 기획&nbsp;· 디자인 퀄리티 검토 | 2021 ~ 2026</div>
           <ul class="resume-bullets">
             <li class="t-body">의뢰가 들어오면 상담과 견적을 진행해 프로젝트 범위를 정했습니다.</li>
             <li class="t-body">프로젝트 PM으로서 세부 일정을 세우고 담당자를 배정했으며, 팀의 리소스를 파악해 업무를 조정하고 문제가 생기면 직접 해결했습니다. 매월 평균 20~30개 프로젝트의 일정을 관리했습니다.</li>
-            <li class="t-body">제품의 방향성과 전체 스토리라인을 검토하고 조정했으며, 촬영 기획은 직접 하기도 하고 팀의 기획안을 검토·조정하기도 했고, 촬영 현장은 직접 챙겼습니다.</li>
+            <li class="t-body">제품의 방향성과 전체 스토리라인을 검토하고 조정했으며, 촬영 기획은 직접 하기도 하고 팀의 기획안을 <span style="white-space:nowrap">검토·조정하기도</span> 했고, 촬영 현장은 직접 챙겼습니다.</li>
             <li class="t-body">디자인 결과물의 퀄리티를 검토하고 조정했고, 주요 프로젝트는 직접 디자인했습니다. 최종 결과물의 만족도는 클라이언트에게 확인했습니다.</li>
             <li class="t-body">작업 완료 후 다시 의뢰하는 클라이언트에게 추가 혜택을 제공해 재의뢰가 이어지도록 했습니다.</li>
-            <li class="t-body">단발성 제작(스펙 나열형 기획, 연출 없는 촬영, 심플 디자인)이던 서비스를 채널·타깃 분석, 스토리·흐름 기획, 기획안에 맞춘 촬영, 브랜드 방향을 반영한 디자인까지 포함하는 프로젝트형으로 개편해 건당 단가를 약 7배로 높였습니다.</li>
+            <li class="t-body">단발성 제작(스펙 나열형 기획, 연출 없는 촬영, 심플 디자인)이던 서비스를 <span style="white-space:nowrap">채널·타깃</span> 분석, <span style="white-space:nowrap">스토리·흐름</span> 기획, 기획안에 맞춘 촬영, 브랜드 방향을 반영한 디자인까지 포함하는 프로젝트형으로 개편해 건당 단가를 약 7배로 높였습니다.</li>
           </ul>
         </div>
 <div class="resume-entry">
           <div class="resume-entry__head">
-            <h4>키비주얼·브랜드 콘텐츠 직접 기획·디자인</h4>
+            <h4><span style="white-space:nowrap">키비주얼·브랜드</span> 콘텐츠 직접 <span style="white-space:nowrap">기획·디자인</span></h4>
             
           </div>
-          <div class="resume-entry__meta">수행직무 — 키비주얼 기획 · 문구 기획 · 비주얼 디자인 · 상세페이지 디자인 | 포트폴리오 '메시지·상세페이지' 구간 참조</div>
+          <div class="resume-entry__meta">수행직무 — 키비주얼 기획&nbsp;· 문구 기획&nbsp;· 비주얼 디자인&nbsp;· 상세페이지 디자인 | 포트폴리오 <span style="white-space:nowrap">'카피·키비주얼'</span> 구간 참조</div>
           <ul class="resume-bullets">
             <li class="t-body">제품이 선택받는 이유를 첫 화면의 키비주얼 한 장으로 먼저 전달하도록 기획하고 직접 디자인했습니다. 글이 들어간 작업은 문구 기획까지 함께 수행했습니다.</li>
-            <li class="t-body">대표 작업: 수피어(스포츠 신발), 얼티브 플랜트유(CJ제일제당), 로지텍 MX Mechanical × 드래곤볼Z, 로지텍 K380·M350, 락포트, 센트룸.</li>
+            <li class="t-body">대표 작업: 수피어(스포츠 신발), 얼티브 플랜트유(CJ제일제당), 로지텍 MX Mechanical × 드래곤볼Z, 로지텍 <span style="white-space:nowrap">K380·M350</span>, 락포트, 센트룸.</li>
             <li class="t-body">키비주얼을 상세페이지 전체의 구성으로 이어, 대표 장면부터 세부 설명까지 하나의 톤으로 완성했습니다.</li>
-            <li class="t-body">웰썸 사례에서는 콘텐츠 제작 내용을 그대로 제품 소개서(국문·영문 25쪽)로 쓸 수 있도록, 소비자가 이해하기 쉬운 순서로 정리했습니다.</li>
+            <li class="t-body">웰썸 사례에서는 콘텐츠 제작 내용을 그대로 제품 소개서(<span style="white-space:nowrap">국문·영문</span> 25쪽)로 쓸 수 있도록, 소비자가 이해하기 쉬운 순서로 정리했습니다.</li>
             <li class="t-body">온라인용으로 만든 콘텐츠를 오프라인 인쇄물 규격에 맞춰 다시 구성했습니다. 소프라움 신상품 POP와 3단 접지 쿠폰북, 플럼아이웨어 3개 국어 브로슈어 20쪽이 해당합니다.</li>
           </ul>
         </div>
@@ -2270,26 +2279,26 @@
           <div class="resume-entry__head">
             <h4>생성형 AI 제작 방식 테스트와 포토그래퍼 전달</h4>
           </div>
-          <div class="resume-entry__meta">수행직무 — 도구 테스트 · 방법 정리 · 포토그래퍼 협의</div>
+          <div class="resume-entry__meta">수행직무 — 도구 테스트&nbsp;· 방법 정리&nbsp;· 포토그래퍼 협의</div>
           <ul class="resume-bullets">
-            <li class="t-body">모델 촬영 예산에 부담을 느끼는 MD의 고민에서 시작해, Midjourney로 만든 인물에 실제 제품을 결합하고 NanoBanana·Flow로 합성과 영상까지 만드는 방법을 직접 테스트했습니다.</li>
+            <li class="t-body">모델 촬영 예산에 부담을 느끼는 MD의 고민에서 시작해, Midjourney로 만든 인물에 실제 제품을 결합하고 <span style="white-space:nowrap">NanoBanana·Flow로</span> 합성과 영상까지 만드는 방법을 직접 테스트했습니다.</li>
             <li class="t-body">찾은 방법을 포토그래퍼에게 전달했고, 이후 생성 이미지는 포토그래퍼가 이 방법을 적용해 제작했습니다.</li>
-            <li class="t-body">디자인 조직 전체의 공통 규칙으로 만드는 단계까지는 진행하지 못했습니다.</li>
+            <li class="t-body"><span style="white-space:nowrap">모델·스타일리스트</span> 섭외가 필요한 컷과 촬영 후 제품 컬러 변경을 AI로 해결해 제작 시간과 비용을 줄였습니다.</li>
           </ul>
         </div>
 <div class="resume-entry">
           <div class="resume-entry__head">
-            <h4>메시지·스토리 구조화 · 삼국지 도서 크라우드펀딩</h4>
+            <h4><span style="white-space:nowrap">메시지·스토리</span> 구조화&nbsp;· 삼국지 도서 크라우드펀딩</h4>
             
           </div>
-          <div class="resume-entry__meta">고객 인사이트 기반 메시지 전략 | 최종 매출 2억 1,000만 원 · 수행직무 — 고객·시장 분석 · 페르소나 설정 · 핵심 메시지 전략 · 스토리 기획 · 디자인 디렉팅 · 클라이언트 커뮤니케이션</div>
+          <div class="resume-entry__meta">고객 인사이트 기반 메시지 전략 | 최종 매출 2억 1,000만 원&nbsp;· 수행직무 — <span style="white-space:nowrap">고객·시장</span> 분석&nbsp;· 페르소나 설정&nbsp;· 핵심 메시지 전략&nbsp;· 스토리 기획&nbsp;· 디자인 디렉팅&nbsp;· 클라이언트 커뮤니케이션</div>
           <ul class="resume-bullets">
-            <li class="t-body">다양한 판본과 높은 인지도로 인해 새로운 삼국지를 구매해야 할 이유를 전달하는 것이 핵심 과제였고, 시장·검색·고객 데이터를 참고해 자녀 교육을 고민하는 부모와 재독을 희망하는 성인, 두 유형의 구매 타깃을 설정했습니다.</li>
-            <li class="t-body">두 타깃의 구매 동기를 구분해 교육적·인문학적 가치, 현대적 가독성, 작가의 20년 집필 과정이라는 핵심 메시지를 설계했습니다.</li>
+            <li class="t-body">다양한 판본과 높은 인지도로 인해 새로운 삼국지를 구매해야 할 이유를 전달하는 것이 핵심 과제였고, <span style="white-space:nowrap">시장·검색·고객</span> 데이터를 참고해 자녀 교육을 고민하는 부모와 재독을 희망하는 성인, 두 유형의 구매 타깃을 설정했습니다.</li>
+            <li class="t-body">두 타깃의 구매 동기를 구분해 <span style="white-space:nowrap">교육적·인문학적</span> 가치, 현대적 가독성, 작가의 20년 집필 과정이라는 핵심 메시지를 설계했습니다.</li>
             <li class="t-body">출판사가 강조하는 판본의 신뢰성과 고객이 실제로 구매를 결정하는 이유를 구분해 스토리를 구성했습니다.</li>
             <li class="t-body">클라이언트가 구성은 간결하게 하되 소비자에게 꼭 필요하지 않을 수 있는 내용까지 많이 담기를 거듭 요청해 의견이 좁혀지지 않자, 일부 영역의 기획안과 디자인 예시를 직접 만들어 시각적으로 설득했고 제안한 방향으로 진행했습니다. 전집이고 가격대가 있어 소장하고 싶어지는 비주얼이 중요하다고 판단해, 패키지 디자인에 쓰인 요소와 전체 톤앤무드를 상세페이지에 적극 활용했습니다.</li>
             <li class="t-body">최초 사업 목표 1억 원 대비 최종 펀딩 매출 2억 1,000만 원(사업 목표 기준 달성률 210%, 와디즈 표시 달성률과는 별개), 본펀딩 오픈 1일 차 1억 2,000만 원을 달성했습니다.</li>
-            <li class="t-body">최종 결과물은 수정 없이 관계자 승인을 받았고, 이후 2차 작업을 요청받아 지속적인 외주 작업으로 이어졌습니다. 프로젝트 전체 매출은 클라이언트와 팀이 함께 만든 결과이며, 저는 고객·시장 분석부터 메시지·스토리 기획, 디자인 디렉팅, 클라이언트 커뮤니케이션을 담당했습니다.</li>
+            <li class="t-body">최종 결과물은 수정 없이 관계자 승인을 받았고, 이후 2차 작업을 요청받아 지속적인 외주 작업으로 이어졌습니다. 프로젝트 전체 매출은 클라이언트와 팀이 함께 만든 결과이며, 저는 <span style="white-space:nowrap">고객·시장</span> 분석부터 <span style="white-space:nowrap">메시지·스토리</span> 기획, 디자인 디렉팅, 클라이언트 커뮤니케이션을 담당했습니다.</li>
           </ul>
         </div>
 <div class="resume-entry">
@@ -2297,21 +2306,21 @@
             <h4>디자인 기준 수립과 디자이너 교육</h4>
             
           </div>
-          <div class="resume-entry__meta">수행직무 — 디자인 기준 수립 · 디자이너 교육 · 강의 기획</div>
+          <div class="resume-entry__meta">수행직무 — 디자인 기준 수립&nbsp;· 디자이너 교육&nbsp;· 강의 기획</div>
           <ul class="resume-bullets">
             <li class="t-body">비티와이플러스에서 디자이너 2명에게 디자인 교육을 지속적으로 진행했습니다.</li>
-            <li class="t-body">교육은 디자인 기준점(좋고 나쁨을 판단하는 기준), 영역과 섹션 구분 방법, 덩어리감 표현 방법, 디테일한 효과, 텍스트 크기와 비율 고정값 전달, 레이아웃·레퍼런스 스크랩북 동기화로 구성했습니다.</li>
+            <li class="t-body">교육은 디자인 기준점(좋고 나쁨을 판단하는 기준), 영역과 섹션 구분 방법, 덩어리감 표현 방법, 디테일한 효과, 텍스트 크기와 비율 고정값 전달, <span style="white-space:nowrap">레이아웃·레퍼런스</span> 스크랩북 동기화로 구성했습니다.</li>
             <li class="t-body">Coloso 공식 클래스(올라운더 디자이너를 위한 상세페이지 제작 마스터 클래스)의 커리큘럼 기획, 강의 자료 제작, 실제 강연까지 전 과정을 직접 수행했습니다.</li>
           </ul>
         </div>
 <div class="resume-entry">
           <div class="resume-entry__head">
-            <h4>반응을 보고 고친 디자인 · 광고 소재와 상세페이지</h4>
+            <h4>반응을 보고 고친 디자인&nbsp;· 광고 소재와 상세페이지</h4>
             
           </div>
-          <div class="resume-entry__meta">수행직무 — 광고 운영 · 소재 반응 분석 · 상세페이지 개선 항목 정의 · 개선 검수</div>
+          <div class="resume-entry__meta">수행직무 — 광고 운영&nbsp;· 소재 반응 분석&nbsp;· 상세페이지 개선 항목 정의&nbsp;· 개선 검수</div>
           <ul class="resume-bullets">
-            <li class="t-body">고가 제품 크라우드펀딩 광고에서 목표 수량에서 역산해 필요한 알림신청자 수와 광고 예산을 설계하고, 소재 반응에 따라 집행 방향을 조정했습니다. 광고 운영과 성과 분석은 직접 수행했고, 기획·디자인·소재 제작은 팀과 공동 작업, 촬영본은 업체에서 제공받았습니다.</li>
+            <li class="t-body">고가 제품 크라우드펀딩 광고에서 목표 수량에서 역산해 필요한 알림신청자 수와 광고 예산을 설계하고, 소재 반응에 따라 집행 방향을 조정했습니다. 광고 운영과 성과 분석은 직접 수행했고, <span style="white-space:nowrap">기획·디자인·소재</span> 제작은 팀과 공동 작업, 촬영본은 업체에서 제공받았습니다.</li>
             <li class="t-body">소재 5종 중 반응 없는 3종을 중단하고 2종에 집중했으며, 소재 피로도를 진단해 메시지는 유지한 변형 소재 2종을 추가했습니다.</li>
             <li class="t-body">알림신청자는 최종 2,997명(계획 대비 약 2.1배)이었고, 최고 수치 기준 클릭률 5.8~6.7%(평균 3%), 클릭 후 알림신청 전환율 34~40%(평균 28%), 환산 알림신청 1건당 비용 945원(와디즈 평균 2,800원)을 기록했으며, 본펀딩 4일 평균 광고 ROAS는 773%(매체별 351~1,292%)였습니다.</li>
             <li class="t-body">너리싱 운영(팀 공동 운영)에서는 클릭은 유지되는데 구매 전환이 낮은 구간을 광고가 아닌 상세페이지의 옵션 복잡성과 리뷰 시인성 문제로 정의하고, 개선안을 담당과 일정이 있는 실행 항목으로 만들었습니다. 저는 회의에서 리스크를 확인하고 먼저 적용할 항목을 제안했으며, 반영 일정을 세팅하고 결과물을 검수했습니다.</li>
@@ -2320,20 +2329,20 @@
         </div>
 <div class="resume-entry">
           <div class="resume-entry__head">
-            <h4>대기업 브랜드 콘텐츠·디자인 프로젝트</h4>
+            <h4>대기업 브랜드 <span style="white-space:nowrap">콘텐츠·디자인</span> 프로젝트</h4>
             <span class="resume-entry__date">2021.09 ~ 2026.07</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 콘텐츠 기획 · 디자인 · 콘텐츠 디렉팅</div>
+          <div class="resume-entry__meta">수행직무 — 콘텐츠 기획&nbsp;· 디자인&nbsp;· 콘텐츠 디렉팅</div>
           <ul class="resume-bullets">
             <li class="t-body">다양한 산업군의 대기업과 주요 브랜드를 대상으로 디지털 콘텐츠 기획, 디자인, 크리에이티브 디렉팅 프로젝트를 수행했습니다.</li>
             <li class="t-body">브랜드의 목적, 제품 특성, 타깃 고객에 대한 이해를 바탕으로 프로젝트별 콘텐츠 방향성을 수립하고, 기획부터 디자인, 결과물의 완성도 관리까지 전 과정을 담당했습니다.</li>
             <li class="t-body">주요 수행 브랜드는 로지텍, CJ제일제당, 센트룸, LF패션, 라푸마, 네파 등입니다.</li>
             <li class="t-body">리빙 분야에서는 집꾸미기 상세페이지 20~30건을 약 1년 반 동안 디자인했습니다.</li>
-            <li class="t-body">각 브랜드의 기존 아이덴티티와 프로젝트 목적을 고려해 브랜드 가이드에 부합하는 콘텐츠를 제작하고, 캠페인·판매 목적에 맞는 시각적 커뮤니케이션을 구현했습니다.</li>
+            <li class="t-body">각 브랜드의 기존 아이덴티티와 프로젝트 목적을 고려해 브랜드 가이드에 부합하는 콘텐츠를 제작하고, <span style="white-space:nowrap">캠페인·판매</span> 목적에 맞는 시각적 커뮤니케이션을 구현했습니다.</li>
             <li class="t-body">외부 전문 파트너로서 브랜드가 요구하는 기준과 실무 목적을 함께 충족하도록 콘텐츠 구조와 디자인 방향을 조율했습니다.</li>
             <li class="t-body">브랜드 아이덴티티를 유지하면서도 채널과 목적에 맞게 콘텐츠를 재구성하는 크리에이티브 실무 역량을 쌓았습니다.</li>
           </ul>
-          <span class="resume-sub">IP·브랜드 협업 제품</span>
+          <span class="resume-sub"><span style="white-space:nowrap">IP·브랜드</span> 협업 제품</span>
           <ul class="resume-bullets">
             <li class="t-body">리그 오브 레전드(스토리 기획, 촬영 기획, 내부 디자인 가이드라인 구축, 비주얼 컨펌)</li>
             <li class="t-body">로지텍 × 드래곤볼Z(스토리 기획, 촬영 기획, 랜딩 페이지 디자인, 내부 디자인 가이드라인 구축, 비주얼 컨펌)</li>
@@ -2345,10 +2354,10 @@
         </div>
 <div class="resume-entry">
           <div class="resume-entry__head">
-            <h4>대기업 온라인 커머스 서비스 디자인 — G9 가이드라인 구축, 11번가 페이지 기획·디자인</h4>
+            <h4>대기업 온라인 커머스 서비스 디자인 — G9 가이드라인 구축, 11번가 페이지 <span style="white-space:nowrap">기획·디자인</span></h4>
             <span class="resume-entry__date">2017.11 ~ 2023.08</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 디자인 · 디자인 가이드라인 구축 · 페이지 기획</div>
+          <div class="resume-entry__meta">수행직무 — 디자인&nbsp;· 디자인 가이드라인 구축&nbsp;· 페이지 기획</div>
           <ul class="resume-bullets">
             <li class="t-body">G마켓 G9와 11번가의 온라인 커머스 서비스에 외부 전문 디자인 파트너사로 참여했습니다. G9에서는 서비스 초기 디자인 방향성 수립과 디자인 가이드라인 구축을, 11번가에서는 페이지 기획과 디자인 시안을 수행했습니다.</li>
             <li class="t-body">대기업 내부 디자인 조직이 운영되는 환경에서도 외부 파트너사로 디자인 업무를 수주했고, G9에서는 서비스의 브랜드와 사업 방향에 맞는 시각적 기준을 정립했습니다.</li>
@@ -2357,7 +2366,7 @@
           </ul>
           <span class="resume-sub">11번가 '우아픽' | 2023.06 ~ 2023.08</span>
           <ul class="resume-bullets">
-            <li class="t-body">선별한 제품을 보여 주는 큐레이션 서비스에 맞춰, 스와로브스키 S/S 페이지의 브랜드 스토리·시즌 소개·컬렉션 구성을 기획하고 화보 컷 중심의 레이아웃으로 디자인 시안을 만들었습니다. 여러 후보 컷 중 메인 컷을 제안해 전달했습니다.</li>
+            <li class="t-body">선별한 제품을 보여 주는 큐레이션 서비스에 맞춰, 스와로브스키 S/S 페이지의 브랜드 <span style="white-space:nowrap">스토리·시즌</span> <span style="white-space:nowrap">소개·컬렉션</span> 구성을 기획하고 화보 컷 중심의 레이아웃으로 디자인 시안을 만들었습니다. 여러 후보 컷 중 메인 컷을 제안해 전달했습니다.</li>
           </ul>
           <span class="resume-sub">G마켓 G9 '신선지구' | 2017.11 ~ 2018.11</span>
           <ul class="resume-bullets">
@@ -2371,13 +2380,13 @@
             <h4>신규 브랜드 '너리싱' 론칭 및 브랜드 아이덴티티 구축</h4>
             <span class="resume-entry__date">2024.10 ~ 2026.01</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 브랜드 네이밍 · 브랜드 아이덴티티 기획 · 로고 스타일 기획 · 비주얼 기획 · 콘텐츠 기획 · 촬영 · 디자인 · 홈페이지 제작 · 광고 소재 제작</div>
+          <div class="resume-entry__meta">수행직무 — 브랜드 네이밍&nbsp;· 브랜드 아이덴티티 기획&nbsp;· 로고 스타일 기획&nbsp;· 비주얼 기획&nbsp;· 콘텐츠 기획&nbsp;· 촬영&nbsp;· 디자인&nbsp;· 홈페이지 제작&nbsp;· 광고 소재 제작</div>
           <ul class="resume-bullets">
             <li class="t-body">비티와이플러스의 신규 브랜드 '너리싱' 론칭 프로젝트를 팀과 함께 맡아, 네이밍부터 브랜드 아이덴티티 구축, 비주얼 디자인, 콘텐츠 제작, 디지털 채널 구축까지 크리에이티브 전 과정을 주도했습니다.</li>
             <li class="t-body">현대인의 일상에 활력을 제공한다는 브랜드 방향을 설정하고, Nourish와 진행형 의미를 결합해 브랜드 네이밍을 기획했습니다.</li>
-            <li class="t-body">브랜드의 방향성과 타깃 고객을 정의하고, 브랜드 네이밍과 로고, 브랜드 아이덴티티를 기획·구축했습니다.</li>
+            <li class="t-body">브랜드의 방향성과 타깃 고객을 정의하고, 브랜드 네이밍과 로고, 브랜드 아이덴티티를 <span style="white-space:nowrap">기획·구축했습니다.</span></li>
             <li class="t-body">컬러, 타이포그래피, 이미지 톤 등 비주얼 방향을 설정해 브랜드의 일관된 디자인 체계를 마련했습니다.</li>
-            <li class="t-body">콘텐츠 기획, 비주얼 콘셉트 기획, 촬영, 디자인, 홈페이지 제작을 팀과 함께 진행했고, 광고 소재도 팀과 함께 기획·제작했습니다.</li>
+            <li class="t-body">콘텐츠 기획, 비주얼 콘셉트 기획, 촬영, 디자인, 홈페이지 제작을 팀과 함께 진행했고, 광고 소재도 팀과 함께 <span style="white-space:nowrap">기획·제작했습니다.</span></li>
             <li class="t-body">네이밍과 로고 등 핵심 자산을 직접 기획하고, 브랜드 아이덴티티 → 비주얼 → 콘텐츠 → 홈페이지 → 광고 소재로 확장하는 전 과정을 하나의 크리에이티브 방향성 안에서 관리했습니다.</li>
             <li class="t-body">이후 너리싱 브랜드의 운영 및 저작권은 타사로 이전되었습니다.</li>
           </ul>
@@ -2387,17 +2396,17 @@
             <h4>디저트 브랜드 '스쿱당' 리브랜딩 및 한국 전통미 기반 브랜드 아트웍 개발</h4>
             <span class="resume-entry__date">2023.04 ~ 2023.06</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 리브랜딩 콘셉트 제안 · 외주 업체/아티스트 선정 및 섭외 · 아트웍 콘셉트 기획 · 디자인 시안 컨펌 · 크리에이티브 디렉팅</div>
+          <div class="resume-entry__meta">수행직무 — 리브랜딩 콘셉트 제안&nbsp;· 외주 업체/아티스트 선정 및 섭외&nbsp;· 아트웍 콘셉트 기획&nbsp;· 디자인 시안 컨펌&nbsp;· 크리에이티브 디렉팅</div>
           <ul class="resume-bullets">
             <li class="t-body">포항에서 시작해 '뚱카롱'으로 알려진 디저트 브랜드 '스쿱당'의 리브랜딩 프로젝트를 크리에이티브 총괄로 수행했습니다.</li>
-            <li class="t-body">한국을 방문한 해외 관광객이 꼭 경험하고 구매하고 싶은 대표 디저트 브랜드로 확장할 수 있도록 새로운 브랜드·비주얼 방향을 제안했습니다.</li>
+            <li class="t-body">한국을 방문한 해외 관광객이 꼭 경험하고 구매하고 싶은 대표 디저트 브랜드로 확장할 수 있도록 새로운 <span style="white-space:nowrap">브랜드·비주얼</span> 방향을 제안했습니다.</li>
             <li class="t-body">한국 전통미와 뚱카롱 특유의 다채로운 컬러감을 결합하되, 전통 이미지를 그대로 재현하지 않고 현대적이고 세련된 방식으로 재해석하는 것을 핵심 방향으로 설정했습니다.</li>
-            <li class="t-body">한국의 전통 건축·장식 요소와 서울의 도시적 이미지를 제품의 컬러감과 결합한 메인 아트웍 비주얼 콘셉트를 구상했습니다.</li>
-            <li class="t-body">국내 일러스트레이션·아트웍 사례를 리서치해 브랜드 콘셉트에 가장 적합한 작가를 직접 발굴하고, 직접 연락해 협업을 제안하고 외주 제작을 진행했습니다.</li>
-            <li class="t-body">브랜드 콘셉트와 아트웍 방향을 구체적으로 전달하고, 제작 시안을 단계별로 검토·컨펌하며 세부 요소와 표현 방식을 조정했습니다.</li>
+            <li class="t-body">한국의 전통 <span style="white-space:nowrap">건축·장식</span> 요소와 서울의 도시적 이미지를 제품의 컬러감과 결합한 메인 아트웍 비주얼 콘셉트를 구상했습니다.</li>
+            <li class="t-body">국내 <span style="white-space:nowrap">일러스트레이션·아트웍</span> 사례를 리서치해 브랜드 콘셉트에 가장 적합한 작가를 직접 발굴하고, 직접 연락해 협업을 제안하고 외주 제작을 진행했습니다.</li>
+            <li class="t-body">브랜드 콘셉트와 아트웍 방향을 구체적으로 전달하고, 제작 시안을 단계별로 <span style="white-space:nowrap">검토·컨펌하며</span> 세부 요소와 표현 방식을 조정했습니다.</li>
             <li class="t-body">한국 전통의 장식 요소와 서울의 상징적 이미지를 다채로운 컬러와 패턴으로 재해석한 메인 아트웍을 완성해 리브랜딩의 핵심 비주얼 자산으로 구축했습니다.</li>
-            <li class="t-body">브랜드 포지셔닝 수립 → 비주얼 콘셉트 기획 → 외부 크리에이터 발굴·섭외 → 제작 디렉팅 → 최종 아트웍 완성까지 리브랜딩 전 과정을 주도했습니다.</li>
-            <li class="t-body">브랜드 콘셉트·슬로건·스토리는 기획자와 함께 설계했고, 로고·심볼, 컬러 시스템, 패키지·굿즈 응용 설계는 직접 수행했습니다.</li>
+            <li class="t-body">브랜드 포지셔닝 수립 → 비주얼 콘셉트 기획 → 외부 크리에이터 <span style="white-space:nowrap">발굴·섭외</span> → 제작 디렉팅 → 최종 아트웍 완성까지 리브랜딩 전 과정을 주도했습니다.</li>
+            <li class="t-body">브랜드 <span style="white-space:nowrap">콘셉트·슬로건·스토리는</span> 기획자와 함께 설계했고, <span style="white-space:nowrap">로고·심볼</span>, 컬러 시스템, <span style="white-space:nowrap">패키지·굿즈</span> 응용 설계는 직접 수행했습니다.</li>
             <li class="t-body">론칭 직전 브랜드 방향이 바뀌어 중단되었으나, 결과물은 완성된 상태입니다.</li>
           </ul>
         </div>
@@ -2406,15 +2415,15 @@
             <h4>자사 아이웨어 브랜드 '어나더브릿지' 브랜드 콘텐츠 및 디지털 마케팅 운영</h4>
             <span class="resume-entry__date">2017.04 ~ 2025.10</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 브랜드 콘텐츠 기획 · 비주얼 기획 · 촬영 · 디자인 · 홈페이지 리뉴얼 · 광고 콘텐츠 제작 · 메타 광고 운영</div>
+          <div class="resume-entry__meta">수행직무 — 브랜드 콘텐츠 기획&nbsp;· 비주얼 기획&nbsp;· 촬영&nbsp;· 디자인&nbsp;· 홈페이지 리뉴얼&nbsp;· 광고 콘텐츠 제작&nbsp;· 메타 광고 운영</div>
           <ul class="resume-bullets">
             <li class="t-body">비티와이플러스의 자사 아이웨어 브랜드 '어나더브릿지'의 장기적인 브랜드 운영과 콘텐츠 제작 전반을 담당했습니다.</li>
-            <li class="t-body">시즌과 신제품 출시 목적에 맞춰 제품과 타깃 고객을 분석하고 비주얼·콘텐츠 방향을 기획했습니다.</li>
-            <li class="t-body">촬영 콘셉트 수립부터 모델·촬영 구성, 디자인, 최종 콘텐츠 제작까지 전반적인 크리에이티브를 관리했습니다.</li>
-            <li class="t-body">제품 콘텐츠, 상세페이지, 배너, 디지털 광고 소재 등을 팀과 함께 기획·제작했습니다.</li>
-            <li class="t-body">메타 광고를 자체 운영하며 실제 광고에 쓰이는 소재를 팀과 함께 기획·제작했고, 광고 목적과 타깃에 따라 소재의 메시지와 비주얼을 구성했습니다.</li>
+            <li class="t-body">시즌과 신제품 출시 목적에 맞춰 제품과 타깃 고객을 분석하고 <span style="white-space:nowrap">비주얼·콘텐츠</span> 방향을 기획했습니다.</li>
+            <li class="t-body">촬영 콘셉트 수립부터 <span style="white-space:nowrap">모델·촬영</span> 구성, 디자인, 최종 콘텐츠 제작까지 전반적인 크리에이티브를 관리했습니다.</li>
+            <li class="t-body">제품 콘텐츠, 상세페이지, 배너, 디지털 광고 소재 등을 팀과 함께 <span style="white-space:nowrap">기획·제작했습니다.</span></li>
+            <li class="t-body">메타 광고를 자체 운영하며 실제 광고에 쓰이는 소재를 팀과 함께 <span style="white-space:nowrap">기획·제작했고</span>, 광고 목적과 타깃에 따라 소재의 메시지와 비주얼을 구성했습니다.</li>
             <li class="t-body">브랜드 홈페이지의 구조와 비주얼 개선, 리뉴얼 작업에 참여했습니다.</li>
-            <li class="t-body">자사 브랜드를 장기간 운영하며 제품 출시와 마케팅 목적에 맞춰 콘텐츠를 지속적으로 생산·개선했습니다.</li>
+            <li class="t-body">자사 브랜드를 장기간 운영하며 제품 출시와 마케팅 목적에 맞춰 콘텐츠를 지속적으로 <span style="white-space:nowrap">생산·개선했습니다.</span></li>
           </ul>
         </div>
 
@@ -2422,7 +2431,7 @@
 
 <div class="resume-company">
         <div class="resume-company__head">
-          <div><h3 class="t-sub">광고·영상·촬영 프로젝트</h3></div>
+          <div><h3 class="t-sub"><span style="white-space:nowrap">광고·영상·촬영</span> 프로젝트</h3></div>
         </div>
 
         <div class="resume-entry">
@@ -2430,12 +2439,12 @@
             <h4>대기업 패션 브랜드 시즌별 룩북 및 비주얼 콘텐츠 촬영</h4>
             <span class="resume-entry__date">2020.01 ~ 2025.12</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 포토그래퍼·모델 섭외 및 선정 · 시즌 콘셉트 기획 · 착장 기획 · 촬영 디렉팅</div>
+          <div class="resume-entry__meta">수행직무 — <span style="white-space:nowrap">포토그래퍼·모델</span> 섭외 및 선정&nbsp;· 시즌 콘셉트 기획&nbsp;· 착장 기획&nbsp;· 촬영 디렉팅</div>
           <ul class="resume-bullets">
-            <li class="t-body">호카, LF패션, 라푸마, 네파 등 대기업·주요 패션 브랜드의 시즌별 룩북 및 비주얼 콘텐츠 촬영 프로젝트를 진행했습니다.</li>
+            <li class="t-body">호카, LF패션, 라푸마, 네파 등 <span style="white-space:nowrap">대기업·주요</span> 패션 브랜드의 시즌별 룩북 및 비주얼 콘텐츠 촬영 프로젝트를 진행했습니다.</li>
             <li class="t-body">브랜드와 시즌별 상품 특성을 분석해 전체 촬영 콘셉트와 비주얼 방향을 수립했습니다.</li>
             <li class="t-body">포토그래퍼의 스타일과 포트폴리오를 검토해 적합한 인력을 선정하고, 브랜드 이미지와 타깃 고객에 부합하는 모델을 섭외했습니다.</li>
-            <li class="t-body">모델별 이미지와 상품 특성을 고려해 착장·스타일링 방향을 기획하고, 이미지 톤과 연출 방향을 사전에 설계했습니다.</li>
+            <li class="t-body">모델별 이미지와 상품 특성을 고려해 <span style="white-space:nowrap">착장·스타일링</span> 방향을 기획하고, 이미지 톤과 연출 방향을 사전에 설계했습니다.</li>
             <li class="t-body">촬영 현장에서 구도, 포즈, 장면 구성과 전체 이미지 방향을 디렉팅하며 촬영 전반의 완성도를 관리했습니다.</li>
           </ul>
         </div>
@@ -2444,10 +2453,10 @@
             <h4>신세계백화점 옥외광고 아이웨어 브랜드 광고 영상 제작</h4>
             <span class="resume-entry__date">2024.07 ~ 2024.08</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 영상 기획 · 촬영팀 섭외 및 선정 · 영상 스크립트 기획 · 모델·공간 섭외 및 선정 · 콘셉트 및 착장 기획</div>
+          <div class="resume-entry__meta">수행직무 — 영상 기획&nbsp;· 촬영팀 섭외 및 선정&nbsp;· 영상 스크립트 기획&nbsp;· <span style="white-space:nowrap">모델·공간</span> 섭외 및 선정&nbsp;· 콘셉트 및 착장 기획</div>
           <ul class="resume-bullets">
-            <li class="t-body">대구 신세계백화점 옥외광고에 송출되는 아이웨어 브랜드 광고 영상 제작 프로젝트에 콘텐츠 디렉터로 참여해, 영상 콘셉트 수립부터 촬영 프로덕션 전반의 기획·디렉팅을 담당했습니다.</li>
-            <li class="t-body">광고 메시지와 제품 특성에 맞는 영상 콘셉트와 연출 방향을 기획하고, 적합한 촬영팀을 섭외·선정했습니다.</li>
+            <li class="t-body">대구 신세계백화점 옥외광고에 송출되는 아이웨어 브랜드 광고 영상 제작 프로젝트에 콘텐츠 디렉터로 참여해, 영상 콘셉트 수립부터 촬영 프로덕션 전반의 <span style="white-space:nowrap">기획·디렉팅을</span> 담당했습니다.</li>
+            <li class="t-body">광고 메시지와 제품 특성에 맞는 영상 콘셉트와 연출 방향을 기획하고, 적합한 촬영팀을 <span style="white-space:nowrap">섭외·선정했습니다.</span></li>
             <li class="t-body">영상 스크립트를 기획하고 모델과 촬영 공간을 선정했으며, 모델별 착장과 스타일링 방향까지 직접 기획했습니다.</li>
             <li class="t-body">옥외광고 매체 특성을 고려해 짧은 시간 안에 브랜드와 제품의 핵심 이미지가 전달되는 장면 구성과 비주얼 흐름을 설계했습니다.</li>
             <li class="t-body">기획한 콘셉트가 촬영 결과물에 일관되게 구현되도록 촬영 전반을 디렉팅했습니다. 촬영과 편집은 섭외한 외주 제작사가 진행했습니다.</li>
@@ -2458,12 +2467,12 @@
             <h4>불스원 '루나틱폴리시' 첫 제품 론칭 기념 광고 영상 제작</h4>
             <span class="resume-entry__date">2022.09 ~ 2022.10</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 영상 기획 · 촬영팀 섭외 및 선정 · 영상 스크립트 기획 · 차량·공간 섭외 및 선정 · 콘셉트 및 표현 효과 기획</div>
+          <div class="resume-entry__meta">수행직무 — 영상 기획&nbsp;· 촬영팀 섭외 및 선정&nbsp;· 영상 스크립트 기획&nbsp;· <span style="white-space:nowrap">차량·공간</span> 섭외 및 선정&nbsp;· 콘셉트 및 표현 효과 기획</div>
           <ul class="resume-bullets">
-            <li class="t-body">불스원의 신규 브랜드 '루나틱폴리시' 첫 제품 론칭 기념 광고 영상 제작 프로젝트에 콘텐츠 디렉터로 참여해, 영상 콘셉트 수립부터 촬영 프로덕션 전반의 기획·디렉팅을 담당했습니다.</li>
+            <li class="t-body">불스원의 신규 브랜드 '루나틱폴리시' 첫 제품 론칭 기념 광고 영상 제작 프로젝트에 콘텐츠 디렉터로 참여해, 영상 콘셉트 수립부터 촬영 프로덕션 전반의 <span style="white-space:nowrap">기획·디렉팅을</span> 담당했습니다.</li>
             <li class="t-body">브랜드가 전달하려는 이미지와 제품의 핵심 특성을 바탕으로 전체 영상 콘셉트와 표현 방향을 기획했습니다.</li>
-            <li class="t-body">콘셉트에 적합한 촬영팀을 직접 섭외·선정하고, 영상의 전체 흐름과 메시지가 일관되게 전달되도록 스크립트와 장면 구성을 기획했습니다.</li>
-            <li class="t-body">촬영에 적합한 차량과 공간을 직접 섭외·선정하고, 영상 표현 효과와 연출 방향을 기획했습니다.</li>
+            <li class="t-body">콘셉트에 적합한 촬영팀을 직접 <span style="white-space:nowrap">섭외·선정하고</span>, 영상의 전체 흐름과 메시지가 일관되게 전달되도록 스크립트와 장면 구성을 기획했습니다.</li>
+            <li class="t-body">촬영에 적합한 차량과 공간을 직접 <span style="white-space:nowrap">섭외·선정하고</span>, 영상 표현 효과와 연출 방향을 기획했습니다.</li>
             <li class="t-body">촬영 현장에서 장면별 연출과 비주얼 방향을 디렉팅하며 최종 영상의 완성도를 관리했습니다. 촬영과 편집은 섭외한 외주 제작사가 진행했습니다.</li>
             <li class="t-body">제작된 영상은 불스원 세차 페스티벌 행사 메인 화면에 공식 상영되었고, 행사 현장에서 불스원 회장으로부터 긍정적인 평가를 받았다는 피드백을 담당자를 통해 전달받았습니다.</li>
           </ul>
@@ -2474,16 +2483,16 @@
         <div class="resume-company__head">
           <div>
             <h3 class="t-sub">위메프 WEMAKEPRICE</h3>
-            <span class="resume-company__role">디자인 팀장 · 위메프 패션사업부 디자인 조직 리딩 및 서비스·프로모션 운영</span>
+            <span class="resume-company__role">디자인 팀장&nbsp;· 위메프 패션사업부 디자인 조직 리딩 및 <span style="white-space:nowrap">서비스·프로모션</span> 운영</span>
           </div>
           <span class="resume-entry__date">2012.12 ~ 2017.02</span>
         </div>
         <div class="resume-entry">
           <ul class="resume-bullets">
-            <li class="t-body">위메프에서 젊음과 열정을 쏟았고, 노력한 만큼 인정받았습니다.</li>
+            
             <li class="t-body">파견직으로 입사해 정규직 전환, 디자인 파트장, 사업부 디자인팀 팀장으로 이어지며 약 4년 3개월간 근무했습니다.</li>
-            <li class="t-body">자정에 딜이 오픈되던 시기에는 MD와 디자이너 모두 퇴근하지 않고 남아 오류를 잡아내고 수정했습니다.</li>
-            <li class="t-body">워크숍 중에도 자정 수정에 대비해 노트북을 들고 대기하곤 했습니다.</li>
+            <li class="t-body">자정에 딜이 오픈되던 시기에는 MD와 함께 남아 오픈 직후 오류를 바로 잡아내고 수정했습니다.</li>
+            
           </ul>
         </div>
 <div class="resume-entry">
@@ -2491,15 +2500,15 @@
             <h4>패션사업부 디자인팀 팀장</h4>
             <span class="resume-entry__date">2014 ~ 2017</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 디자인 조직 운영 · 사업부 협업 · 프로모션 디자인 운영 · 서비스 운영 · 업무 프로세스 개선 · 개발 조직 협업</div>
+          <div class="resume-entry__meta">수행직무 — 디자인 조직 운영&nbsp;· 사업부 협업&nbsp;· 프로모션 디자인 운영&nbsp;· 서비스 운영&nbsp;· 업무 프로세스 개선&nbsp;· 개발 조직 협업</div>
           <ul class="resume-bullets">
-            <li class="t-body">조직 개편으로 패션1·2팀이 패션사업부로 통합되면서, 5개 파트와 파트장 5명, 파트원 약 25명으로 이루어진 약 30인 규모의 디자인 조직 중에서 사업부 전체 디자인 업무를 이끄는 팀장으로 승진했습니다.</li>
-            <li class="t-body">사업부의 주요 매출·운영 목표를 디자인 조직의 업무 목표와 연계하고, 영업 매출 KPI를 함께 확인하며 팀의 목표와 업무 우선순위를 설정했습니다.</li>
+            <li class="t-body">조직 개편으로 <span style="white-space:nowrap">패션1·2팀이</span> 패션사업부로 통합되면서, 5개 파트와 파트장 5명, 파트원 약 25명으로 이루어진 약 30인 규모 디자인 조직의 팀장으로 승진해 사업부 전체 디자인 업무를 이끌었습니다.</li>
+            <li class="t-body">사업부의 주요 <span style="white-space:nowrap">매출·운영</span> 목표를 디자인 조직의 업무 목표와 연계하고, 영업 매출 KPI를 함께 확인하며 팀의 목표와 업무 우선순위를 설정했습니다.</li>
             <li class="t-body">대형 업데이트, 정기 점검, 라이브 반응형 프로모션 등 서비스 운영을 담당했습니다.</li>
-            <li class="t-body">트래픽이 몰릴 때 생길 수 있는 병목을 사전에 막는 프로세스를 구축·가동해 라이브 서비스를 차질 없이 운영했습니다.</li>
+            <li class="t-body">트래픽이 몰릴 때 생길 수 있는 병목을 사전에 막는 프로세스를 <span style="white-space:nowrap">구축·가동해</span> 라이브 서비스를 차질 없이 운영했습니다.</li>
             <li class="t-body">매주 디자이너가 대표 작업을 제출하고 파트장이 평가 의견을 취합하는 리뷰를 운영했습니다. 결과를 보고 파트장을 통해 교육 피드백을 전달했고, 우수작에는 보상을 연결했습니다.</li>
-            <li class="t-body">정보 섹션 분리, 레이아웃, 시각적 리듬, 이미지·영상 품질, 브랜드 적합성을 판단 기준으로 공유하고, 작업 중간 검수와 레퍼런스 공유로 팀의 결과물 수준을 맞췄습니다.</li>
-            <li class="t-body">사업부 주간 회의, 전사 회의, 팀장 회의에 참여하며 사업부·개발·디자인 직군 간 요구사항과 일정을 조율했습니다.</li>
+            <li class="t-body">정보 섹션 분리, 레이아웃, 시각적 리듬, <span style="white-space:nowrap">이미지·영상</span> 품질, 브랜드 적합성을 판단 기준으로 공유하고, 작업 중간 검수와 레퍼런스 공유로 팀의 결과물 수준을 맞췄습니다.</li>
+            <li class="t-body">사업부 주간 회의, 전사 회의, 팀장 회의에 참여하며 <span style="white-space:nowrap">사업부·개발·디자인</span> 직군 간 요구사항과 일정을 조율했습니다.</li>
             <li class="t-body">이후 개발 조직과 협업하는 프로젝트까지 맡았습니다.</li>
           </ul>
         </div>
@@ -2508,7 +2517,7 @@
             <h4>해외브랜드 디자인 파트장</h4>
             <span class="resume-entry__date">2013 ~ 2014</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 파트 운영 · 해외브랜드 디자인 전담 · 주요 딜 직접 제작 · 영업 부서 협업</div>
+          <div class="resume-entry__meta">수행직무 — 파트 운영&nbsp;· 해외브랜드 디자인 전담&nbsp;· 주요 딜 직접 제작&nbsp;· 영업 부서 협업</div>
           <ul class="resume-bullets">
             <li class="t-body">팀이 세 개 파트로 나뉘면서 해외브랜드 파트의 파트장을 맡았습니다.</li>
             <li class="t-body">파트원 5명과 함께 해외브랜드 디자인 업무를 전담하며 필요한 디자인을 지원했습니다.</li>
@@ -2520,7 +2529,7 @@
             <h4>패션2팀 디자이너</h4>
             <span class="resume-entry__date">2012 ~ 2013</span>
           </div>
-          <div class="resume-entry__meta">수행직무 — 딜(deal) 디자인 제작 · 영업 부서 오픈 일정 지원 · 당일 오픈 대응</div>
+          <div class="resume-entry__meta">수행직무 — 딜(deal) 디자인 제작&nbsp;· 영업 부서 오픈 일정 지원&nbsp;· 당일 오픈 대응</div>
           <ul class="resume-bullets">
             <li class="t-body">파견직으로 입사해 패션팀 소속 디자이너로 근무했습니다.</li>
             <li class="t-body">하루 2~3건의 딜(deal)을 제작해 영업 부서에 전달했습니다.</li>
@@ -2540,9 +2549,9 @@
         </div>
         <div class="resume-entry">
           <ul class="resume-bullets">
-            <li class="t-body">학과와 연계해 전시 기획, 전시회 부스 제작·운영을 여러 차례 경험했고, 이를 바탕으로 오프라인 접점의 공간과 동선을 보는 안목을 갖추고 있습니다.</li>
+            <li class="t-body">학과와 연계해 전시 기획, 전시회 부스 <span style="white-space:nowrap">제작·운영을</span> 여러 차례 경험했고, 이를 바탕으로 오프라인 접점의 공간과 동선을 보는 안목을 갖추고 있습니다.</li>
             <li class="t-body">졸업작품으로 서울랜드 내부 공간의 일부에 전시 부스를 만들어 일주일 동안 직접 운영했습니다.</li>
-            <li class="t-body">박람회·행사에 필요한 팸플릿, X배너 등 인쇄물을 제작했습니다.</li>
+            <li class="t-body"><span style="white-space:nowrap">박람회·행사에</span> 필요한 팸플릿, X배너 등 인쇄물을 제작했습니다.</li>
           </ul>
         </div>
       </div>
@@ -2586,22 +2595,27 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-portrait"><img src="../assets/561c826452911371367c45033decb4b6.jpg" alt="레노바 포켓몬 에디션 화장지 촬영 연출 컷"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">레노바 × 포켓몬스터</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 포켓몬 30주년 · IP 콜라보레이션</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 포켓몬 30주년&nbsp;· IP 콜라보레이션</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">레노바 × 포켓몬스터</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">스토리·촬영·디자인 기획</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">펀딩 10일 · 매출 9,000만 원+</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v"><span style="white-space:nowrap">스토리·촬영·디자인</span> 기획</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">펀딩 10일&nbsp;· 매출 9,000만 원+</div></div>
       </div>
     </div>
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">스토리 기획</div><div class="detail">포켓몬 30주년의 의미를 앞세운 도입부부터 제품 구성·소장 포인트까지 상세페이지 흐름 설계</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">스토리 기획</div><div class="detail">포켓몬 30주년의 의미를 앞세운 도입부부터 제품 <span style="white-space:nowrap">구성·소장</span> 포인트까지 상세페이지 흐름 설계</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">포켓몬 소품을 활용한 연출 컷 기획과 촬영 진행. 연출 소품 대부분을 보유품으로 직접 제공</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인 기획</div><div class="detail">라이선스 검수 기준을 고려해 디자인 요소는 덜고 촬영물이 임팩트를 만드는 상세페이지 구성</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePokemon_1_1.jpg" width="600" height="4000" alt="레노바 × 포켓몬스터 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/casePokemon_1_2.jpg" width="600" height="1997" alt="레노바 × 포켓몬스터 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePokemon_2_1.jpg" width="600" height="4000" alt="레노바 × 포켓몬스터 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/casePokemon_2_2.jpg" width="600" height="2076" alt="레노바 × 포켓몬스터 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePokemon_3_1.jpg" width="600" height="4000" alt="레노바 × 포켓몬스터 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/casePokemon_3_2.jpg" width="600" height="1968" alt="레노바 × 포켓몬스터 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePokemon_4_1.jpg" width="600" height="4000" alt="레노바 × 포켓몬스터 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/casePokemon_4_2.jpg" width="600" height="2010" alt="레노바 × 포켓몬스터 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePokemon_5_1.jpg" width="600" height="4000" alt="레노바 × 포켓몬스터 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/casePokemon_5_2.jpg" width="600" height="1811" alt="레노바 × 포켓몬스터 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -2620,18 +2634,6 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">디자인 요소를 늘리는 대신 <b>촬영물에서 임팩트</b>를 만드는 쪽으로 방향을 잡았습니다. 평소 포켓몬을 좋아해 모아 온 소품이 많아, 몬스터볼과 카드, 굿즈를 직접 가져와 노란 배경 위에 <b>팬이 책상 위에 펼쳐놓은 듯한 장면</b>으로 연출했습니다.</p>            <p class="t-body">상세페이지는 30주년의 의미를 앞세운 도입부에서 시작해, 한눈에 보이는 제품 구성과 포켓몬별 소장 포인트로 이어지게 설계했습니다. 소품 대부분을 직접 제공한 덕분에 업체가 촬영을 준비하는 부담도 크게 줄었습니다.</p>            <div class="case-ba-block">
-              <div class="case-ba-title">연출 촬영 · 상세페이지 구간</div>
-              <div class="case-scrollrow" style="margin-top:0;">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/b13bcaf4769d85f6dee3fe144dec508e.jpg" alt="레노바 포켓몬 에디션 상세페이지 도입부" loading="lazy"></div>
-                <figcaption>상세페이지 · 30주년 도입 <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/b02b85da0aa8c48b2aa497992db043b5.jpg" alt="레노바 포켓몬 에디션 상세페이지 제품 구성" loading="lazy"></div>
-                <figcaption>상세페이지 · 제품 구성 <span>↕ 스크롤</span></figcaption>
-              </figure>
-            </div>
-            </div>            <div class="case-ba-block">
               <div class="case-ba-title">상세페이지 영상 컷</div>
               <div class="case-ba" style="grid-template-columns:minmax(0,300px);"><figure><video src="../assets/639052ca5ce03189943bc8985cd71221.mp4" autoplay loop muted playsinline style="aspect-ratio:9/16;"></video></figure></div>
             </div>
@@ -2646,7 +2648,7 @@
             <div class="case-result t-body">
               <p>펀딩 진행 10일 동안 <b>매출 9,000만 원 이상</b>, 와디즈 <b>18,114% 달성</b>(2,013명 참여)을 기록했습니다. 서포터 만족도는 5점 만점에 <b>4.7점</b>이었습니다.</p>
               <p>후기에는 기획 의도가 닿은 흔적이 남았습니다. 캐릭터 상품을 아끼게 되는 소장 욕구는 <b>"귀여워서 아껴쓰고 있어요.."</b>라는 후기로, 포켓몬과 함께 자란 세대의 마음은 펀딩에 참여한 서포터의 <b>"포켓몬을 보고 자란 세대라.. 다시 동심을 느껴보려구요"</b>라는 응원으로 나타났습니다.</p>
-              <p>소품을 직접 제공해 연출한 방식은 제조·판매사의 촬영 준비 부담을 크게 줄여 주었고, 업체 역시 높은 만족을 전해 주었습니다.</p>
+              <p>소품을 직접 제공해 연출한 방식은 <span style="white-space:nowrap">제조·판매사의</span> 촬영 준비 부담을 크게 줄여 주었고, 업체 역시 높은 만족을 전해 주었습니다.</p>
             </div>
           </div>
         </div>
@@ -2663,13 +2665,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-portrait"><img src="../assets/720d016d2fa5b9f3d342c34cbb1a634b.jpg" alt="심슨 월드 한국어판 가이드북 촬영 컷"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">심슨 월드 한국어판</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 심슨 · IP 콜라보레이션</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 심슨&nbsp;· IP 콜라보레이션</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">윌북 × 심슨</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">촬영 기획, 디자인 기획</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">단기간 · 매출 4.1억+</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">단기간&nbsp;· 매출 4.1억+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -2679,6 +2681,11 @@
         <div class="case-contrib-row"><div class="area">디자인 기획</div><div class="detail">심슨 특유의 컬러감과 위트를 살린 상세페이지 디자인 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">라이선스사 대응</div><div class="detail">긴 피드백 대기 속 일정 관리, 사용 불가 판정을 받은 이미지 전면 재작업 후 2차 피드백 확보</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSimpsons_1_1.jpg" width="600" height="4000" alt="심슨 월드 한국어판 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseSimpsons_1_2.jpg" width="600" height="1624" alt="심슨 월드 한국어판 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSimpsons_2_1.jpg" width="600" height="4000" alt="심슨 월드 한국어판 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseSimpsons_2_2.jpg" width="600" height="3559" alt="심슨 월드 한국어판 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSimpsons_3_1.jpg" width="600" height="3451" alt="심슨 월드 한국어판 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSimpsons_4_1.jpg" width="600" height="4000" alt="심슨 월드 한국어판 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseSimpsons_4_2.jpg" width="600" height="3426" alt="심슨 월드 한국어판 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSimpsons_5_1.jpg" width="600" height="4000" alt="심슨 월드 한국어판 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseSimpsons_5_2.jpg" width="600" height="1721" alt="심슨 월드 한국어판 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -2696,25 +2703,9 @@
         <div class="case-flow-row">
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
-            <p class="t-body">심슨의 노란색과 레드를 전면에 세운 <b>팬이 한눈에 알아보는 컬러 톤</b>으로 상세페이지를 디자인하고, <b>"15년 만의 부활"</b>, <b>"20년의 기록을 단 한 권에"</b>, <b>"오직 와디즈에서만"</b>이라는 세 가지 메시지로 기다림과 소장 가치, 한정성을 차례로 전달했습니다.</p>            <p class="t-body">사용 불가 피드백을 받은 이미지는 촬영·구성을 빠르게 다시 정리해 수정본을 제출했고, <b>2차 피드백</b>을 받아 일정 안에서 상세페이지를 마무리했습니다.</p>            <div class="case-ba-block">
+            <p class="t-body">심슨의 노란색과 레드를 전면에 세운 <b>팬이 한눈에 알아보는 컬러 톤</b>으로 상세페이지를 디자인하고, <b>"15년 만의 부활"</b>, <b>"20년의 기록을 단 한 권에"</b>, <b>"오직 와디즈에서만"</b>이라는 세 가지 메시지로 기다림과 소장 가치, 한정성을 차례로 전달했습니다.</p>            <p class="t-body">사용 불가 피드백을 받은 이미지는 <span style="white-space:nowrap">촬영·구성을</span> 빠르게 다시 정리해 수정본을 제출했고, <b>2차 피드백</b>을 받아 일정 안에서 상세페이지를 마무리했습니다.</p>            <div class="case-ba-block">
               <div class="case-ba-title">상세페이지 영상 컷</div>
               <div class="case-ba"><figure><video src="../assets/ea3e4aeb61ce2d46eeeebe07527c9610.mp4" autoplay loop muted playsinline style="aspect-ratio:4/5; object-fit:cover;"></video></figure><figure><video src="../assets/7dd64c3f2fa0358240774f5f098bf631.mp4" autoplay loop muted playsinline style="aspect-ratio:4/5; object-fit:cover;"></video></figure></div>
-            </div>            <div class="case-ba-block">
-              <div class="case-ba-title">상세페이지 구간</div>
-              <div class="case-scrollrow" style="margin-top:0;">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/1871664cce6e5166dd3a06c59f56a836.jpg" alt="심슨 월드 한국어판 상세페이지 도입부" loading="lazy"></div>
-                <figcaption>상세페이지 · 15년 만의 부활 <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/f29dc66adafaeede5de8738d6b890cab.jpg" alt="심슨 월드 한국어판 상세페이지 본문" loading="lazy"></div>
-                <figcaption>상세페이지 · 20년의 기록 <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/192129d28e3cdf1f685a06c372612c51.jpg" alt="심슨 월드 한국어판 와디즈 단독 리워드 구성" loading="lazy"></div>
-                <figcaption>리워드 구성 <span>↕ 스크롤</span></figcaption>
-              </figure>
-            </div>
             </div>
           </div>
         </div>
@@ -2743,13 +2734,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-portrait"><img src="../assets/0f8e162d8454de777ebf648f841f998e.jpg" alt="리그 오브 레전드 VIXUM 흡음보드 게이밍룸 연출 컷"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">리그 오브 레전드 × VIXUM 흡음보드</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 게임 IP 콜라보레이션 · 게이밍 인테리어</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 게임 IP 콜라보레이션&nbsp;· 게이밍 인테리어</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">VIXUM × 리그 오브 레전드</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">촬영 기획, 디자인 기획</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">펀딩 3주 · 1,200% 달성</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">펀딩 3주&nbsp;· 1,200% 달성</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -2758,6 +2749,11 @@
         <div class="case-contrib-row"><div class="area">디자인 기획</div><div class="detail">라이선스사가 제공한 디자인 소스를 활용해 게임 자체의 분위기를 상세페이지 전반에 녹이는 디자인 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">실제 게이밍 룸에 보드가 놓인 모습을 보여주는 연출 촬영 기획과 진행</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseLoL_1_1.jpg" width="600" height="4000" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseLoL_1_2.jpg" width="600" height="826" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseLoL_2_1.jpg" width="600" height="4000" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseLoL_2_2.jpg" width="600" height="826" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseLoL_3_1.jpg" width="600" height="4000" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseLoL_3_2.jpg" width="600" height="1189" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseLoL_4_1.jpg" width="600" height="4000" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseLoL_4_2.jpg" width="600" height="1622" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseLoL_5_1.jpg" width="600" height="3669" alt="리그 오브 레전드 × VIXUM 흡음보드 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -2776,19 +2772,7 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">라이선스사가 제공한 디자인 소스를 자유롭게 쓸 수 있었던 만큼, <b>리그 오브 레전드 게임 자체의 느낌을 최대한 살려</b> 깊은 네이비와 골드 톤, 엠블럼 프레임으로 상세페이지 전체를 구성했습니다. 챔피언 일러스트가 담긴 육각 보드는 게이밍 룸에서 <b>바로 덕질 공간이 되는 인테리어</b>로 보이도록 연출 촬영했습니다.</p>            <p class="t-body">기능은 "협곡에 들어설 준비를 모두 마친 지금!"처럼 게임 플레이어의 언어로 풀어 소개했고, 설치의 간편함과 반영구적인 사용성까지 포인트별로 정리했습니다.</p>            <div class="case-ba-block">
-              <div class="case-ba-title">상세페이지 구간</div>
-              <div class="case-scrollrow" style="margin-top:0;">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/2084179cd5c6f92901639d43a336447f.jpg" alt="리그 오브 레전드 VIXUM 흡음보드 상세페이지 도입부" loading="lazy"></div>
-                <figcaption>상세페이지 · 와디즈 최초 공개 <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/da157dd6b42385719b307205690e806f.jpg" alt="리그 오브 레전드 VIXUM 흡음보드 상세페이지 기능 소개" loading="lazy"></div>
-                <figcaption>상세페이지 · 게이머의 언어로 기능 소개 <span>↕ 스크롤</span></figcaption>
-              </figure>
-            </div>
-            </div>            <div class="case-ba-block">
-              <div class="case-ba-title">라이선스 포인트 · 설치 · 사용성</div>
+              <div class="case-ba-title">라이선스 포인트&nbsp;· 설치&nbsp;· 사용성</div>
               <div class="case-tiles cols-3">
                 <figure class="case-tile is-cover is-portrait"><div class="ph"><img src="../assets/7b399416d3154f7f70694f63027e98f1.jpg" alt="리그 오브 레전드 흡음보드 간편 셀프 시공 구간" loading="lazy"></div></figure>
                 <figure class="case-tile is-cover is-portrait"><div class="ph"><img src="../assets/88fa49a48edd9d0780283cc70ab290ab.jpg" alt="리그 오브 레전드 흡음보드 라이선스 프리미엄 구간" loading="lazy"></div></figure>
@@ -2822,24 +2806,24 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-art"><img src="../assets/9531a6e252eeee1d3cd5fb5f301162ee.jpg" alt="너리싱 보정속옷 촬영 컷과 제품 컷"></div>
-      <div class="eyebrow">Case Study · Brand Launch</div>
+      <div class="eyebrow">Case Study&nbsp;· Brand Launch</div>
       <h1 class="t-display">너리싱 (NOURISHING) 보정속옷 브랜드 론칭</h1>
-      <div class="tags">브랜드 론칭 · 네이밍 · 촬영 · 메타 광고 소재 운영</div>
+      <div class="tags">브랜드 론칭&nbsp;· 네이밍&nbsp;· 촬영&nbsp;· 메타 광고 소재 운영</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">너리싱 (NOURISHING)</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">네이밍, 촬영 콘셉트·모델 선정, 광고 소재</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">론칭 · 월별 광고 소재 운영</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">네이밍, 촬영 <span style="white-space:nowrap">콘셉트·모델</span> 선정, 광고 소재</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">론칭&nbsp;· 월별 광고 소재 운영</div></div>
       </div>
     </div>
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">네이밍 · 브랜드 스타일</div><div class="detail">브랜드명 NOURISHING 네이밍과 브랜드 전체 스타일 기획</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">네이밍&nbsp;· 브랜드 스타일</div><div class="detail">브랜드명 NOURISHING 네이밍과 브랜드 전체 스타일 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">로고</div><div class="detail">로고 스타일 기획</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">촬영 콘셉트 · 모델 선정</div><div class="detail">브랜드 무드에 맞는 촬영 콘셉트 설계와 모델 선정을 팀과 함께 진행</div><div class="badge">공동 작업</div></div>
-        <div class="case-contrib-row"><div class="area">광고 소재 제작</div><div class="detail">메타(페이스북·인스타그램) 광고용 이미지·영상 소재를 팀과 함께 월별 시즌 이슈에 맞춰 제작</div><div class="badge">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">촬영 콘셉트&nbsp;· 모델 선정</div><div class="detail">브랜드 무드에 맞는 촬영 콘셉트 설계와 모델 선정을 팀과 함께 진행</div><div class="badge">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">광고 소재 제작</div><div class="detail">메타(<span style="white-space:nowrap">페이스북·인스타그램</span>) 광고용 <span style="white-space:nowrap">이미지·영상</span> 소재를 팀과 함께 월별 시즌 이슈에 맞춰 제작</div><div class="badge">공동 작업</div></div>
         <div class="case-contrib-row"><div class="area">론칭 후 개선</div><div class="detail">구매 후기와 고객센터 문의 내용을 검토해 팀과 함께 디자인을 수정</div><div class="badge">공동 작업</div></div>
-        <div class="case-contrib-row"><div class="area">AI 영상·컷 아이디어</div><div class="detail">하객룩, 출산 후 여성 등 소구 아이디어 제안 (제작은 팀원이 진행)</div><div class="badge">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">AI <span style="white-space:nowrap">영상·컷</span> 아이디어</div><div class="detail">하객룩, 출산 후 여성 등 소구 아이디어 제안 (제작은 팀원이 진행)</div><div class="badge">공동 작업</div></div>
       </div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
@@ -2858,8 +2842,8 @@
         <div class="case-flow-row">
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
-            <p class="t-body">브랜드의 바탕은 직접 세웠습니다. 이름을 짓고, 굵은 서체의 로고와 <b>베이지·브라운 중심의 차분한 톤</b>으로 전체 스타일을 기획해 외주 디자이너에게 전달했습니다. 이어 팀과 함께 촬영 콘셉트와 모델 선정으로 브랜드의 첫인상을 만들었습니다.</p>            <div class="case-ba-block">
-              <div class="case-ba-title">브랜드 기초 · 로고와 촬영</div>
+            <p class="t-body">브랜드의 바탕은 직접 세웠습니다. 이름을 짓고, 굵은 서체의 로고와 <b><span style="white-space:nowrap">베이지·브라운</span> 중심의 차분한 톤</b>으로 전체 스타일을 기획해 외주 디자이너에게 전달했습니다. 이어 팀과 함께 촬영 콘셉트와 모델 선정으로 브랜드의 첫인상을 만들었습니다.</p>            <div class="case-ba-block">
+              <div class="case-ba-title">브랜드 기초&nbsp;· 로고와 촬영</div>
               <div class="case-tiles" style="grid-template-columns:1fr;">
                 <figure class="case-tile is-cover"><div class="ph" style="aspect-ratio:12/5;"><img src="../assets/fc3d0a6e97a667eb9fe36c833adc79b0.jpg" alt="너리싱 로고" loading="lazy"></div></figure>
               </div>
@@ -2867,31 +2851,31 @@
                 <figure class="case-tile is-cover is-portrait"><div class="ph"><img src="../assets/223fa0fead9f373980f5df44d909c0b6.jpg" alt="너리싱 촬영 컷 1" loading="lazy"></div></figure>
                 <figure class="case-tile is-cover is-portrait"><div class="ph"><img src="../assets/dc15aa653318ab603663c9de3bf9c369.jpg" alt="너리싱 촬영 컷 2" loading="lazy"></div></figure>
               </div>
-            </div>            <p class="t-body">광고는 <b>매달 고객의 상황이 바뀌는 지점</b>에 소구점을 맞춰 팀과 함께 새로 만들었습니다. 겨울에는 라인이 매끈해지는 착용 순간을 영상으로, 2월 말에는 <b>D-Day 대비템·봄맞이 얼리버드·브라이달 패키지</b>로, 7월에는 <b>주말 세트 할인과 1+1 초특가</b>로 구매 이유를 계속 바꿔 가며 메타 광고(페이스북·인스타그램)에 맞는 이미지와 영상 소재로 제작했습니다.</p>            <div class="case-ba-block">
-              <div class="case-ba-title">12월 · 착용 영상과 이미지 소재</div>
+            </div>            <p class="t-body">광고는 <b>매달 고객의 상황이 바뀌는 지점</b>에 소구점을 맞춰 팀과 함께 새로 만들었습니다. 겨울에는 라인이 매끈해지는 착용 순간을 영상으로, 2월 말에는 <b>D-Day <span style="white-space:nowrap">대비템·봄맞이</span> <span style="white-space:nowrap">얼리버드·브라이달</span> 패키지</b>로, 7월에는 <b>주말 세트 할인과 1+1 초특가</b>로 구매 이유를 계속 바꿔 가며 메타 광고(<span style="white-space:nowrap">페이스북·인스타그램</span>)에 맞는 이미지와 영상 소재로 제작했습니다.</p>            <div class="case-ba-block">
+              <div class="case-ba-title">12월&nbsp;· 착용 영상과 이미지 소재</div>
             <div class="case-gallery">
-              <figure><video src="../assets/e90ab60dff7f2e77f8508ab5f935fbdc.mp4" autoplay loop muted playsinline></video><figcaption>12월 · 착용 영상</figcaption></figure>
-              <figure><video src="../assets/a7bca1f12735a36c10835f105573dc3d.mp4" autoplay loop muted playsinline></video><figcaption>12월 · 라인 소구</figcaption></figure>
-              <figure><video src="../assets/e550e9242cc3980c5502330da12c7c53.mp4" autoplay loop muted playsinline></video><figcaption>12월 · 고민 공감</figcaption></figure>
-              <figure><video src="../assets/905875edaa7d7773db74d41aa70d885e.mp4" autoplay loop muted playsinline></video><figcaption>12월 · 입는 순간</figcaption></figure>
-              <figure><img src="../assets/2a00db000506a1eeee1064f2166ebba2.jpg" alt="너리싱 12월 메타 광고 이미지 소재 1" loading="lazy"><figcaption>12월 · 이미지 소재</figcaption></figure>
-              <figure><img src="../assets/cdbe40b7432ea9be502e54018e7c48c1.jpg" alt="너리싱 12월 메타 광고 이미지 소재 2" loading="lazy"><figcaption>12월 · 이미지 소재</figcaption></figure>
+              <figure><video src="../assets/e90ab60dff7f2e77f8508ab5f935fbdc.mp4" autoplay loop muted playsinline></video><figcaption>12월&nbsp;· 착용 영상</figcaption></figure>
+              <figure><video src="../assets/a7bca1f12735a36c10835f105573dc3d.mp4" autoplay loop muted playsinline></video><figcaption>12월&nbsp;· 라인 소구</figcaption></figure>
+              <figure><video src="../assets/e550e9242cc3980c5502330da12c7c53.mp4" autoplay loop muted playsinline></video><figcaption>12월&nbsp;· 고민 공감</figcaption></figure>
+              <figure><video src="../assets/905875edaa7d7773db74d41aa70d885e.mp4" autoplay loop muted playsinline></video><figcaption>12월&nbsp;· 입는 순간</figcaption></figure>
+              <figure><img src="../assets/2a00db000506a1eeee1064f2166ebba2.jpg" alt="너리싱 12월 메타 광고 이미지 소재 1" loading="lazy"><figcaption>12월&nbsp;· 이미지 소재</figcaption></figure>
+              <figure><img src="../assets/cdbe40b7432ea9be502e54018e7c48c1.jpg" alt="너리싱 12월 메타 광고 이미지 소재 2" loading="lazy"><figcaption>12월&nbsp;· 이미지 소재</figcaption></figure>
             </div>
             </div>            <div class="case-ba-block">
-              <div class="case-ba-title">2월 4주 · D-Day 대비, 봄맞이 얼리버드, 브라이달 패키지</div>
+              <div class="case-ba-title">2월 4주&nbsp;· D-Day 대비, 봄맞이 얼리버드, 브라이달 패키지</div>
             <div class="case-gallery">
-              <figure><img src="../assets/cde992eb139c76272a3e08e753ddcd2d.jpg" alt="너리싱 D-Day 대비템 메타 광고 소재 1" loading="lazy"><figcaption>2월 4주 · D-Day 대비</figcaption></figure>
-              <figure><img src="../assets/307fb933ec7cc1166903d2481836a033.jpg" alt="너리싱 D-Day 대비템 메타 광고 소재 2" loading="lazy"><figcaption>2월 4주 · D-Day 대비</figcaption></figure>
-              <figure><img src="../assets/686eedf462efce4c6cef191e48b36522.jpg" alt="너리싱 D-Day 대비템 메타 광고 소재 3" loading="lazy"><figcaption>2월 4주 · D-Day 대비</figcaption></figure>
-              <figure><img src="../assets/303ac0c017f532b06dd46dcc09dc344f.jpg" alt="너리싱 봄맞이 얼리버드 메타 광고 소재" loading="lazy"><figcaption>2월 4주 · 봄맞이 얼리버드</figcaption></figure>
-              <figure><img src="../assets/535c2ea41ee264ad8dcec4e9b28afef8.jpg" alt="너리싱 브라이달 패키지 메타 광고 소재" loading="lazy"><figcaption>2월 4주 · 브라이달 패키지</figcaption></figure>
+              <figure><img src="../assets/cde992eb139c76272a3e08e753ddcd2d.jpg" alt="너리싱 D-Day 대비템 메타 광고 소재 1" loading="lazy"><figcaption>2월 4주&nbsp;· D-Day 대비</figcaption></figure>
+              <figure><img src="../assets/307fb933ec7cc1166903d2481836a033.jpg" alt="너리싱 D-Day 대비템 메타 광고 소재 2" loading="lazy"><figcaption>2월 4주&nbsp;· D-Day 대비</figcaption></figure>
+              <figure><img src="../assets/686eedf462efce4c6cef191e48b36522.jpg" alt="너리싱 D-Day 대비템 메타 광고 소재 3" loading="lazy"><figcaption>2월 4주&nbsp;· D-Day 대비</figcaption></figure>
+              <figure><img src="../assets/303ac0c017f532b06dd46dcc09dc344f.jpg" alt="너리싱 봄맞이 얼리버드 메타 광고 소재" loading="lazy"><figcaption>2월 4주&nbsp;· 봄맞이 얼리버드</figcaption></figure>
+              <figure><img src="../assets/535c2ea41ee264ad8dcec4e9b28afef8.jpg" alt="너리싱 브라이달 패키지 메타 광고 소재" loading="lazy"><figcaption>2월 4주&nbsp;· 브라이달 패키지</figcaption></figure>
             </div>
             </div>            <div class="case-ba-block">
-              <div class="case-ba-title">7월 · 주말 세트 할인, 1+1 초특가</div>
+              <div class="case-ba-title">7월&nbsp;· 주말 세트 할인, 1+1 초특가</div>
             <div class="case-gallery">
-              <figure><video src="../assets/e34207bc6be282b1552f04358cd225e6.mp4" autoplay loop muted playsinline></video><figcaption>7월 · 1+1 초특가</figcaption></figure>
-              <figure><video src="../assets/75de9721ee45e1cef7ab21232c742ac0.mp4" autoplay loop muted playsinline></video><figcaption>7월 · 1+1 초특가</figcaption></figure>
-              <figure><img src="../assets/9e82aa785ddb009e1b9590dd084053bb.jpg" alt="너리싱 주말 세트 할인 메타 광고 이미지 소재" loading="lazy"><figcaption>7월 · 주말 세트 할인</figcaption></figure>
+              <figure><video src="../assets/e34207bc6be282b1552f04358cd225e6.mp4" autoplay loop muted playsinline></video><figcaption>7월&nbsp;· 1+1 초특가</figcaption></figure>
+              <figure><video src="../assets/75de9721ee45e1cef7ab21232c742ac0.mp4" autoplay loop muted playsinline></video><figcaption>7월&nbsp;· 1+1 초특가</figcaption></figure>
+              <figure><img src="../assets/9e82aa785ddb009e1b9590dd084053bb.jpg" alt="너리싱 주말 세트 할인 메타 광고 이미지 소재" loading="lazy"><figcaption>7월&nbsp;· 주말 세트 할인</figcaption></figure>
             </div>
             </div>            <p class="t-body">론칭 후에는 구매 후기와 고객센터 문의에서 반복되는 질문과 불편을 모아 팀과 함께 <b>상세페이지와 디자인을 수정</b>했고, 그 내용은 다시 다음 달 광고 소재의 소구점으로 이어졌습니다.</p>
           </div>
@@ -2904,7 +2888,7 @@
           <div class="txt">
             <div class="case-result t-body">
               <p>론칭 이후 시즌마다 새 광고 소재를 팀과 함께 이어 제작하며 브랜드를 운영했습니다. 브랜드 운영이 이후 다른 곳으로 이관되어 판매 수치는 싣지 않았고, 대신 결과물과 운영 방식을 그대로 보여드립니다.</p>
-              <p>한 번 만들고 끝나는 소재가 아니라, <b>후기·문의에서 얻은 고객의 언어를 다음 소재와 디자인에 반영하는 순환</b>을 만들었다는 점이 이 프로젝트에서 가져가는 자산입니다.</p>
+              <p>한 번 만들고 끝나는 소재가 아니라, <b><span style="white-space:nowrap">후기·문의에서</span> 얻은 고객의 언어를 다음 소재와 디자인에 반영하는 순환</b>을 만들었다는 점이 이 프로젝트에서 가져가는 자산입니다.</p>
             </div>
           </div>
         </div>
@@ -2921,9 +2905,9 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-art"><img src="../assets/595b0c4a503a5430071e98362084fbbd.jpg" alt="어나더브릿지 룩북과 연출컷"></div>
-      <div class="eyebrow">Case Study · Brand Growth</div>
+      <div class="eyebrow">Case Study&nbsp;· Brand Growth</div>
       <h1 class="t-display">어나더브릿지 브랜드 확산 콘텐츠</h1>
-      <div class="tags">안경 브랜드 · 메타 광고 소재 · 릴스 · 룩북</div>
+      <div class="tags">안경 브랜드&nbsp;· 메타 광고 소재&nbsp;· 릴스&nbsp;· 룩북</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">어나더브릿지 (ANOTHER BRIDGE)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">광고 소재, 릴스, 룩북</div></div>
@@ -2933,9 +2917,9 @@
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">광고 소재</div><div class="detail">요크·토카·카로 모델별 메타 광고 이미지·영상 소재를 팀과 함께 시즌·프로모션에 맞춰 기획·제작</div><div class="badge">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">광고 소재</div><div class="detail"><span style="white-space:nowrap">요크·토카·카로</span> 모델별 메타 광고 <span style="white-space:nowrap">이미지·영상</span> 소재를 팀과 함께 <span style="white-space:nowrap">시즌·프로모션에</span> 맞춰 <span style="white-space:nowrap">기획·제작</span></div><div class="badge">공동 작업</div></div>
         <div class="case-contrib-row"><div class="area">연출 컷 촬영</div><div class="detail">광고와 릴스에 함께 쓰는 안경 연출 컷 촬영을 팀과 함께 기획</div><div class="badge">공동 작업</div></div>
-        <div class="case-contrib-row"><div class="area">릴스</div><div class="detail">브랜드를 알리기 위한 확산용 숏폼 릴스를 팀과 함께 기획·제작</div><div class="badge">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">릴스</div><div class="detail">브랜드를 알리기 위한 확산용 숏폼 릴스를 팀과 함께 <span style="white-space:nowrap">기획·제작</span></div><div class="badge">공동 작업</div></div>
         <div class="case-contrib-row"><div class="area">룩북</div><div class="detail">2024 룩북 기획과 촬영 디렉팅을 팀과 함께 진행</div><div class="badge">공동 작업</div></div>
       </div>
     </div>
@@ -2957,32 +2941,32 @@
           <div class="txt">
             <p class="t-body"><b>광고 소재</b>는 팀과 함께 모델마다 소구를 다르게 잡았습니다. 요크는 <b>"첫인상이 30% 부드러워지는 프레임"</b>, 카로는 <b>"5만원대 뿔테의 정석"</b>, 토카는 <b>맞춤 사이즈와 합리적 가격</b>을 앞세웠고, 추석 할인이나 마감 임박 같은 시즌 이슈가 생기면 같은 제품에 새로운 구매 이유를 입혀 소재를 계속 새로 만들었습니다. 이미지 소재와 연출 컷 촬영을 한 흐름으로 이어 광고와 릴스에 함께 쓰이게 했습니다.</p>
             <div class="case-ba-block">
-              <div class="case-ba-title">브랜딩 · 요크 — 브랜드를 소개하고 모델의 장점을 한 문장으로</div>
+              <div class="case-ba-title">브랜딩&nbsp;· 요크 — 브랜드를 소개하고 모델의 장점을 한 문장으로</div>
               <div class="case-gallery" style="margin-top:0;">
-                <figure><img src="../assets/06024e5fee2c20cfe6f970e69c4b9f23.jpg" alt="어나더브릿지 브랜딩 광고 스토리형" loading="lazy"><figcaption>브랜딩 · 스토리</figcaption></figure>
-                <figure><img src="../assets/aba78d80ce51ad706caf18dfee9b5883.jpg" alt="어나더브릿지 브랜딩 광고 스토리형 2" loading="lazy"><figcaption>브랜딩 · 스토리</figcaption></figure>
-                <figure><img src="../assets/20d88ca868aa9767354d5a6697c694b3.jpg" alt="요크 광고 스토리형" loading="lazy"><figcaption>요크 · 컬러</figcaption></figure>
-                <figure><img src="../assets/a7a7a6f3b28c537ab0246f28936f7d37.jpg" alt="요크 광고 피드형" loading="lazy"><figcaption>요크 · 피드</figcaption></figure>
-                <figure><img src="../assets/ccc5b2c422c4669813e2eb51f524fd29.jpg" alt="요크 광고 첫인상 소구" loading="lazy"><figcaption>요크 · 첫인상</figcaption></figure>
+                <figure><img src="../assets/06024e5fee2c20cfe6f970e69c4b9f23.jpg" alt="어나더브릿지 브랜딩 광고 스토리형" loading="lazy"><figcaption>브랜딩&nbsp;· 스토리</figcaption></figure>
+                <figure><img src="../assets/aba78d80ce51ad706caf18dfee9b5883.jpg" alt="어나더브릿지 브랜딩 광고 스토리형 2" loading="lazy"><figcaption>브랜딩&nbsp;· 스토리</figcaption></figure>
+                <figure><img src="../assets/20d88ca868aa9767354d5a6697c694b3.jpg" alt="요크 광고 스토리형" loading="lazy"><figcaption>요크&nbsp;· 컬러</figcaption></figure>
+                <figure><img src="../assets/a7a7a6f3b28c537ab0246f28936f7d37.jpg" alt="요크 광고 피드형" loading="lazy"><figcaption>요크&nbsp;· 피드</figcaption></figure>
+                <figure><img src="../assets/ccc5b2c422c4669813e2eb51f524fd29.jpg" alt="요크 광고 첫인상 소구" loading="lazy"><figcaption>요크&nbsp;· 첫인상</figcaption></figure>
               </div>
             </div>
             <div class="case-ba-block">
               <div class="case-ba-title">카로 — 5만원대 뿔테의 정석</div>
               <div class="case-gallery" style="margin-top:0;">
-                <figure><img src="../assets/b00f5de00f0a5034cf6e5e898d7e1020.jpg" alt="카로 광고 5만원대 뿔테" loading="lazy"><figcaption>카로 · 가격과 착용감</figcaption></figure>
-                <figure><img src="../assets/e77a3e311e0355337647ab0f9e9b95cb.jpg" alt="카로 광고 블랙·투명그린" loading="lazy"><figcaption>카로 · 컬러</figcaption></figure>
-                <figure><img src="../assets/480263afb4183839c7e0bdff22ca56ee.jpg" alt="카로 광고 가볍고 견고하다는 소구" loading="lazy"><figcaption>카로 · 가볍고 견고</figcaption></figure>
+                <figure><img src="../assets/b00f5de00f0a5034cf6e5e898d7e1020.jpg" alt="카로 광고 5만원대 뿔테" loading="lazy"><figcaption>카로&nbsp;· 가격과 착용감</figcaption></figure>
+                <figure><img src="../assets/e77a3e311e0355337647ab0f9e9b95cb.jpg" alt="카로 광고 블랙·투명그린" loading="lazy"><figcaption>카로&nbsp;· 컬러</figcaption></figure>
+                <figure><img src="../assets/480263afb4183839c7e0bdff22ca56ee.jpg" alt="카로 광고 가볍고 견고하다는 소구" loading="lazy"><figcaption>카로&nbsp;· 가볍고 견고</figcaption></figure>
               </div>
             </div>
             <div class="case-ba-block">
               <div class="case-ba-title">토카 — 사이즈, 가격, 시즌 프로모션으로 구매 이유를 바꿔 가며</div>
               <div class="case-gallery" style="margin-top:0;">
-                <figure><img src="../assets/60c04dbac71374d7a478638bf938e4b3.jpg" alt="토카 광고 44·46·49 맞춤형 사이즈" loading="lazy"><figcaption>토카 · 사이즈</figcaption></figure>
-                <figure><img src="../assets/6d12e49bba926692fb362e9ddfa7ae8b.jpg" alt="토카 광고 아세테이트 소재와 7종 컬러" loading="lazy"><figcaption>토카 · 소재와 컬러</figcaption></figure>
-                <figure><img src="../assets/d3d66d5276a1b55f6b2180b63cd9d13e.jpg" alt="토카 광고 안경사도 놀라는 안경 59,000원" loading="lazy"><figcaption>토카 · 가격</figcaption></figure>
-                <figure><img src="../assets/d21ae5ddb4bda355226280cee280814f.jpg" alt="토카 광고 추석 맞이 할인" loading="lazy"><figcaption>토카 · 추석 프로모션</figcaption></figure>
-                <figure><img src="../assets/bb40ae632c6673a44925fbdd59cd2217.jpg" alt="토카 광고 내일이면 비싸져요" loading="lazy"><figcaption>토카 · 마감 임박</figcaption></figure>
-                <figure><img src="../assets/d694bdca16e45bf01dfca6d7be4ddc5b.jpg" alt="토카 광고 10년차 안경사 추천" loading="lazy"><figcaption>토카 · 전문가 추천</figcaption></figure>
+                <figure><img src="../assets/60c04dbac71374d7a478638bf938e4b3.jpg" alt="토카 광고 44·46·49 맞춤형 사이즈" loading="lazy"><figcaption>토카&nbsp;· 사이즈</figcaption></figure>
+                <figure><img src="../assets/6d12e49bba926692fb362e9ddfa7ae8b.jpg" alt="토카 광고 아세테이트 소재와 7종 컬러" loading="lazy"><figcaption>토카&nbsp;· 소재와 컬러</figcaption></figure>
+                <figure><img src="../assets/d3d66d5276a1b55f6b2180b63cd9d13e.jpg" alt="토카 광고 안경사도 놀라는 안경 59,000원" loading="lazy"><figcaption>토카&nbsp;· 가격</figcaption></figure>
+                <figure><img src="../assets/d21ae5ddb4bda355226280cee280814f.jpg" alt="토카 광고 추석 맞이 할인" loading="lazy"><figcaption>토카&nbsp;· 추석 프로모션</figcaption></figure>
+                <figure><img src="../assets/bb40ae632c6673a44925fbdd59cd2217.jpg" alt="토카 광고 내일이면 비싸져요" loading="lazy"><figcaption>토카&nbsp;· 마감 임박</figcaption></figure>
+                <figure><img src="../assets/d694bdca16e45bf01dfca6d7be4ddc5b.jpg" alt="토카 광고 10년차 안경사 추천" loading="lazy"><figcaption>토카&nbsp;· 전문가 추천</figcaption></figure>
               </div>
             </div>
             <div class="case-ba-block">
@@ -3000,12 +2984,12 @@
             <div class="case-ba-block">
               <div class="case-ba-title">확산용 릴스</div>
               <div class="case-gallery" style="margin-top:0;">
-                <figure><video src="../assets/d967f3f27acefc329747ec6697737fd4.mp4" autoplay loop muted playsinline></video><figcaption>릴스 · 종이벽 연출</figcaption></figure>
-                <figure><video src="../assets/b3d4cb25ee05bc71f55eda6828a7ee06.mp4" autoplay loop muted playsinline></video><figcaption>릴스 · 디테일 클로즈업</figcaption></figure>
-                <figure><video src="../assets/1c9a6305ecd979c0710f1b7ba8e3c3fe.mp4" autoplay loop muted playsinline></video><figcaption>릴스 · 티테이블 연출</figcaption></figure>
-                <figure><video src="../assets/3ebe23ea1298b8acd3c9e21861b42fc7.mp4" autoplay loop muted playsinline></video><figcaption>릴스 · 언박싱</figcaption></figure>
-                <figure><video src="../assets/a16be71f1a40dc223c54595473671e58.mp4" autoplay loop muted playsinline></video><figcaption>릴스 · 토카 가격</figcaption></figure>
-                <figure><video src="../assets/1ce1f612f5339c0cd1416232d88f39f4.mp4" autoplay loop muted playsinline></video><figcaption>릴스 · 클래식 글라스</figcaption></figure>
+                <figure><video src="../assets/d967f3f27acefc329747ec6697737fd4.mp4" autoplay loop muted playsinline></video><figcaption>릴스&nbsp;· 종이벽 연출</figcaption></figure>
+                <figure><video src="../assets/b3d4cb25ee05bc71f55eda6828a7ee06.mp4" autoplay loop muted playsinline></video><figcaption>릴스&nbsp;· 디테일 클로즈업</figcaption></figure>
+                <figure><video src="../assets/1c9a6305ecd979c0710f1b7ba8e3c3fe.mp4" autoplay loop muted playsinline></video><figcaption>릴스&nbsp;· 티테이블 연출</figcaption></figure>
+                <figure><video src="../assets/3ebe23ea1298b8acd3c9e21861b42fc7.mp4" autoplay loop muted playsinline></video><figcaption>릴스&nbsp;· 언박싱</figcaption></figure>
+                <figure><video src="../assets/a16be71f1a40dc223c54595473671e58.mp4" autoplay loop muted playsinline></video><figcaption>릴스&nbsp;· 토카 가격</figcaption></figure>
+                <figure><video src="../assets/1ce1f612f5339c0cd1416232d88f39f4.mp4" autoplay loop muted playsinline></video><figcaption>릴스&nbsp;· 클래식 글라스</figcaption></figure>
               </div>
             </div>
             <p class="t-body"><b>룩북</b>은 팀과 함께 브랜드의 톤을 한 장면으로 정리한 작업이었습니다. 옅은 블루 배경에 블랙 재킷과 블루 셔츠로 색을 절제하고, 안경이 인물의 표정과 분위기를 결정하는 컷 위주로 구성해 브랜드가 지향하는 차분한 이미지를 쌓았습니다.</p>
@@ -3036,7 +3020,7 @@
           <div class="txt">
             <div class="case-result t-body">
               <p>하나의 소재가 아니라 <b>광고, 릴스, 룩북이 서로 다른 역할로 이어지는 확산 구조</b>를 팀과 함께 만들고 운영했습니다. 광고는 구매할 이유를, 릴스는 알려질 계기를, 룩북은 브랜드의 톤을 맡았습니다.</p>
-              <p>판매·반응 수치는 싣지 않았고, 모델별·시즌별로 쌓아 온 결과물과 운영 방식을 그대로 보여드립니다.</p>
+              <p><span style="white-space:nowrap">판매·반응</span> 수치는 싣지 않았고, <span style="white-space:nowrap">모델별·시즌별로</span> 쌓아 온 결과물과 운영 방식을 그대로 보여드립니다.</p>
             </div>
           </div>
         </div>
@@ -3053,9 +3037,9 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-portrait"><img src="../assets/e7de489964d237d33eb6089e4b84782f.jpg" alt="락포트 50주년 기념 캠페인 대표 연출컷"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">락포트 50주년 기념 캠페인</h1>
-      <div class="tags">50주년 캠페인 · 비주얼 기획 · 상세페이지 · 연출 컷</div>
+      <div class="tags">50주년 캠페인&nbsp;· 비주얼 기획&nbsp;· 상세페이지&nbsp;· 연출 컷</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">락포트 (ROCKPORT)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">비주얼 기획, 디자인</div></div>
@@ -3068,6 +3052,11 @@
         <div class="case-contrib-row"><div class="area">비주얼 기획</div><div class="detail">50주년 캠페인 콘셉트를 "젊은 층부터 중장년층까지 신는 편안함"으로 잡고, 계절감과 모델이 어우러지는 연출 컷 방향 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">락포트 특유의 깔끔하고 정돈된 브랜드 무드를 살린 상세페이지 디자인</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseRockport_1_1.jpg" width="600" height="4000" alt="락포트 50주년 기념 캠페인 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseRockport_1_2.jpg" width="600" height="1545" alt="락포트 50주년 기념 캠페인 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 03 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseRockport_2_1.jpg" width="600" height="4000" alt="락포트 50주년 기념 캠페인 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseRockport_2_2.jpg" width="600" height="1563" alt="락포트 50주년 기념 캠페인 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 03 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseRockport_3_1.jpg" width="600" height="4000" alt="락포트 50주년 기념 캠페인 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseRockport_3_2.jpg" width="600" height="1710" alt="락포트 50주년 기념 캠페인 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 03 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3086,26 +3075,6 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">디자인은 <b>덜어내는 쪽</b>으로 잡았습니다. 베이지와 네이비 중심의 절제된 색, 세리프 영문 타이틀과 넉넉한 여백으로 락포트의 클래식한 무드를 유지하고, 브랜드 히스토리와 50주년 엠블럼은 하나의 흐름으로 정리했습니다.</p>            <p class="t-body">메시지는 <b>연출 컷</b>이 맡았습니다. 맑은 계절의 햇살이 드는 실내와 도심의 야외를 오가며, 다양한 연령대를 떠올리게 하는 모델 구성과 코디로 같은 신발이 어떤 자리에도 어울린다는 것을 보여주었습니다. 계절감과 모델, 신발이 서로 어긋나지 않도록 톤을 맞추는 데 신경 썼습니다.</p>            <p class="t-body">기능은 "하루 종일 발이 활동하는 평균 8시간"처럼 <b>일상의 시간으로 풀어</b>, 편안함이 왜 필요한지 공감에서 출발하도록 구성했습니다.</p>            <div class="case-ba-block">
-              <div class="case-ba-title">상세페이지 구간</div>
-              <div class="case-scrollrow" style="margin-top:0;">
-                <figure class="case-scroll">
-                  <div class="frame"><img src="../assets/0a144d6c0eba7df28ac46975a3195706.jpg" alt="락포트 50주년 상세페이지 브랜드 소개" loading="lazy"></div>
-                  <figcaption>상세페이지 · 브랜드 소개 <span>↕ 스크롤</span></figcaption>
-                </figure>
-                <figure class="case-scroll">
-                  <div class="frame"><img src="../assets/c697b2dadc424ed2398d645bd48e6889.jpg" alt="락포트 50주년 상세페이지 브랜드 히스토리" loading="lazy"></div>
-                  <figcaption>상세페이지 · 브랜드 히스토리 <span>↕ 스크롤</span></figcaption>
-                </figure>
-                <figure class="case-scroll">
-                  <div class="frame"><img src="../assets/ce8040258a4dfa25e5b1211aefd8640a.jpg" alt="락포트 50주년 상세페이지 하루 8시간의 편안함" loading="lazy"></div>
-                  <figcaption>상세페이지 · 하루 8시간 <span>↕ 스크롤</span></figcaption>
-                </figure>
-                <figure class="case-scroll">
-                  <div class="frame"><img src="../assets/f8d780a8776ca08249305c3221d8bc68.jpg" alt="락포트 50주년 상세페이지 두 가지 로퍼" loading="lazy"></div>
-                  <figcaption>상세페이지 · 두 가지 로퍼 <span>↕ 스크롤</span></figcaption>
-                </figure>
-              </div>
-            </div>            <div class="case-ba-block">
               <div class="case-ba-title">연출 컷</div>
               <div class="case-tiles cols-3">
                 <figure class="case-tile is-cover is-portrait"><div class="ph"><img src="../assets/0c2820c899a10db0c599a18371f0755f.jpg" alt="락포트 연출컷 도심 야외" loading="lazy"></div></figure>
@@ -3139,13 +3108,13 @@
   </div>
   <div class="case-wrap">
     <div class="case-hero">
-      <div class="eyebrow">AI Logic &amp; Strategy · Search Keyword Analysis · 직접 수행</div>
+      <div class="eyebrow">AI Logic &amp; Strategy&nbsp;· Search Keyword Analysis&nbsp;· 직접 수행</div>
       <h1 class="t-display">검색 키워드로 읽는 고객과 접점</h1>
-      <div class="tags">자동완성 · 연관 검색어 · 클러스터링 · 검색 의도 · 페르소나 · 제품 접점</div>
+      <div class="tags">자동완성&nbsp;· 연관 검색어&nbsp;· 클러스터링&nbsp;· 검색 의도&nbsp;· 페르소나&nbsp;· 제품 접점</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Method</div><div class="v">상위 카테고리 검색 → 키워드 수집 → 클러스터링 → 의도 → 페르소나 → 접점</div></div>
-        <div class="cell"><div class="k">Data</div><div class="v">Google 검색창 자동완성·연관 검색어 · 2026.10.14 수집</div></div>
-        <div class="cell"><div class="k">Cases</div><div class="v">드래곤볼 · 포켓몬 · 심슨 · 게이밍룸 흡음</div></div>
+        <div class="cell"><div class="k">Data</div><div class="v">Google 검색창 <span style="white-space:nowrap">자동완성·연관</span> 검색어&nbsp;· 2026.10.14 수집</div></div>
+        <div class="cell"><div class="k">Cases</div><div class="v">드래곤볼&nbsp;· 포켓몬&nbsp;· 심슨&nbsp;· 게이밍룸 흡음</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3157,28 +3126,28 @@
         <li>이를 바탕으로 고객 세그먼트를 나누어 페르소나를 발굴합니다.</li>
         <li>페르소나와 우리 제품이 만나는 접점을 찾아 우선순위로 정리합니다.</li>
       </ol>
-      <p class="t-body kw-note">검색량 수치는 포함하지 않은 자동완성·연관 검색어 기반 분석입니다. IP 사례는 제품명 대신 "IP명 + 굿즈", "콜라보 키보드"처럼 한 단계 위의 카테고리로 검색했습니다. 키워드 클러스터링과 페르소나, 접점 우선순위는 생성형 AI로 정리한 1차 분석 결과이고, 제품 접점은 각 프로젝트의 제품 정보와 기획 내용을 기준으로 맞췄습니다.</p>
+      <p class="t-body kw-note">검색량 수치는 포함하지 않은 <span style="white-space:nowrap">자동완성·연관</span> 검색어 기반 분석입니다. IP 사례는 제품명 대신 "IP명 + 굿즈", "콜라보 키보드"처럼 한 단계 위의 카테고리로 검색했습니다. 키워드 클러스터링과 페르소나, 접점 우선순위는 생성형 AI로 정리한 1차 분석 결과이고, 제품 접점은 각 프로젝트의 제품 정보와 기획 내용을 기준으로 맞췄습니다.</p>
     </div>
     <div class="case-sec kw-sec" id="kw-DB">
-      <div class="eyebrow">01 · 콜라보 키보드 · 드래곤볼 굿즈</div>
-      <h2 class="kw-h">검색 카테고리: 콜라보 키보드 · 드래곤볼 굿즈</h2>
-      <div class="kw-step"><span>01</span>키워드 수집 <em>자동완성·연관 검색어 68개</em></div>
-      <p class="t-body kw-rel"><b>함께 검색된 연관 검색어 —</b> 콜라보 키보드 디시 · 레이저 콜라보 키보드 · 미쿠 콜라보 키보드 · 애니 캐릭터 키보드 · 드래곤볼 굿즈 샵 · 드래곤볼 피규어 · 드래곤볼 피규어 추천 · 드래곤볼 제일복권</p>
+      <div class="eyebrow">01&nbsp;· 콜라보 키보드&nbsp;· 드래곤볼 굿즈</div>
+      <h2 class="kw-h">검색 카테고리: 콜라보 키보드&nbsp;· 드래곤볼 굿즈</h2>
+      <div class="kw-step"><span>01</span>키워드 수집 <em><span style="white-space:nowrap">자동완성·연관</span> 검색어 68개</em></div>
+      <p class="t-body kw-rel"><b>함께 검색된 연관 검색어 —</b> 콜라보 키보드 디시&nbsp;· 레이저 콜라보 키보드&nbsp;· 미쿠 콜라보 키보드&nbsp;· 애니 캐릭터 키보드&nbsp;· 드래곤볼 굿즈 샵&nbsp;· 드래곤볼 피규어&nbsp;· 드래곤볼 피규어 추천&nbsp;· 드래곤볼 제일복권</p>
       <div class="kw-step"><span>02</span>연결성 분석과 클러스터링</div>
       <div class="kw-grid">
-          <div class="kw-row"><div class="kw-name">콜라보·한정</div><div class="kw-chips"><span>디맥 콜라보 키보드</span><span>미쿠 콜라보 키보드</span><span>스텔라이브 콜라보 키보드</span><span>애니 콜라보 키보드</span><span>한정판매</span><span>한정판 키캡</span><span>발매</span></div></div>
-          <div class="kw-row"><div class="kw-name">연결·사용성</div><div class="kw-chips"><span>블루투스 연결</span><span>인식 안됨</span><span>페어링</span><span>내구성</span><span>소리</span><span>고르는 법</span><span>vs 키보드</span></div></div>
-          <div class="kw-row"><div class="kw-name">키캡·커스텀</div><div class="kw-chips"><span>키캡 교체</span><span>키캡 추천</span><span>콜라보 키캡</span><span>기계식</span><span>커스텀 키보드</span><span>디자인</span></div></div>
-          <div class="kw-row"><div class="kw-name">레트로·게임·애니 감성</div><div class="kw-chips"><span>레트로 게임</span><span>게임 콜라보</span><span>애니 캐릭터 키보드</span><span>귀여운 캐릭터 키보드</span></div></div>
-          <div class="kw-row"><div class="kw-name">구매처·가격</div><div class="kw-chips"><span>가격</span><span>굿즈샵</span><span>공식몰</span><span>파는곳</span><span>중고</span><span>해외배송</span><span>온라인 구매</span></div></div>
-          <div class="kw-row"><div class="kw-name">피규어·굿즈 확장</div><div class="kw-chips"><span>드래곤볼 피규어</span><span>구슬 피규어</span><span>한정판 키링</span><span>굿즈 종류</span><span>제일복권</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">콜라보·한정</span></div><div class="kw-chips"><span>디맥 콜라보 키보드</span><span>미쿠 콜라보 키보드</span><span>스텔라이브 콜라보 키보드</span><span>애니 콜라보 키보드</span><span>한정판매</span><span>한정판 키캡</span><span>발매</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">연결·사용성</span></div><div class="kw-chips"><span>블루투스 연결</span><span>인식 안됨</span><span>페어링</span><span>내구성</span><span>소리</span><span>고르는 법</span><span>vs 키보드</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">키캡·커스텀</span></div><div class="kw-chips"><span>키캡 교체</span><span>키캡 추천</span><span>콜라보 키캡</span><span>기계식</span><span>커스텀 키보드</span><span>디자인</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">레트로·게임·애니</span> 감성</div><div class="kw-chips"><span>레트로 게임</span><span>게임 콜라보</span><span>애니 캐릭터 키보드</span><span>귀여운 캐릭터 키보드</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">구매처·가격</span></div><div class="kw-chips"><span>가격</span><span>굿즈샵</span><span>공식몰</span><span>파는곳</span><span>중고</span><span>해외배송</span><span>온라인 구매</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">피규어·굿즈</span> 확장</div><div class="kw-chips"><span>드래곤볼 피규어</span><span>구슬 피규어</span><span>한정판 키링</span><span>굿즈 종류</span><span>제일복권</span></div></div>
           <div class="kw-row"><div class="kw-name">선물</div><div class="kw-chips"><span>드래곤볼 굿즈 선물하기</span><span>선물세트</span><span>캐릭터 키보드 선물하기</span></div></div>
-          <div class="kw-row"><div class="kw-name">커뮤니티·후기</div><div class="kw-chips"><span>디시</span><span>후기</span><span>추천</span><span>퀘이사존</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">커뮤니티·후기</span></div><div class="kw-chips"><span>디시</span><span>후기</span><span>추천</span><span>퀘이사존</span></div></div>
       </div>
       <ul class="kw-links">
-          <li>"연결·사용성" ↔ "콜라보·한정"(8회): 콜라보 키보드는 연결·인식·내구성 검색과 함께 붙습니다. 팬 굿즈를 사더라도 키보드로서 제대로 쓸 수 있는지를 따로 확인한다는 뜻입니다.</li>
-          <li>"커뮤니티·후기" ↔ "콜라보·한정"(5회)과 "구매처·가격" ↔ "콜라보·한정"(5회): 한정판매·콜라보 키보드는 커뮤니티 평판을 거쳐 구매처와 가격으로 이어집니다.</li>
-          <li>"콜라보·한정" ↔ "레트로·게임·애니 감성"(4회), "콜라보·한정" ↔ "키캡·커스텀"(4회): 콜라보 상품은 감성에서 시작해 키캡 등 취향 변형으로 확장되는 흐름도 있습니다.</li>
+          <li><span style="white-space:nowrap">"연결·사용성"</span> ↔ <span style="white-space:nowrap">"콜라보·한정"</span>(8회): 콜라보 키보드는 <span style="white-space:nowrap">연결·인식·내구성</span> 검색과 함께 붙습니다. 팬 굿즈를 사더라도 키보드로서 제대로 쓸 수 있는지를 따로 확인한다는 뜻입니다.</li>
+          <li><span style="white-space:nowrap">"커뮤니티·후기"</span> ↔ <span style="white-space:nowrap">"콜라보·한정"</span>(5회)과 <span style="white-space:nowrap">"구매처·가격"</span> ↔ <span style="white-space:nowrap">"콜라보·한정"</span>(5회): <span style="white-space:nowrap">한정판매·콜라보</span> 키보드는 커뮤니티 평판을 거쳐 구매처와 가격으로 이어집니다.</li>
+          <li><span style="white-space:nowrap">"콜라보·한정"</span> ↔ <span style="white-space:nowrap">"레트로·게임·애니</span> 감성"(4회), <span style="white-space:nowrap">"콜라보·한정"</span> ↔ <span style="white-space:nowrap">"키캡·커스텀"</span>(4회): 콜라보 상품은 감성에서 시작해 키캡 등 취향 변형으로 확장되는 흐름도 있습니다.</li>
       </ul>
       <div class="kw-step"><span>03</span>검색 의도 그룹</div>
       <div class="kw-grid">
@@ -3186,134 +3155,134 @@
           <div class="kw-row"><div class="kw-name">실사용 확인형</div><div class="kw-chips"><span>연결</span><span>인식 안됨</span><span>페어링</span><span>내구성</span><span>소리</span></div></div>
           <div class="kw-row"><div class="kw-name">취향 변형형</div><div class="kw-chips"><span>키캡 교체</span><span>키캡 추천</span><span>커스텀</span><span>기계식</span></div></div>
           <div class="kw-row"><div class="kw-name">감성 탐색형</div><div class="kw-chips"><span>레트로 게임</span><span>애니 캐릭터 키보드</span><span>귀여운 캐릭터</span></div></div>
-          <div class="kw-row"><div class="kw-name">구매·선물형</div><div class="kw-chips"><span>굿즈샵</span><span>공식몰</span><span>가격</span><span>선물하기</span><span>선물세트</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">구매·선물형</span></div><div class="kw-chips"><span>굿즈샵</span><span>공식몰</span><span>가격</span><span>선물하기</span><span>선물세트</span></div></div>
       </div>
       <div class="kw-step"><span>04</span>고객 세그먼트와 페르소나</div>
       <div class="kw-personas">
-          <div class="kw-persona"><b>어린 시절 드래곤볼 세대의 어른 팬</b><span class="kw-ev">드래곤볼 굿즈 · 피규어 · 레트로 게임 · 한정판 키링 · 선물세트</span><p>추억을 소장품으로 가져오고 싶어 하며, 일상 공간에서 쓰고 보여줄 수 있어야 함</p></div>
-          <div class="kw-persona"><b>콜라보 키보드 수집가</b><span class="kw-ev">디맥 · 미쿠 · 스텔라이브 콜라보 · 한정판매 · 콜라보 키캡</span><p>희소성과 정식 콜라보인지가 구매 기준임</p></div>
-          <div class="kw-persona"><b>콜라보여도 키보드로 제대로 쓰고 싶은 실사용자</b><span class="kw-ev">블루투스 연결 · 인식 안됨 · 페어링 · 내구성 · 소리</span><p>팬심과 별개로 기본기를 확인해야 결제함</p></div>
+          <div class="kw-persona"><b>어린 시절 드래곤볼 세대의 어른 팬</b><span class="kw-ev">드래곤볼 굿즈&nbsp;· 피규어&nbsp;· 레트로 게임&nbsp;· 한정판 키링&nbsp;· 선물세트</span><p>추억을 소장품으로 가져오고 싶어 하며, 일상 공간에서 쓰고 보여줄 수 있어야 함</p></div>
+          <div class="kw-persona"><b>콜라보 키보드 수집가</b><span class="kw-ev">디맥&nbsp;· 미쿠&nbsp;· 스텔라이브 콜라보&nbsp;· 한정판매&nbsp;· 콜라보 키캡</span><p>희소성과 정식 콜라보인지가 구매 기준임</p></div>
+          <div class="kw-persona"><b>콜라보여도 키보드로 제대로 쓰고 싶은 실사용자</b><span class="kw-ev">블루투스 연결&nbsp;· 인식 안됨&nbsp;· 페어링&nbsp;· 내구성&nbsp;· 소리</span><p>팬심과 별개로 기본기를 확인해야 결제함</p></div>
       </div>
       <div class="kw-step"><span>05</span>제품 접점과 우선순위 <em>로지텍 × 드래곤볼Z 콜라보 키보드</em></div>
       <div class="kw-touches">
-          <div class="kw-touch"><div class="kw-no">1</div><div><b>레트로 향수</b><p>"레트로 게임·애니" 감성과 드래곤볼 세대의 추억에 가장 직접 닿는 접점</p></div></div>
-          <div class="kw-touch"><div class="kw-no">2</div><div><b>정식 콜라보·한정 희소성</b><p>"콜라보·한정판매" 검색의 중심. 정식 라이선스 콜라보라는 신뢰가 구매 이유가 됨</p></div></div>
-          <div class="kw-touch"><div class="kw-no">3</div><div><b>키보드로서의 사용성</b><p>"연결·인식·내구성" 불안 해소. 콜라보 제품도 기본기가 받쳐 줘야 함</p></div></div>
-          <div class="kw-touch"><div class="kw-no">4</div><div><b>책상 위 전시감</b><p>굿즈·피규어와 함께 놓이는 데스크 셋업 장면으로 소장 욕구를 자극</p></div></div>
-          <div class="kw-touch"><div class="kw-no">5</div><div><b>선물·가격</b><p>선물하기·가격 검색에 대한 마지막 확인</p></div></div>
+          <div class="kw-touch"><div class="kw-no">1</div><div><b>레트로 향수</b><p>"레트로 <span style="white-space:nowrap">게임·애니"</span> 감성과 드래곤볼 세대의 추억에 가장 직접 닿는 접점</p></div></div>
+          <div class="kw-touch"><div class="kw-no">2</div><div><b>정식 <span style="white-space:nowrap">콜라보·한정</span> 희소성</b><p><span style="white-space:nowrap">"콜라보·한정판매"</span> 검색의 중심. 정식 라이선스 콜라보라는 신뢰가 구매 이유가 됨</p></div></div>
+          <div class="kw-touch"><div class="kw-no">3</div><div><b>키보드로서의 사용성</b><p><span style="white-space:nowrap">"연결·인식·내구성"</span> 불안 해소. 콜라보 제품도 기본기가 받쳐 줘야 함</p></div></div>
+          <div class="kw-touch"><div class="kw-no">4</div><div><b>책상 위 전시감</b><p><span style="white-space:nowrap">굿즈·피규어와</span> 함께 놓이는 데스크 셋업 장면으로 소장 욕구를 자극</p></div></div>
+          <div class="kw-touch"><div class="kw-no">5</div><div><b><span style="white-space:nowrap">선물·가격</span></b><p><span style="white-space:nowrap">선물하기·가격</span> 검색에 대한 마지막 확인</p></div></div>
       </div>
       <p class="t-body kw-insight"><b>해석 —</b> 콜라보 키보드의 검색은 "팬심"과 "키보드 기본기"가 한 사람 안에 함께 있습니다. 레트로 향수로 먼저 끌고, 사용성 불안은 신뢰할 수 있는 근거로 뒤이어 풀어 주는 순서가 맞습니다. 키캡 커스텀 수요는 있지만 이 제품의 핵심 접점과는 거리가 있어 우선순위를 낮췄습니다.</p>
     </div>
     <div class="case-sec kw-sec" id="kw-PK">
-      <div class="eyebrow">02 · 포켓몬 굿즈</div>
+      <div class="eyebrow">02&nbsp;· 포켓몬 굿즈</div>
       <h2 class="kw-h">검색 카테고리: 포켓몬 굿즈</h2>
-      <div class="kw-step"><span>01</span>키워드 수집 <em>자동완성·연관 검색어 52개</em></div>
-      <p class="t-body kw-rel"><b>함께 검색된 연관 검색어 —</b> 포켓몬 굿즈 샵 · 포켓몬 오프라인 매장 · 포켓몬 스토어 · 포켓몬 굿즈 디시 · 포켓몬 30주년 굿즈 · 포켓몬 굿즈 오프라인 · 포켓몬 굿즈 갤 · 포켓몬 카드</p>
+      <div class="kw-step"><span>01</span>키워드 수집 <em><span style="white-space:nowrap">자동완성·연관</span> 검색어 52개</em></div>
+      <p class="t-body kw-rel"><b>함께 검색된 연관 검색어 —</b> 포켓몬 굿즈 샵&nbsp;· 포켓몬 오프라인 매장&nbsp;· 포켓몬 스토어&nbsp;· 포켓몬 굿즈 디시&nbsp;· 포켓몬 30주년 굿즈&nbsp;· 포켓몬 굿즈 오프라인&nbsp;· 포켓몬 굿즈 갤&nbsp;· 포켓몬 카드</p>
       <div class="kw-step"><span>02</span>연결성 분석과 클러스터링</div>
       <div class="kw-grid">
-          <div class="kw-row"><div class="kw-name">구매처·채널</div><div class="kw-chips"><span>굿즈샵</span><span>파는곳</span><span>사이트</span><span>스토어</span><span>네이버스토어</span><span>오프라인</span><span>편의점</span><span>온라인</span></div></div>
-          <div class="kw-row"><div class="kw-name">한정·30주년·수집</div><div class="kw-chips"><span>30주년 굿즈</span><span>한정판 굿즈</span><span>한정판 피규어</span><span>수집</span><span>30주년 기념 굿즈</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">구매처·채널</span></div><div class="kw-chips"><span>굿즈샵</span><span>파는곳</span><span>사이트</span><span>스토어</span><span>네이버스토어</span><span>오프라인</span><span>편의점</span><span>온라인</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">한정·30주년·수집</span></div><div class="kw-chips"><span>30주년 굿즈</span><span>한정판 굿즈</span><span>한정판 피규어</span><span>수집</span><span>30주년 기념 굿즈</span></div></div>
           <div class="kw-row"><div class="kw-name">가격</div><div class="kw-chips"><span>30주년 굿즈 가격</span><span>팝업 굿즈 가격</span><span>이디야 굿즈 가격</span><span>롯데월드 굿즈 가격</span><span>서울숲 굿즈 가격</span></div></div>
-          <div class="kw-row"><div class="kw-name">팝업·행사</div><div class="kw-chips"><span>시크릿 포레스트</span><span>메가페스타</span><span>무릉도원</span><span>30주년 팝업</span><span>롯데월드</span><span>서울숲</span><span>이디야</span></div></div>
-          <div class="kw-row"><div class="kw-name">커뮤니티·후기</div><div class="kw-chips"><span>굿즈 디시</span><span>굿즈갤</span><span>후기</span><span>추천</span><span>고르는 법</span></div></div>
-          <div class="kw-row"><div class="kw-name">해외·직구</div><div class="kw-chips"><span>일본 포켓몬 30주년 굿즈</span><span>직구</span><span>해외배송</span><span>한국</span></div></div>
-          <div class="kw-row"><div class="kw-name">선물·어른</div><div class="kw-chips"><span>선물하기</span><span>선물세트</span><span>어른들</span></div></div>
-          <div class="kw-row"><div class="kw-name">공식·정품 확인</div><div class="kw-chips"><span>공식 굿즈</span><span>공식 굿즈 샵</span><span>공식 굿즈 사이트</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">팝업·행사</span></div><div class="kw-chips"><span>시크릿 포레스트</span><span>메가페스타</span><span>무릉도원</span><span>30주년 팝업</span><span>롯데월드</span><span>서울숲</span><span>이디야</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">커뮤니티·후기</span></div><div class="kw-chips"><span>굿즈 디시</span><span>굿즈갤</span><span>후기</span><span>추천</span><span>고르는 법</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">해외·직구</span></div><div class="kw-chips"><span>일본 포켓몬 30주년 굿즈</span><span>직구</span><span>해외배송</span><span>한국</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">선물·어른</span></div><div class="kw-chips"><span>선물하기</span><span>선물세트</span><span>어른들</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">공식·정품</span> 확인</div><div class="kw-chips"><span>공식 굿즈</span><span>공식 굿즈 샵</span><span>공식 굿즈 사이트</span></div></div>
       </div>
       <ul class="kw-links">
-          <li>"가격" ↔ "팝업·행사"(8회): 가격 검색의 대부분이 시크릿 포레스트·메가페스타·롯데월드·이디야 같은 행사·협업 굿즈입니다. 굿즈 구매의 큰 축이 오프라인 팝업과 협업 매장이며, 가지 못했거나 놓친 팬의 대체 구매처 수요가 있다는 신호입니다.</li>
-          <li>"한정·30주년·수집" ↔ "해외·직구"(2회), "구매처·채널" ↔ "공식·정품 확인"(2회): 한정·30주년은 일본 직구까지 이어지고, 공식 여부를 확인하며 구매처를 찾습니다.</li>
-          <li>"선물·어른" 키워드가 따로 존재합니다. 어른 팬이 직접 사거나 선물하는 시장이 있습니다.</li>
+          <li>"가격" ↔ <span style="white-space:nowrap">"팝업·행사"</span>(8회): 가격 검색의 대부분이 시크릿 <span style="white-space:nowrap">포레스트·메가페스타·롯데월드·이디야</span> 같은 <span style="white-space:nowrap">행사·협업</span> 굿즈입니다. 굿즈 구매의 큰 축이 오프라인 팝업과 협업 매장이며, 가지 못했거나 놓친 팬의 대체 구매처 수요가 있다는 신호입니다.</li>
+          <li><span style="white-space:nowrap">"한정·30주년·수집"</span> ↔ <span style="white-space:nowrap">"해외·직구"</span>(2회), <span style="white-space:nowrap">"구매처·채널"</span> ↔ <span style="white-space:nowrap">"공식·정품</span> 확인"(2회): <span style="white-space:nowrap">한정·30주년은</span> 일본 직구까지 이어지고, 공식 여부를 확인하며 구매처를 찾습니다.</li>
+          <li><span style="white-space:nowrap">"선물·어른"</span> 키워드가 따로 존재합니다. 어른 팬이 직접 사거나 선물하는 시장이 있습니다.</li>
       </ul>
       <div class="kw-step"><span>03</span>검색 의도 그룹</div>
       <div class="kw-grid">
           <div class="kw-row"><div class="kw-name">구매처 탐색형</div><div class="kw-chips"><span>굿즈샵</span><span>파는곳</span><span>사이트</span><span>오프라인</span><span>편의점</span></div></div>
           <div class="kw-row"><div class="kw-name">행사 가격 확인형</div><div class="kw-chips"><span>팝업 굿즈 가격</span><span>메가페스타</span><span>시크릿 포레스트</span><span>이디야</span><span>롯데월드</span></div></div>
-          <div class="kw-row"><div class="kw-name">한정·수집형</div><div class="kw-chips"><span>30주년 굿즈</span><span>한정판</span><span>피규어</span><span>수집</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">한정·수집형</span></div><div class="kw-chips"><span>30주년 굿즈</span><span>한정판</span><span>피규어</span><span>수집</span></div></div>
           <div class="kw-row"><div class="kw-name">해외 직구형</div><div class="kw-chips"><span>일본 굿즈</span><span>직구</span><span>해외배송</span></div></div>
           <div class="kw-row"><div class="kw-name">선물형</div><div class="kw-chips"><span>선물하기</span><span>선물세트</span><span>어른들</span></div></div>
-          <div class="kw-row"><div class="kw-name">공식·정품 확인형</div><div class="kw-chips"><span>공식 굿즈</span><span>공식 굿즈 샵</span><span>공식 사이트</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">공식·정품</span> 확인형</div><div class="kw-chips"><span>공식 굿즈</span><span>공식 굿즈 샵</span><span>공식 사이트</span></div></div>
       </div>
       <div class="kw-step"><span>04</span>고객 세그먼트와 페르소나</div>
       <div class="kw-personas">
-          <div class="kw-persona"><b>포켓몬과 함께 자란 어른 수집가</b><span class="kw-ev">30주년 굿즈 · 한정판 · 수집 · 어른들</span><p>어린 시절의 추억을 지금의 취향으로 모으고 싶어 함</p></div>
-          <div class="kw-persona"><b>팝업·행사를 따라다니는 팬</b><span class="kw-ev">팝업 굿즈 가격 · 메가페스타 · 시크릿 포레스트 · 이디야 · 롯데월드</span><p>행사 한정 굿즈를 놓치지 않으려 하며, 놓치면 다른 구매처를 찾음</p></div>
-          <div class="kw-persona"><b>일본 직구까지 찾아보는 탐색형</b><span class="kw-ev">일본 굿즈 · 직구 · 해외배송 · 한국</span><p>구하기 어려운 한정품을 어떻게든 구하려는 열성 팬</p></div>
+          <div class="kw-persona"><b>포켓몬과 함께 자란 어른 수집가</b><span class="kw-ev">30주년 굿즈&nbsp;· 한정판&nbsp;· 수집&nbsp;· 어른들</span><p>어린 시절의 추억을 지금의 취향으로 모으고 싶어 함</p></div>
+          <div class="kw-persona"><b><span style="white-space:nowrap">팝업·행사를</span> 따라다니는 팬</b><span class="kw-ev">팝업 굿즈 가격&nbsp;· 메가페스타&nbsp;· 시크릿 포레스트&nbsp;· 이디야&nbsp;· 롯데월드</span><p>행사 한정 굿즈를 놓치지 않으려 하며, 놓치면 다른 구매처를 찾음</p></div>
+          <div class="kw-persona"><b>일본 직구까지 찾아보는 탐색형</b><span class="kw-ev">일본 굿즈&nbsp;· 직구&nbsp;· 해외배송&nbsp;· 한국</span><p>구하기 어려운 한정품을 어떻게든 구하려는 열성 팬</p></div>
       </div>
       <div class="kw-step"><span>05</span>제품 접점과 우선순위 <em>레노바 × 포켓몬스터 에디션 화장지</em></div>
       <div class="kw-touches">
-          <div class="kw-touch"><div class="kw-no">1</div><div><b>30주년 · 세계 최초 한정</b><p>"30주년 굿즈·한정판" 검색의 중심. 세계 최초라는 희소성이 구매 이유가 됨</p></div></div>
-          <div class="kw-touch"><div class="kw-no">2</div><div><b>포켓몬이 담기는 소장 재미</b><p>수집 욕구를 자극하는 구성. 촬영·연출로 팬의 책상 위 장면을 먼저 보여줌</p></div></div>
+          <div class="kw-touch"><div class="kw-no">1</div><div><b>30주년&nbsp;· 세계 최초 한정</b><p>"30주년 <span style="white-space:nowrap">굿즈·한정판"</span> 검색의 중심. 세계 최초라는 희소성이 구매 이유가 됨</p></div></div>
+          <div class="kw-touch"><div class="kw-no">2</div><div><b>포켓몬이 담기는 소장 재미</b><p>수집 욕구를 자극하는 구성. <span style="white-space:nowrap">촬영·연출로</span> 팬의 책상 위 장면을 먼저 보여줌</p></div></div>
           <div class="kw-touch"><div class="kw-no">3</div><div><b>어른이 일상에서 쓰는 굿즈</b><p>화장지라는 소모품이라 소장과 실사용을 함께 만족시킴</p></div></div>
-          <div class="kw-touch"><div class="kw-no">4</div><div><b>선물</b><p>"선물하기·선물세트" 수요에 맞는 접점</p></div></div>
+          <div class="kw-touch"><div class="kw-no">4</div><div><b>선물</b><p><span style="white-space:nowrap">"선물하기·선물세트"</span> 수요에 맞는 접점</p></div></div>
           <div class="kw-touch"><div class="kw-no">5</div><div><b>팝업 없이도 사는 채널</b><p>행사 가격 검색이 큰 만큼 오프라인에 가지 못해도 구매할 수 있는 채널이 접점이 됨</p></div></div>
       </div>
-      <p class="t-body kw-insight"><b>해석 —</b> 이 굿즈 시장은 오프라인 팝업과 협업 매장이 구매의 큰 축입니다. 행사에 가지 못한 팬에게 "30주년 · 세계 최초"라는 희소성과, 소모품이라 매일 쓰는 즐거움을 함께 건네는 방향이 검색 맥락과 맞습니다. 디자인 검수가 까다로운 IP라 촬영물 연출로 소장 욕구를 먼저 만드는 선택과도 이어집니다.</p>
+      <p class="t-body kw-insight"><b>해석 —</b> 이 굿즈 시장은 오프라인 팝업과 협업 매장이 구매의 큰 축입니다. 행사에 가지 못한 팬에게 "30주년&nbsp;· 세계 최초"라는 희소성과, 소모품이라 매일 쓰는 즐거움을 함께 건네는 방향이 검색 맥락과 맞습니다. 디자인 검수가 까다로운 IP라 촬영물 연출로 소장 욕구를 먼저 만드는 선택과도 이어집니다.</p>
     </div>
     <div class="case-sec kw-sec" id="kw-SP">
-      <div class="eyebrow">03 · 심슨 굿즈 · 심슨 책</div>
-      <h2 class="kw-h">검색 카테고리: 심슨 굿즈 · 심슨 책</h2>
-      <div class="kw-step"><span>01</span>키워드 수집 <em>자동완성·연관 검색어 65개</em></div>
+      <div class="eyebrow">03&nbsp;· 심슨 굿즈&nbsp;· 심슨 책</div>
+      <h2 class="kw-h">검색 카테고리: 심슨 굿즈&nbsp;· 심슨 책</h2>
+      <div class="kw-step"><span>01</span>키워드 수집 <em><span style="white-space:nowrap">자동완성·연관</span> 검색어 65개</em></div>
       <p class="t-body kw-rel"><b>연관 검색어 —</b> 이 키워드는 검색결과에 연관 검색어 영역이 제공되지 않아, 자동완성 키워드를 기준으로 분석했습니다.</p>
       <div class="kw-step"><span>02</span>연결성 분석과 클러스터링</div>
       <div class="kw-grid">
-          <div class="kw-row"><div class="kw-name">도서·에피소드</div><div class="kw-chips"><span>심슨 월드 책</span><span>벽돌 책</span><span>책 시즌 1~3</span><span>추천 에피소드</span><span>추천 시즌</span><span>영문판</span><span>한국어판</span><span>가이드북</span><span>일러스트</span></div></div>
-          <div class="kw-row"><div class="kw-name">구매처·팝업</div><div class="kw-chips"><span>파는곳</span><span>쇼핑몰</span><span>사이트</span><span>팝업 스토어</span><span>던킨</span><span>디즈니 플러스</span><span>출시</span><span>예약</span></div></div>
-          <div class="kw-row"><div class="kw-name">가격·후기·추천</div><div class="kw-chips"><span>가격</span><span>후기</span><span>추천</span><span>가격 비교</span><span>더쿠</span><span>고르는 법</span><span>중고</span></div></div>
-          <div class="kw-row"><div class="kw-name">해외·직구</div><div class="kw-chips"><span>직구</span><span>해외직구</span><span>직구 사이트</span><span>직구 방법</span><span>직구 금지</span><span>해외배송</span></div></div>
-          <div class="kw-row"><div class="kw-name">공식·정품 확인</div><div class="kw-chips"><span>공식 굿즈</span><span>정품</span><span>브랜드</span><span>한국어</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">도서·에피소드</span></div><div class="kw-chips"><span>심슨 월드 책</span><span>벽돌 책</span><span>책 시즌 1~3</span><span>추천 에피소드</span><span>추천 시즌</span><span>영문판</span><span>한국어판</span><span>가이드북</span><span>일러스트</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">구매처·팝업</span></div><div class="kw-chips"><span>파는곳</span><span>쇼핑몰</span><span>사이트</span><span>팝업 스토어</span><span>던킨</span><span>디즈니 플러스</span><span>출시</span><span>예약</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">가격·후기·추천</span></div><div class="kw-chips"><span>가격</span><span>후기</span><span>추천</span><span>가격 비교</span><span>더쿠</span><span>고르는 법</span><span>중고</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">해외·직구</span></div><div class="kw-chips"><span>직구</span><span>해외직구</span><span>직구 사이트</span><span>직구 방법</span><span>직구 금지</span><span>해외배송</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">공식·정품</span> 확인</div><div class="kw-chips"><span>공식 굿즈</span><span>정품</span><span>브랜드</span><span>한국어</span></div></div>
           <div class="kw-row"><div class="kw-name">굿즈 종류</div><div class="kw-chips"><span>스티커</span><span>피규어</span><span>공책</span><span>가족 굿즈</span><span>종류</span></div></div>
           <div class="kw-row"><div class="kw-name">선물</div><div class="kw-chips"><span>선물하기</span><span>선물 추천</span></div></div>
       </div>
       <ul class="kw-links">
-          <li>"도서·에피소드" ↔ "가격·후기·추천"(7회): 책 키워드에는 가격·후기·추천이 거의 항상 따라붙습니다. 책은 구매 전에 가격과 평가를 확인하는 단계가 분명합니다. "벽돌 책", "심슨 월드 책"처럼 책의 형태와 이름 그대로 검색되는 점도 눈에 띕니다.</li>
-          <li>"영문판"과 "한국어판"이 함께 검색되고, "구매처·팝업" ↔ "해외·직구"(2회)에 "직구 금지·직구 방법" 같은 키워드가 보입니다. 한국어로 편하게 구하기 어려워 직구를 알아보고, 그 과정에서 막히는 수요가 있다는 신호입니다.</li>
-          <li>"추천 에피소드·추천 시즌·시즌1"처럼 어디서부터 볼지 묻는 입문 키워드가 별도로 존재합니다. 가이드북이 해결해 줄 수 있는 수요입니다.</li>
+          <li><span style="white-space:nowrap">"도서·에피소드"</span> ↔ <span style="white-space:nowrap">"가격·후기·추천"</span>(7회): 책 키워드에는 <span style="white-space:nowrap">가격·후기·추천이</span> 거의 항상 따라붙습니다. 책은 구매 전에 가격과 평가를 확인하는 단계가 분명합니다. "벽돌 책", "심슨 월드 책"처럼 책의 형태와 이름 그대로 검색되는 점도 눈에 띕니다.</li>
+          <li>"영문판"과 "한국어판"이 함께 검색되고, <span style="white-space:nowrap">"구매처·팝업"</span> ↔ <span style="white-space:nowrap">"해외·직구"</span>(2회)에 "직구 <span style="white-space:nowrap">금지·직구</span> 방법" 같은 키워드가 보입니다. 한국어로 편하게 구하기 어려워 직구를 알아보고, 그 과정에서 막히는 수요가 있다는 신호입니다.</li>
+          <li>"추천 <span style="white-space:nowrap">에피소드·추천</span> <span style="white-space:nowrap">시즌·시즌1"처럼</span> 어디서부터 볼지 묻는 입문 키워드가 별도로 존재합니다. 가이드북이 해결해 줄 수 있는 수요입니다.</li>
       </ul>
       <div class="kw-step"><span>03</span>검색 의도 그룹</div>
       <div class="kw-grid">
           <div class="kw-row"><div class="kw-name">구매처 탐색형</div><div class="kw-chips"><span>파는곳</span><span>쇼핑몰</span><span>사이트</span><span>팝업 스토어</span><span>던킨</span><span>디즈니 플러스</span></div></div>
-          <div class="kw-row"><div class="kw-name">공식·정품 확인형</div><div class="kw-chips"><span>공식 굿즈</span><span>정품</span><span>한국어</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">공식·정품</span> 확인형</div><div class="kw-chips"><span>공식 굿즈</span><span>정품</span><span>한국어</span></div></div>
           <div class="kw-row"><div class="kw-name">해외 직구형</div><div class="kw-chips"><span>직구 방법</span><span>직구 사이트</span><span>직구 금지</span><span>해외배송</span></div></div>
-          <div class="kw-row"><div class="kw-name">책 정보·가격 확인형</div><div class="kw-chips"><span>심슨 월드 책</span><span>벽돌 책</span><span>가격</span><span>후기</span><span>영문판</span><span>한국어판</span></div></div>
+          <div class="kw-row"><div class="kw-name">책 <span style="white-space:nowrap">정보·가격</span> 확인형</div><div class="kw-chips"><span>심슨 월드 책</span><span>벽돌 책</span><span>가격</span><span>후기</span><span>영문판</span><span>한국어판</span></div></div>
           <div class="kw-row"><div class="kw-name">입문 가이드형</div><div class="kw-chips"><span>추천 에피소드</span><span>추천 시즌</span><span>시즌1</span></div></div>
           <div class="kw-row"><div class="kw-name">선물형</div><div class="kw-chips"><span>선물하기</span><span>선물 추천</span></div></div>
       </div>
       <div class="kw-step"><span>04</span>고객 세그먼트와 페르소나</div>
       <div class="kw-personas">
-          <div class="kw-persona"><b>영문판·직구 장벽에 막혔던 팬</b><span class="kw-ev">영문판 · 한국어판 · 직구 · 직구 금지 · 해외배송</span><p>좋아하지만 영어와 직구의 벽 때문에 책을 갖지 못했음</p></div>
-          <div class="kw-persona"><b>공식·정품 굿즈를 찾는 수집가</b><span class="kw-ev">공식 굿즈 · 정품 · 팝업 스토어 · 던킨 · 디즈니 플러스</span><p>정식 라이선스인지가 구매 기준임</p></div>
-          <div class="kw-persona"><b>어디서부터 볼지 찾는 입문 팬</b><span class="kw-ev">추천 에피소드 · 추천 시즌 · 시즌1</span><p>긴 역사 속에서 어떤 에피소드가 좋은지 안내가 필요함</p></div>
+          <div class="kw-persona"><b><span style="white-space:nowrap">영문판·직구</span> 장벽에 막혔던 팬</b><span class="kw-ev">영문판&nbsp;· 한국어판&nbsp;· 직구&nbsp;· 직구 금지&nbsp;· 해외배송</span><p>좋아하지만 영어와 직구의 벽 때문에 책을 갖지 못했음</p></div>
+          <div class="kw-persona"><b><span style="white-space:nowrap">공식·정품</span> 굿즈를 찾는 수집가</b><span class="kw-ev">공식 굿즈&nbsp;· 정품&nbsp;· 팝업 스토어&nbsp;· 던킨&nbsp;· 디즈니 플러스</span><p>정식 라이선스인지가 구매 기준임</p></div>
+          <div class="kw-persona"><b>어디서부터 볼지 찾는 입문 팬</b><span class="kw-ev">추천 에피소드&nbsp;· 추천 시즌&nbsp;· 시즌1</span><p>긴 역사 속에서 어떤 에피소드가 좋은지 안내가 필요함</p></div>
       </div>
       <div class="kw-step"><span>05</span>제품 접점과 우선순위 <em>심슨 월드 한국어판 가이드북</em></div>
       <div class="kw-touches">
-          <div class="kw-touch"><div class="kw-no">1</div><div><b>한국어 정식 출간</b><p>"영문판·직구" 장벽을 한 번에 해소하는 가장 큰 접점. "15년 만의 부활"의 이유</p></div></div>
-          <div class="kw-touch"><div class="kw-no">2</div><div><b>공식·정품 라이선스</b><p>"공식·정품" 확인 수요. 라이선스사의 검수를 거친 정식 한국어판이라는 신뢰</p></div></div>
-          <div class="kw-touch"><div class="kw-no">3</div><div><b>시즌 1~20 에피소드 가이드</b><p>"추천 에피소드·시즌" 입문 수요에 답함. 한 권에 20년의 기록을 담은 소장 가치</p></div></div>
-          <div class="kw-touch"><div class="kw-no">4</div><div><b>와디즈 단독 한정·리워드</b><p>한정·독점 구성이 선택 이유가 됨</p></div></div>
-          <div class="kw-touch"><div class="kw-no">5</div><div><b>선물</b><p>"선물하기·선물 추천" 수요에 맞는 접점</p></div></div>
+          <div class="kw-touch"><div class="kw-no">1</div><div><b>한국어 정식 출간</b><p><span style="white-space:nowrap">"영문판·직구"</span> 장벽을 한 번에 해소하는 가장 큰 접점. "15년 만의 부활"의 이유</p></div></div>
+          <div class="kw-touch"><div class="kw-no">2</div><div><b><span style="white-space:nowrap">공식·정품</span> 라이선스</b><p><span style="white-space:nowrap">"공식·정품"</span> 확인 수요. 라이선스사의 검수를 거친 정식 한국어판이라는 신뢰</p></div></div>
+          <div class="kw-touch"><div class="kw-no">3</div><div><b>시즌 1~20 에피소드 가이드</b><p>"추천 <span style="white-space:nowrap">에피소드·시즌"</span> 입문 수요에 답함. 한 권에 20년의 기록을 담은 소장 가치</p></div></div>
+          <div class="kw-touch"><div class="kw-no">4</div><div><b>와디즈 단독 <span style="white-space:nowrap">한정·리워드</span></b><p><span style="white-space:nowrap">한정·독점</span> 구성이 선택 이유가 됨</p></div></div>
+          <div class="kw-touch"><div class="kw-no">5</div><div><b>선물</b><p><span style="white-space:nowrap">"선물하기·선물</span> 추천" 수요에 맞는 접점</p></div></div>
       </div>
       <p class="t-body kw-insight"><b>해석 —</b> 이 검색은 "구하기 어렵다"와 "어디서부터 봐야 하나"의 두 가지 막힘에서 출발합니다. 한국어 정식 출간이라는 사실을 가장 먼저 세우고, 시즌 전체를 한 권에 담은 소장 가치를 이어서 보여주는 구조가 검색 맥락과 맞습니다. "벽돌 책"이라는 팬들의 표현 그대로 쓰는 것도 효과적인 접점입니다.</p>
     </div>
     <div class="case-sec kw-sec" id="kw-AB">
-      <div class="eyebrow">04 · 흡음재 · 게이밍룸 방음</div>
-      <h2 class="kw-h">검색 카테고리: 흡음재 · 게이밍룸 방음</h2>
-      <div class="kw-step"><span>01</span>키워드 수집 <em>자동완성·연관 검색어 123개</em></div>
-      <p class="t-body kw-rel"><b>함께 검색된 연관 검색어 —</b> 흡음재 방음재 차이 · 흡음재 종류 · 키보드 흡음재 · 흡음재 추천 · 흡음재 효과 · 차음재 흡음재 순서</p>
+      <div class="eyebrow">04&nbsp;· 흡음재&nbsp;· 게이밍룸 방음</div>
+      <h2 class="kw-h">검색 카테고리: 흡음재&nbsp;· 게이밍룸 방음</h2>
+      <div class="kw-step"><span>01</span>키워드 수집 <em><span style="white-space:nowrap">자동완성·연관</span> 검색어 123개</em></div>
+      <p class="t-body kw-rel"><b>함께 검색된 연관 검색어 —</b> 흡음재 방음재 차이&nbsp;· 흡음재 종류&nbsp;· 키보드 흡음재&nbsp;· 흡음재 추천&nbsp;· 흡음재 효과&nbsp;· 차음재 흡음재 순서</p>
       <div class="kw-step"><span>02</span>연결성 분석과 클러스터링</div>
       <div class="kw-grid">
-          <div class="kw-row"><div class="kw-name">개념·차이 이해</div><div class="kw-chips"><span>흡음재 방음재 차이</span><span>차음재 흡음재</span><span>종류</span><span>원리</span><span>효과</span><span>역할</span></div></div>
-          <div class="kw-row"><div class="kw-name">시공·셀프 설치</div><div class="kw-chips"><span>셀프 시공</span><span>붙이는 법</span><span>DIY</span><span>설치</span><span>시공 방법</span><span>벽에 붙이는 흡음재</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">개념·차이</span> 이해</div><div class="kw-chips"><span>흡음재 방음재 차이</span><span>차음재 흡음재</span><span>종류</span><span>원리</span><span>효과</span><span>역할</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">시공·셀프</span> 설치</div><div class="kw-chips"><span>셀프 시공</span><span>붙이는 법</span><span>DIY</span><span>설치</span><span>시공 방법</span><span>벽에 붙이는 흡음재</span></div></div>
           <div class="kw-row"><div class="kw-name">소음 문제 상황</div><div class="kw-chips"><span>층간소음</span><span>벽간소음</span><span>울림 제거</span><span>울리면</span><span>게이밍룸 방음 안됨</span><span>안되는 이유</span><span>녹음</span></div></div>
-          <div class="kw-row"><div class="kw-name">게이밍·장비 환경</div><div class="kw-chips"><span>게이밍 모니터</span><span>게이밍 의자</span><span>게이밍 키보드</span><span>스피커</span><span>마이크</span><span>스트리머</span></div></div>
-          <div class="kw-row"><div class="kw-name">인테리어·꾸미기</div><div class="kw-chips"><span>게이밍룸 꾸미기</span><span>세팅</span><span>셋업</span><span>인테리어 디시</span><span>벽걸이</span><span>벽지</span></div></div>
-          <div class="kw-row"><div class="kw-name">가격·구매·후기</div><div class="kw-chips"><span>추천 디시</span><span>후기</span><span>가격</span><span>다이소</span><span>파는곳</span><span>비교</span><span>장단점</span></div></div>
-          <div class="kw-row"><div class="kw-name">안전·소재 우려</div><div class="kw-chips"><span>안전성</span><span>단점</span><span>문제점</span><span>소재</span><span>두께</span><span>유리섬유</span><span>청소</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">게이밍·장비</span> 환경</div><div class="kw-chips"><span>게이밍 모니터</span><span>게이밍 의자</span><span>게이밍 키보드</span><span>스피커</span><span>마이크</span><span>스트리머</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">인테리어·꾸미기</span></div><div class="kw-chips"><span>게이밍룸 꾸미기</span><span>세팅</span><span>셋업</span><span>인테리어 디시</span><span>벽걸이</span><span>벽지</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">가격·구매·후기</span></div><div class="kw-chips"><span>추천 디시</span><span>후기</span><span>가격</span><span>다이소</span><span>파는곳</span><span>비교</span><span>장단점</span></div></div>
+          <div class="kw-row"><div class="kw-name"><span style="white-space:nowrap">안전·소재</span> 우려</div><div class="kw-chips"><span>안전성</span><span>단점</span><span>문제점</span><span>소재</span><span>두께</span><span>유리섬유</span><span>청소</span></div></div>
       </div>
       <ul class="kw-links">
           <li>가장 위에 올라오는 연관 검색어가 "흡음재 방음재 차이"입니다. 소비자는 방음(소음 차단)과 흡음(울림 흡수)을 구분하지 못한 채 검색을 시작합니다. 같은 제품을 "방음"으로 기대하면 후기가 갈릴 수 있어, 개념을 먼저 정리해 주는 것이 중요합니다.</li>
-          <li>"게이밍·장비 환경" ↔ "가격·구매·후기"(12회): 게이밍 모니터·의자·키보드 같은 장비 키워드에 추천·후기·가격이 붙습니다. 게이머는 흡음재를 게이밍 장비 구매의 일부로 비교합니다.</li>
-          <li>"게이밍·장비 환경" ↔ "인테리어·꾸미기"(8회): 게이밍룸 꾸미기·세팅·셋업 검색이 흡음 검색과 이어집니다. 기능 제품이 곧 방 꾸미기 소품으로 소비됩니다.</li>
+          <li><span style="white-space:nowrap">"게이밍·장비</span> 환경" ↔ <span style="white-space:nowrap">"가격·구매·후기"</span>(12회): 게이밍 <span style="white-space:nowrap">모니터·의자·키보드</span> 같은 장비 키워드에 <span style="white-space:nowrap">추천·후기·가격이</span> 붙습니다. 게이머는 흡음재를 게이밍 장비 구매의 일부로 비교합니다.</li>
+          <li><span style="white-space:nowrap">"게이밍·장비</span> 환경" ↔ <span style="white-space:nowrap">"인테리어·꾸미기"</span>(8회): 게이밍룸 <span style="white-space:nowrap">꾸미기·세팅·셋업</span> 검색이 흡음 검색과 이어집니다. 기능 제품이 곧 방 꾸미기 소품으로 소비됩니다.</li>
       </ul>
       <div class="kw-step"><span>03</span>검색 의도 그룹</div>
       <div class="kw-grid">
@@ -3326,16 +3295,16 @@
       </div>
       <div class="kw-step"><span>04</span>고객 세그먼트와 페르소나</div>
       <div class="kw-personas">
-          <div class="kw-persona"><b>울림·잡음을 줄이고 싶은 게이머</b><span class="kw-ev">게이밍룸 방음 안됨 · 울림 제거 · 마이크 · 스트리머 · 게이밍 키보드</span><p>소음 차단보다 소리가 선명해지고 몰입이 되는 환경을 원함</p></div>
-          <div class="kw-persona"><b>셀프로 쉽게 해결하려는 입문자</b><span class="kw-ev">셀프 시공 · 붙이는 법 · DIY · 인테리어 비용</span><p>공사 없이 직접 붙여서 끝내고 싶음</p></div>
-          <div class="kw-persona"><b>공간을 취향으로 꾸미려는 팬</b><span class="kw-ev">게이밍룸 꾸미기 · 세팅 · 셋업 · 인테리어 디시 · 벽걸이</span><p>기능 제품도 내 방의 덕질 소품이 되어야 사고 싶음</p></div>
+          <div class="kw-persona"><b><span style="white-space:nowrap">울림·잡음을</span> 줄이고 싶은 게이머</b><span class="kw-ev">게이밍룸 방음 안됨&nbsp;· 울림 제거&nbsp;· 마이크&nbsp;· 스트리머&nbsp;· 게이밍 키보드</span><p>소음 차단보다 소리가 선명해지고 몰입이 되는 환경을 원함</p></div>
+          <div class="kw-persona"><b>셀프로 쉽게 해결하려는 입문자</b><span class="kw-ev">셀프 시공&nbsp;· 붙이는 법&nbsp;· DIY&nbsp;· 인테리어 비용</span><p>공사 없이 직접 붙여서 끝내고 싶음</p></div>
+          <div class="kw-persona"><b>공간을 취향으로 꾸미려는 팬</b><span class="kw-ev">게이밍룸 꾸미기&nbsp;· 세팅&nbsp;· 셋업&nbsp;· 인테리어 디시&nbsp;· 벽걸이</span><p>기능 제품도 내 방의 덕질 소품이 되어야 사고 싶음</p></div>
       </div>
       <div class="kw-step"><span>05</span>제품 접점과 우선순위 <em>리그 오브 레전드 × VIXUM 흡음보드</em></div>
       <div class="kw-touches">
-          <div class="kw-touch"><div class="kw-no">1</div><div><b>울림·잡음 해결</b><p>"울림 제거·방음 안됨" 검색에 직접 답함. 소음 차단이 아니라 소리가 선명해지는 몰입 경험으로 번역</p></div></div>
-          <div class="kw-touch"><div class="kw-no">2</div><div><b>간편한 셀프 시공</b><p>"셀프 시공·붙이는 법" 검색에 답하는 접점. 벽에 붙이고 걸기만 하면 끝나는 구조</p></div></div>
+          <div class="kw-touch"><div class="kw-no">1</div><div><b><span style="white-space:nowrap">울림·잡음</span> 해결</b><p>"울림 <span style="white-space:nowrap">제거·방음</span> 안됨" 검색에 직접 답함. 소음 차단이 아니라 소리가 선명해지는 몰입 경험으로 번역</p></div></div>
+          <div class="kw-touch"><div class="kw-no">2</div><div><b>간편한 셀프 시공</b><p>"셀프 <span style="white-space:nowrap">시공·붙이는</span> 법" 검색에 답하는 접점. 벽에 붙이고 걸기만 하면 끝나는 구조</p></div></div>
           <div class="kw-touch"><div class="kw-no">3</div><div><b>덕질 인테리어</b><p>게이밍룸 꾸미기 검색과 맞닿는 접점. 게임 일러스트 보드가 곧 인테리어가 됨</p></div></div>
-          <div class="kw-touch"><div class="kw-no">4</div><div><b>소재·반영구 안정성</b><p>안전성·소재·청소 불안을 해소하는 접점</p></div></div>
+          <div class="kw-touch"><div class="kw-no">4</div><div><b><span style="white-space:nowrap">소재·반영구</span> 안정성</b><p><span style="white-space:nowrap">안전성·소재·청소</span> 불안을 해소하는 접점</p></div></div>
           <div class="kw-touch"><div class="kw-no">5</div><div><b>가격</b><p>위 접점이 충족된 뒤에 비교 대상이 됨</p></div></div>
       </div>
       <p class="t-body kw-insight"><b>해석 —</b> 이 카테고리는 "방음"과 "흡음"의 개념 혼동에서 출발합니다. 게이머에게는 소음 차단이 아니라 소리가 선명해지는 몰입으로 번역하고, 기능 제품을 방 꾸미기 소품으로 받아들이게 하는 방향이 검색 맥락과 맞습니다. 게임 IP 디자인이 접점이 되는 이유입니다.</p>
@@ -3352,14 +3321,14 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/68772165c42ce9a13a3040bbc6f26a44.jpg" alt="로지텍 K380 & Pebble M350 컬러 라인업 플랫레이"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">로지텍 K380 &amp; Pebble M350</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 신규 컬러 라인업 론칭</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 신규 컬러 라인업 론칭</div>
 
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">로지텍 (Logitech)</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">스토리·비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 1.1억+</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v"><span style="white-space:nowrap">스토리·비주얼</span> 기획, 디자인</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 1.1억+</div></div>
       </div>
     </div>
 
@@ -3368,7 +3337,7 @@
       <div class="case-contrib">
         <div class="case-contrib-row">
           <div class="area">기획</div>
-          <div class="detail">타깃 소비자 분석, 신규 컬러 라인업의 메시지·스토리 구조 설계, 상세페이지 섹션 구성</div>
+          <div class="detail">타깃 소비자 분석, 신규 컬러 라인업의 <span style="white-space:nowrap">메시지·스토리</span> 구조 설계, 상세페이지 섹션 구성</div>
           <div class="badge">직접 수행</div>
         </div>
         <div class="case-contrib-row">
@@ -3389,6 +3358,11 @@
       </div>
     </div>
 
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseK380_1_1.jpg" width="600" height="4486" alt="로지텍 K380 &amp; Pebble M350 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 03 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseK380_2_1.jpg" width="600" height="4000" alt="로지텍 K380 &amp; Pebble M350 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseK380_2_2.jpg" width="600" height="1086" alt="로지텍 K380 &amp; Pebble M350 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 03 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseK380_3_1.jpg" width="600" height="4000" alt="로지텍 K380 &amp; Pebble M350 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseK380_3_2.jpg" width="600" height="786" alt="로지텍 K380 &amp; Pebble M350 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 03 ↕ 스크롤</figcaption></figure></div>
+    </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
 
@@ -3407,16 +3381,6 @@
           <div class="txt">
             <p class="t-body">컬러를 스펙이 아닌 <b>분위기로 먼저 전달</b>했습니다. 라벤더 레모네이드는 라벤더 밭, 샌드는 사막의 풍경에 제품을 얹어 컬러의 감성을 한눈에 보여주고, 첫 화면에서 "베스트셀러의 새 컬러, 국내 최초 공개"를 헤드라인으로 제시했습니다.</p>
             <p class="t-body">촬영 콘셉트부터 최종 디자인까지 하나의 톤으로 이어 가며, 로지텍 가이드라인 검수에 맞춰 컨펌을 대응했습니다.</p>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/bc52c9b4c295b471d1bf670340e530c8.webp" alt="로지텍 K380 상세페이지 컬러 콘셉트 비주얼">
-                <figcaption>상세페이지 · 컬러 콘셉트 비주얼</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/dc8bbc2a2451e23f57d3d6ad0dd9b154.jpg" alt="로지텍 K380 상세페이지 컬러 제품 소개">
-                <figcaption>상세페이지 · 컬러 제품 소개</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
       </div>
@@ -3444,13 +3408,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/6e23a5968565f558788f507be956b3af.jpg" alt="로지텍 MX Master 3S 데스크테리어 셋업"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">로지텍 MX Master 3S</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 프리미엄 마우스 + 무선 충전 도킹 스테이션</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 프리미엄 마우스 + 무선 충전 도킹 스테이션</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">로지텍 (Logitech)</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">스토리·비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 1.3억+</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v"><span style="white-space:nowrap">스토리·비주얼</span> 기획, 디자인</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 1.3억+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3461,6 +3425,11 @@
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 레이아웃 설계 및 최종 디자인 작업</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">클라이언트 대응</div><div class="detail">로지텍 글로벌 가이드라인 준수 검수 및 컨펌 커뮤니케이션</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseMX_1_1.jpg" width="600" height="4000" alt="로지텍 MX Master 3S 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseMX_1_2.jpg" width="600" height="1780" alt="로지텍 MX Master 3S 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 04 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseMX_2_1.jpg" width="600" height="4000" alt="로지텍 MX Master 3S 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseMX_2_2.jpg" width="600" height="700" alt="로지텍 MX Master 3S 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 04 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseMX_3_1.jpg" width="600" height="4000" alt="로지텍 MX Master 3S 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseMX_3_2.jpg" width="600" height="2610" alt="로지텍 MX Master 3S 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 04 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseMX_4_1.jpg" width="600" height="3871" alt="로지텍 MX Master 3S 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 04 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3479,16 +3448,6 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">두 제품을 따로 보여주지 않고 <b>'효율적인 데스크테리어'라는 하나의 장면</b>으로 묶었습니다. 제품 단독 컷보다 책상 위 실사용 구도를 중심으로 촬영 콘셉트와 이미지 톤을 기획하고, 상세페이지 구조도 그 흐름에 맞춰 디자인했습니다.</p>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/cb8068c7347eed86629a8217d7c3c021.jpg" alt="로지텍 MX Master 3S 상세페이지 데스크 메인 비주얼" loading="lazy">
-                <figcaption>상세페이지 · 데스크테리어 메인</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/9b395a50903428ff75c2b20c921ebcc9.jpg" alt="로지텍 MX Master 3S 상세페이지 무선 충전 섹션" loading="lazy">
-                <figcaption>상세페이지 · 무선 충전의 편리함</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
       </div>
@@ -3516,13 +3475,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/2d347b5d52295e64e548a3301c272c75.jpg" alt="로지텍 x 드래곤볼Z 콜라보 키보드 레트로 데스크 셋업"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">로지텍 × 드래곤볼Z</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · IP 콜라보레이션</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· IP 콜라보레이션</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">로지텍 × 드래곤볼Z</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">스토리·비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 1.1억+</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v"><span style="white-space:nowrap">스토리·비주얼</span> 기획, 디자인</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 1.1억+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3533,6 +3492,11 @@
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 디자인</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">라이선스사 대응</div><div class="detail">까다로운 디자인 가이드라인 검수 대응 및 빠른 재수정</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseDBZ_1_1.jpg" width="600" height="2550" alt="로지텍 × 드래곤볼Z 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseDBZ_2_1.jpg" width="600" height="1775" alt="로지텍 × 드래곤볼Z 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseDBZ_3_1.jpg" width="600" height="3098" alt="로지텍 × 드래곤볼Z 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseDBZ_4_1.jpg" width="600" height="2238" alt="로지텍 × 드래곤볼Z 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseDBZ_5_1.jpg" width="600" height="2234" alt="로지텍 × 드래곤볼Z 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3552,16 +3516,6 @@
           <div class="txt">
             <p class="t-body">어린 시절 책상 위를 그대로 옮긴 <b>레트로 데스크 장면</b>(만화책, 피규어, 휴대용 게임기, 스티커 붙은 모니터)을 촬영 콘셉트로 잡고, 그 안에 콜라보 키보드를 놓아 제품이 곧 추억의 소품처럼 보이도록 구성했습니다.</p>
             <p class="t-body">상세페이지는 같은 톤으로 이어 디자인하고, 라이선스사의 가이드라인 검수에는 빠르게 대응해 단기간에 통과시켰습니다.</p>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/b5e45681b5ec6688999037798fddda91.jpg" alt="로지텍 드래곤볼Z 상세페이지 콜라보 도입부" loading="lazy">
-                <figcaption>상세페이지 · 콜라보 도입</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/8c0896bd1715e44045766d98b99d154a.jpg" alt="로지텍 드래곤볼Z 상세페이지 제품 소개" loading="lazy">
-                <figcaption>상세페이지 · 에디션 제품 소개</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
       </div>
@@ -3589,13 +3543,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/d8deee7b28d7c9994607a853ffc0897d.jpg" alt="북플레저 삼국지 도서와 고서 플랫레이"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">북플레저 삼국지</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 출판</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 출판</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">북플레저</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">스토리·비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 2.1억+</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v"><span style="white-space:nowrap">스토리·비주얼</span> 기획, 디자인</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 2.1억+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3605,6 +3559,11 @@
         <div class="case-contrib-row"><div class="area">비주얼 디렉팅</div><div class="detail">리뉴얼 디자인 톤앤매너 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 레이아웃 설계 및 최종 디자인 작업</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBookpleasure_1_1.jpg" width="600" height="4000" alt="북플레저 삼국지 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseBookpleasure_1_2.jpg" width="600" height="2000" alt="북플레저 삼국지 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBookpleasure_2_1.jpg" width="600" height="4000" alt="북플레저 삼국지 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseBookpleasure_2_2.jpg" width="600" height="1379" alt="북플레저 삼국지 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBookpleasure_3_1.jpg" width="600" height="4000" alt="북플레저 삼국지 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseBookpleasure_3_2.jpg" width="600" height="2318" alt="북플레저 삼국지 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBookpleasure_4_1.jpg" width="600" height="4000" alt="북플레저 삼국지 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseBookpleasure_4_2.jpg" width="600" height="2110" alt="북플레저 삼국지 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBookpleasure_5_1.jpg" width="600" height="4000" alt="북플레저 삼국지 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseBookpleasure_5_2.jpg" width="600" height="1952" alt="북플레저 삼국지 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3623,16 +3582,6 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">제품 스펙보다 앞서 <b>작가의 20년 서사</b>를 보여주는 구조로 상세페이지를 설계했습니다. 리뉴얼 디자인의 톤앤매너를 처음부터 끝까지 일관되게 유지해, 책의 완성도가 비주얼에서도 그대로 느껴지도록 디자인했습니다.</p>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/7327803b97f73e7d17b1205e05772430.jpg" alt="북플레저 삼국지 상세페이지 인생 책 1위 섹션" loading="lazy">
-                <figcaption>상세페이지 · 인생 책 1위</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/b4b2a36d555d5a54afcae55730aff9c1.jpg" alt="북플레저 삼국지 상세페이지 박상률 완역 삼국지 소개" loading="lazy">
-                <figcaption>상세페이지 · 완역 삼국지가 특별한 이유</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
       </div>
@@ -3670,13 +3619,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/33102d9d1330614cf6d697b8e4ff4b9d.jpg" alt="CJ제일제당 비비고 치킨고수만두 플레이팅"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">CJ제일제당 비비고</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 국내 최초 공개</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 국내 최초 공개</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">CJ제일제당</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 4,400만 원+</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 4,400만 원+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3687,6 +3636,11 @@
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 디자인</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">클라이언트 대응</div><div class="detail">CJ제일제당 디자인 가이드라인 준수 검수 대응</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBibigo_1_1.jpg" width="600" height="4000" alt="CJ제일제당 비비고 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseBibigo_1_2.jpg" width="600" height="2589" alt="CJ제일제당 비비고 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBibigo_2_1.jpg" width="600" height="4382" alt="CJ제일제당 비비고 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBibigo_3_1.jpg" width="600" height="4000" alt="CJ제일제당 비비고 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseBibigo_3_2.jpg" width="600" height="1485" alt="CJ제일제당 비비고 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBibigo_4_1.jpg" width="600" height="4000" alt="CJ제일제당 비비고 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseBibigo_4_2.jpg" width="600" height="1486" alt="CJ제일제당 비비고 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBibigo_5_1.jpg" width="600" height="4000" alt="CJ제일제당 비비고 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseBibigo_5_2.jpg" width="600" height="1486" alt="CJ제일제당 비비고 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3705,16 +3659,6 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">해외 콜라보 비주얼의 <b>스포티한 톤을 그대로 가져오되</b> 국내 소비자에게 자연스럽게 읽히도록 상세페이지 전반을 재구성했습니다. 가이드라인 검수에 맞춰 디자인을 조율하며 일관된 톤을 유지했습니다.</p>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/d092eb4737cb9d2890f317026ceee148.jpg" alt="CJ제일제당 비비고 상세페이지 도입부" loading="lazy">
-                <figcaption>상세페이지 · 국내 최초 공개</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/69af7cbd72afdcf0f92d7e26b8c39e42.jpg" alt="CJ제일제당 비비고 상세페이지 LA 레이커스 콜라보" loading="lazy">
-                <figcaption>상세페이지 · LA 레이커스 콜라보</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
       </div>
@@ -3742,13 +3686,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/ada215f57ab127f2f6d91fd6a1f91967.jpg" alt="비버드 이어스캐너 제품 컷"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">비버드 이어스캐너</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 글로벌 누적 펀딩 62억+</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 글로벌 누적 펀딩 62억+</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">비버드 (Bebird)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 1억+</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 1억+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3758,6 +3702,11 @@
         <div class="case-contrib-row"><div class="area">비주얼 디렉팅</div><div class="detail">제품 디자인에 맞춘 비주얼 톤 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 리뉴얼 디자인</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBeaverd_1_1.jpg" width="600" height="4000" alt="비버드 이어스캐너 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseBeaverd_1_2.jpg" width="600" height="1946" alt="비버드 이어스캐너 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBeaverd_2_1.jpg" width="600" height="4000" alt="비버드 이어스캐너 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseBeaverd_2_2.jpg" width="600" height="3614" alt="비버드 이어스캐너 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBeaverd_3_1.jpg" width="600" height="4432" alt="비버드 이어스캐너 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBeaverd_4_1.jpg" width="600" height="4000" alt="비버드 이어스캐너 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseBeaverd_4_2.jpg" width="600" height="1877" alt="비버드 이어스캐너 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseBeaverd_5_1.jpg" width="600" height="4000" alt="비버드 이어스캐너 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseBeaverd_5_2.jpg" width="600" height="1864" alt="비버드 이어스캐너 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3777,14 +3726,6 @@
           <div class="txt">
             <p class="t-body">제품 자체의 미니멀한 디자인과 어울리는 <b>깔끔한 페이지 구성으로 비주얼을 리뉴얼</b>했습니다. 정보 전달력과 신뢰도를 함께 높이는 방향으로 섹션 구조와 이미지 톤을 정리했습니다.</p>
             <div class="case-scrollrow">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/0f29a5500464b4e5fec10872e0ec8542.jpg" alt="비버드 이어스캐너 상세페이지 상단" loading="lazy"></div>
-                <figcaption>상세페이지 · 상단 (1/2) <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/678526d65c7a3ea620ecb6101a0e5ade.jpg" alt="비버드 이어스캐너 상세페이지 하단" loading="lazy"></div>
-                <figcaption>상세페이지 · 하단 (2/2) <span>↕ 스크롤</span></figcaption>
-              </figure>
             </div>
           </div>
         </div>
@@ -3813,9 +3754,9 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-art"><img src="../assets/11c305dc904d56cc21bad427f742338d.jpg" alt="스쿱당 최종 메인 아트워크"></div>
-      <div class="eyebrow">Case Study · Brand Identity</div>
+      <div class="eyebrow">Case Study&nbsp;· Brand Identity</div>
       <h1 class="t-display">스쿱당 리브랜딩</h1>
-      <div class="tags">브랜드 아이덴티티 · 로고 · 컬러 시스템 · 패키지 · 브랜드스토리</div>
+      <div class="tags">브랜드 아이덴티티&nbsp;· 로고&nbsp;· 컬러 시스템&nbsp;· 패키지&nbsp;· 브랜드스토리</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">스쿱당 (SCOOPDANG)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">크리에이티브 총괄</div></div>
@@ -3826,10 +3767,10 @@
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">리브랜딩 제안</div><div class="detail">디저트 브랜드를 한국 관광 상품으로 확장하는 방향 제안, 기획자와 함께 브랜드 콘셉트·슬로건·스토리 설계</div><div class="badge badge--collab">공동 작업</div></div>
-        <div class="case-contrib-row"><div class="area">아티스트 발굴·섭외</div><div class="detail">국내 일러스트 작가 리서치 및 협업 제안</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">리브랜딩 제안</div><div class="detail">디저트 브랜드를 한국 관광 상품으로 확장하는 방향 제안, 기획자와 함께 브랜드 <span style="white-space:nowrap">콘셉트·슬로건·스토리</span> 설계</div><div class="badge badge--collab">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">아티스트 <span style="white-space:nowrap">발굴·섭외</span></div><div class="detail">국내 일러스트 작가 리서치 및 협업 제안</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">아트웍 디렉팅</div><div class="detail">콘셉트 전달, 단계별 시안 컨펌, 세부 디자인 조정</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">아이덴티티·응용 설계</div><div class="detail">로고·심볼, 컬러 시스템, 패키지·굿즈 응용, 브랜드스토리</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area"><span style="white-space:nowrap">아이덴티티·응용</span> 설계</div><div class="detail"><span style="white-space:nowrap">로고·심볼</span>, 컬러 시스템, <span style="white-space:nowrap">패키지·굿즈</span> 응용, 브랜드스토리</div><div class="badge">직접 수행</div></div>
       </div>
     </div>
 
@@ -3841,28 +3782,28 @@
 
     <div class="case-sec">
       <div class="eyebrow">진행 과정</div>
-      <p class="t-body">한국 전통미와 뚱카롱 특유의 컬러감을 결합하되, 전통 이미지를 그대로 재현하지 않고 현대적으로 재해석하는 것을 핵심 방향으로 잡았습니다. 국내 일러스트 작가를 직접 발굴해 협업을 제안하고, 시안을 단계별로 검토·컨펌하며 세부 표현을 조정했습니다.</p>
+      <p class="t-body">한국 전통미와 뚱카롱 특유의 컬러감을 결합하되, 전통 이미지를 그대로 재현하지 않고 현대적으로 재해석하는 것을 핵심 방향으로 잡았습니다. 국내 일러스트 작가를 직접 발굴해 협업을 제안하고, 시안을 단계별로 <span style="white-space:nowrap">검토·컨펌하며</span> 세부 표현을 조정했습니다.</p>
       <div class="case-tiles cols-2" style="margin-top:24px;">
-        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/13c451934192c39cc53374ff6ae3e01a.jpg" alt="스쿱당 1차 로고 베리에이션" loading="lazy"></div><figcaption>1차 · 로고와 컬러 방향</figcaption></figure>
-        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/894a9d4ce8dd02a2caef47fc1886c6d3.jpg" alt="스쿱당 2차 메인 아트워크" loading="lazy"></div><figcaption>2차 · 서울의 상징을 전통 장식으로 재해석</figcaption></figure>
+        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/13c451934192c39cc53374ff6ae3e01a.jpg" alt="스쿱당 1차 로고 베리에이션" loading="lazy"></div><figcaption>1차&nbsp;· 로고와 컬러 방향</figcaption></figure>
+        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/894a9d4ce8dd02a2caef47fc1886c6d3.jpg" alt="스쿱당 2차 메인 아트워크" loading="lazy"></div><figcaption>2차&nbsp;· 서울의 상징을 전통 장식으로 재해석</figcaption></figure>
       </div>
     </div>
 
     <div class="case-sec">
       <div class="eyebrow">아이덴티티 시스템</div>
-      <p class="t-body">영문·한글 심볼과 다양한 로고 베리에이션, 5가지 메인 컬러로 브랜드 시스템을 정리했습니다.</p>
+      <p class="t-body"><span style="white-space:nowrap">영문·한글</span> 심볼과 다양한 로고 베리에이션, 5가지 메인 컬러로 브랜드 시스템을 정리했습니다.</p>
       <div class="case-tiles cols-2" style="margin-top:24px;">
-        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/9913c0ba49153bc3c42fc8640a7d0a29.jpg" alt="스쿱당 영문 심볼" loading="lazy"></div><figcaption>로고 심볼 · 영문</figcaption></figure>
-        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/b58011c1b921a226ddd0c68688af4207.jpg" alt="스쿱당 한글 심볼" loading="lazy"></div><figcaption>로고 심볼 · 한글</figcaption></figure>
-        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/9fc6d5e122a7a7654e0f6dd94e54841f.jpg" alt="스쿱당 리본 로고" loading="lazy"></div><figcaption>로고 베리에이션 · 리본</figcaption></figure>
-        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/d7ab791b0192005c29aa01d009f926c8.jpg" alt="스쿱당 거울 로고" loading="lazy"></div><figcaption>로고 베리에이션 · 거울</figcaption></figure>
+        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/9913c0ba49153bc3c42fc8640a7d0a29.jpg" alt="스쿱당 영문 심볼" loading="lazy"></div><figcaption>로고 심볼&nbsp;· 영문</figcaption></figure>
+        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/b58011c1b921a226ddd0c68688af4207.jpg" alt="스쿱당 한글 심볼" loading="lazy"></div><figcaption>로고 심볼&nbsp;· 한글</figcaption></figure>
+        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/9fc6d5e122a7a7654e0f6dd94e54841f.jpg" alt="스쿱당 리본 로고" loading="lazy"></div><figcaption>로고 베리에이션&nbsp;· 리본</figcaption></figure>
+        <figure class="case-tile is-contain"><div class="ph"><img src="../assets/d7ab791b0192005c29aa01d009f926c8.jpg" alt="스쿱당 거울 로고" loading="lazy"></div><figcaption>로고 베리에이션&nbsp;· 거울</figcaption></figure>
       </div>
       <figure class="case-tile is-plain" style="margin-top:16px;"><div class="ph"><img src="../assets/b67ab553ea58fb12ced4aed045b16ff2.jpg" alt="스쿱당 메인 컬러 팔레트" loading="lazy"></div><figcaption>컬러 시스템</figcaption></figure>
     </div>
 
     <div class="case-sec">
       <div class="eyebrow">패키지와 굿즈 적용</div>
-      <p class="t-body">쇼핑백·종이봉투·컵·쿠키 틴·포장지 등 실제 접점에서 아이덴티티가 일관되게 쓰이도록 응용안을 설계했습니다.</p>
+      <p class="t-body"><span style="white-space:nowrap">쇼핑백·종이봉투·컵·쿠키</span> <span style="white-space:nowrap">틴·포장지</span> 등 실제 접점에서 아이덴티티가 일관되게 쓰이도록 응용안을 설계했습니다.</p>
       <div class="case-tiles cols-3" style="margin-top:24px;">
         <figure class="case-tile is-cover"><div class="ph"><img src="../assets/c24be77997c0460d9f37e2f7f85df452.jpg" alt="스쿱당 쇼핑백 그린" loading="lazy"></div></figure>
         <figure class="case-tile is-cover"><div class="ph"><img src="../assets/7aa89a0dcacaea77c1885fc7e8ae7991.jpg" alt="스쿱당 쇼핑백 블랙" loading="lazy"></div></figure>
@@ -3875,7 +3816,7 @@
 
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">결과</div>
-      <div class="case-result t-body">브랜드 포지셔닝 수립부터 비주얼 콘셉트 기획, 아티스트 섭외, 로고·컬러 시스템, 패키지·굿즈 응용까지 리브랜딩 전 과정을 주도했습니다. <b>론칭 직전 브랜드 방향이 바뀌어 중단</b>되었으나, 결과물은 완성된 상태입니다.</div>
+      <div class="case-result t-body">브랜드 포지셔닝 수립부터 비주얼 콘셉트 기획, 아티스트 섭외, <span style="white-space:nowrap">로고·컬러</span> 시스템, <span style="white-space:nowrap">패키지·굿즈</span> 응용까지 리브랜딩 전 과정을 주도했습니다. <b>론칭 직전 브랜드 방향이 바뀌어 중단</b>되었으나, 결과물은 완성된 상태입니다.</div>
     </div>
   </div>
 </div>
@@ -3888,13 +3829,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/a9f916a510d1c2000f0a28b974cd01b4.jpg" alt="네파 사나래 등산화 룩북"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">네파 사나래 등산화</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 아웃도어 등산화</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 아웃도어 등산화</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">네파 (NEPA)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 4,600만 원+</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 4,600만 원+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -3904,6 +3845,11 @@
         <div class="case-contrib-row"><div class="area">비주얼 디렉팅</div><div class="detail">제품 특성에 맞는 촬영 콘셉트와 이미지 톤 기획, 촬영 디렉팅</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 레이아웃 설계 및 최종 디자인 작업</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseNepa_1_1.jpg" width="600" height="4000" alt="네파 사나래 등산화 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseNepa_1_2.jpg" width="600" height="2267" alt="네파 사나래 등산화 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseNepa_2_1.jpg" width="600" height="4000" alt="네파 사나래 등산화 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseNepa_2_2.jpg" width="600" height="1582" alt="네파 사나래 등산화 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseNepa_3_1.jpg" width="600" height="4000" alt="네파 사나래 등산화 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseNepa_3_2.jpg" width="600" height="1646" alt="네파 사나래 등산화 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseNepa_4_1.jpg" width="600" height="4000" alt="네파 사나래 등산화 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseNepa_4_2.jpg" width="600" height="2642" alt="네파 사나래 등산화 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseNepa_5_1.jpg" width="600" height="4000" alt="네파 사나래 등산화 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseNepa_5_2.jpg" width="600" height="960" alt="네파 사나래 등산화 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3922,16 +3868,6 @@
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
             <p class="t-body">소비자가 기능과 착용 장면을 한눈에 이해할 수 있도록 <b>촬영 콘셉트와 상세페이지 구조를 함께 기획</b>하고, 하나의 톤으로 최종 디자인까지 완성했습니다.</p>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/eea0f04939387b5c834160b5fd7ae897.jpg" alt="네파 사나래 상세페이지 메인 비주얼" loading="lazy">
-                <figcaption>상세페이지 · 메인 비주얼</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/cbb48a871e8fd318953a7798390ab787.jpg" alt="네파 사나래 상세페이지 일상 착용 섹션" loading="lazy">
-                <figcaption>상세페이지 · 트래킹과 일상</figcaption>
-              </figure>
-            </div>
           </div>
         </div>
       </div>
@@ -3959,22 +3895,27 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-square"><img src="../assets/c081a70f3d4e8eeb3a48ecf551b8da3a.jpg" alt="실버팍스 스핀키드PRO 상세페이지 메인 비주얼"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">실버팍스 스핀키드PRO</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 카시트</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 카시트</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">실버팍스</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">비주얼 기획, 디자인</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 2.2억+</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 2.2억+</div></div>
       </div>
     </div>
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">기획</div><div class="detail">카시트 안전성·사용성 메시지 전략 수립</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">기획</div><div class="detail">카시트 <span style="white-space:nowrap">안전성·사용성</span> 메시지 전략 수립</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">비주얼 디렉팅</div><div class="detail">제품 신뢰도를 전달하는 촬영 콘셉트 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">상세페이지 레이아웃 설계 및 최종 디자인 작업</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSilverfox_1_1.jpg" width="600" height="4000" alt="실버팍스 스핀키드PRO 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseSilverfox_1_2.jpg" width="600" height="2390" alt="실버팍스 스핀키드PRO 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSilverfox_2_1.jpg" width="600" height="4097" alt="실버팍스 스핀키드PRO 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSilverfox_3_1.jpg" width="600" height="4000" alt="실버팍스 스핀키드PRO 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseSilverfox_3_2.jpg" width="600" height="3271" alt="실버팍스 스핀키드PRO 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSilverfox_4_1.jpg" width="600" height="4000" alt="실버팍스 스핀키드PRO 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseSilverfox_4_2.jpg" width="600" height="2393" alt="실버팍스 스핀키드PRO 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSilverfox_5_1.jpg" width="600" height="4000" alt="실버팍스 스핀키드PRO 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseSilverfox_5_2.jpg" width="600" height="1330" alt="실버팍스 스핀키드PRO 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -3992,16 +3933,8 @@
         <div class="case-flow-row">
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
-            <p class="t-body">스펙 나열이 아니라 <b>실사용 상황을 기준으로 설득 구조</b>를 설계했습니다. 제품의 신뢰도를 전달하는 촬영 콘셉트와 상세페이지 구성을 기획하고, 핵심 수치(105cm · 18kg)와 안전 메시지를 첫 화면에서 바로 보이도록 정리했습니다.</p>
+            <p class="t-body">스펙 나열이 아니라 <b>실사용 상황을 기준으로 설득 구조</b>를 설계했습니다. 제품의 신뢰도를 전달하는 촬영 콘셉트와 상세페이지 구성을 기획하고, 핵심 수치(105cm&nbsp;· 18kg)와 안전 메시지를 첫 화면에서 바로 보이도록 정리했습니다.</p>
             <div class="case-scrollrow">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/3dc0f75586f1262f22653dcda1f1cb16.jpg" alt="실버팍스 스핀키드PRO 상세페이지 — 가장 좋은 카시트, 이제는 악스키드입니다" loading="lazy"></div>
-                <figcaption>상세페이지 · Why Axkid <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/c1e00dd6de7ab426e36227403355cce8.jpg" alt="실버팍스 스핀키드PRO 상세페이지 — 항공기 알루미늄 프레임" loading="lazy"></div>
-                <figcaption>상세페이지 · 알루미늄 프레임 <span>↕ 스크롤</span></figcaption>
-              </figure>
             </div>
           </div>
         </div>
@@ -4030,23 +3963,23 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-video"><video src="../assets/60e2f05b1aeff7cd5c18e1143d46611c.mp4" controls loop muted playsinline></video><a class="full-video" id="fullVideo-bullsone" href="https://youtu.be/q2z-qwFc8DA" target="_blank" rel="noopener">▶ 풀영상 보기 ↗</a></div>
-      <div class="eyebrow">Case Study · Video Production</div>
+      <div class="eyebrow">Case Study&nbsp;· Video Production</div>
       <h1 class="t-display">불스원 루나틱폴리시</h1>
-      <div class="tags">광고 영상 제작 · 신규 브랜드 첫 제품 론칭</div>
+      <div class="tags">광고 영상 제작&nbsp;· 신규 브랜드 첫 제품 론칭</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">불스원</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">콘텐츠 디렉팅 (콘셉트·스크립트·현장 디렉팅)</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">콘텐츠 디렉팅 (<span style="white-space:nowrap">콘셉트·스크립트·현장</span> 디렉팅)</div></div>
         <div class="cell"><div class="k">Result</div><div class="v">세차 페스티벌 메인 상영</div></div>
       </div>
     </div>
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">영상 기획</div><div class="detail">신제품·브랜드 이미지를 반영한 콘셉트 및 표현 방향 수립</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">촬영팀 섭외</div><div class="detail">콘셉트에 적합한 촬영팀 직접 섭외·선정</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">차량·공간 섭외</div><div class="detail">촬영에 적합한 차량과 공간 직접 섭외·선정</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">스크립트·연출 디렉팅</div><div class="detail">장면 구성 기획 및 촬영 현장 디렉팅</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">촬영 · 편집</div><div class="detail">외주 제작사가 진행 (섭외한 제작사와 기획 의도에 맞춰 협업)</div><div class="badge">외주 제작사</div></div>
+        <div class="case-contrib-row"><div class="area">영상 기획</div><div class="detail"><span style="white-space:nowrap">신제품·브랜드</span> 이미지를 반영한 콘셉트 및 표현 방향 수립</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">촬영팀 섭외</div><div class="detail">콘셉트에 적합한 촬영팀 직접 <span style="white-space:nowrap">섭외·선정</span></div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area"><span style="white-space:nowrap">차량·공간</span> 섭외</div><div class="detail">촬영에 적합한 차량과 공간 직접 <span style="white-space:nowrap">섭외·선정</span></div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area"><span style="white-space:nowrap">스크립트·연출</span> 디렉팅</div><div class="detail">장면 구성 기획 및 촬영 현장 디렉팅</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">촬영&nbsp;· 편집</div><div class="detail">외주 제작사가 진행 (섭외한 제작사와 기획 의도에 맞춰 협업)</div><div class="badge">외주 제작사</div></div>
       </div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
@@ -4065,7 +3998,7 @@
         <div class="case-flow-row">
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
-            <p class="t-body">브랜드가 전달하려는 이미지와 제품의 핵심 특성을 바탕으로 <b>영상 콘셉트와 표현 방향</b>을 수립하고, 콘셉트에 맞는 촬영팀과 차량·공간을 직접 섭외했습니다. 스크립트와 장면 구성을 기획하고 촬영 현장에서 장면별 연출을 디렉팅했습니다. 촬영과 편집은 섭외한 외주 제작사가 진행했습니다.</p>
+            <p class="t-body">브랜드가 전달하려는 이미지와 제품의 핵심 특성을 바탕으로 <b>영상 콘셉트와 표현 방향</b>을 수립하고, 콘셉트에 맞는 촬영팀과 <span style="white-space:nowrap">차량·공간을</span> 직접 섭외했습니다. 스크립트와 장면 구성을 기획하고 촬영 현장에서 장면별 연출을 디렉팅했습니다. 촬영과 편집은 섭외한 외주 제작사가 진행했습니다.</p>
           </div>
         </div>
       </div>
@@ -4092,12 +4025,12 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-video"><video src="../assets/774d9e44a92dcc8bb12b2fd3b0ffc35b.mp4" controls loop muted playsinline></video><a class="full-video" id="fullVideo-plum" href="https://youtu.be/4Dl9eXUvHk8" target="_blank" rel="noopener">▶ 풀영상 보기 ↗</a></div>
-      <div class="eyebrow">Case Study · Video Production</div>
+      <div class="eyebrow">Case Study&nbsp;· Video Production</div>
       <h1 class="t-display">플럼에디터 아이웨어 필름</h1>
-      <div class="tags">광고 영상 제작 · 신세계백화점 옥외광고</div>
+      <div class="tags">광고 영상 제작&nbsp;· 신세계백화점 옥외광고</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">플럼에디터</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">콘텐츠 디렉팅 (콘셉트·스크립트·캐스팅·현장 디렉팅)</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">콘텐츠 디렉팅 (<span style="white-space:nowrap">콘셉트·스크립트·캐스팅·현장</span> 디렉팅)</div></div>
         <div class="cell"><div class="k">Result</div><div class="v">신세계백화점 옥외광고 송출</div></div>
       </div>
     </div>
@@ -4106,9 +4039,9 @@
       <div class="case-contrib">
         <div class="case-contrib-row"><div class="area">영상 기획</div><div class="detail">아이웨어 브랜드 광고 영상 콘셉트 수립</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">촬영팀 섭외</div><div class="detail">콘셉트에 적합한 촬영팀 섭외</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">모델·공간 섭외/스타일링</div><div class="detail">모델·촬영 공간 선정, 착장 및 스타일링 방향 기획</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area"><span style="white-space:nowrap">모델·공간</span> 섭외/스타일링</div><div class="detail"><span style="white-space:nowrap">모델·촬영</span> 공간 선정, 착장 및 스타일링 방향 기획</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">촬영 디렉팅</div><div class="detail">현장 연출 및 장면 구성 디렉팅</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">촬영 · 편집</div><div class="detail">외주 제작사가 진행 (섭외한 제작사와 기획 의도에 맞춰 협업)</div><div class="badge">외주 제작사</div></div>
+        <div class="case-contrib-row"><div class="area">촬영&nbsp;· 편집</div><div class="detail">외주 제작사가 진행 (섭외한 제작사와 기획 의도에 맞춰 협업)</div><div class="badge">외주 제작사</div></div>
       </div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
@@ -4127,7 +4060,7 @@
         <div class="case-flow-row">
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
-            <p class="t-body"><b>짧은 시간에 핵심 이미지가 읽히는 장면 구성과 비주얼 흐름</b>을 설계했습니다. 영상 콘셉트와 스크립트를 기획하고, 촬영팀·모델·공간 섭외와 착장·스타일링 방향까지 직접 정리한 뒤 촬영 전반을 디렉팅했습니다. 촬영과 편집은 섭외한 외주 제작사가 진행했습니다.</p>
+            <p class="t-body"><b>짧은 시간에 핵심 이미지가 읽히는 장면 구성과 비주얼 흐름</b>을 설계했습니다. 영상 콘셉트와 스크립트를 기획하고, <span style="white-space:nowrap">촬영팀·모델·공간</span> 섭외와 <span style="white-space:nowrap">착장·스타일링</span> 방향까지 직접 정리한 뒤 촬영 전반을 디렉팅했습니다. 촬영과 편집은 섭외한 외주 제작사가 진행했습니다.</p>
           </div>
         </div>
       </div>
@@ -4154,9 +4087,9 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/1eb68a308a3aec970a5f615d32347207.jpg" alt="한화비전 키퍼 앱 화면"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">한화비전 키퍼</h1>
-      <div class="tags">디자인 리뉴얼 · 상세페이지 · 전후 비교 영상 촬영</div>
+      <div class="tags">디자인 리뉴얼&nbsp;· 상세페이지&nbsp;· 전후 비교 영상 촬영</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">한화비전 (Hanwha Vision)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">비주얼 기획, 촬영 기획, 디자인 기획</div></div>
@@ -4167,10 +4100,15 @@
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
         <div class="case-contrib-row"><div class="area">비주얼 기획</div><div class="detail">소비자 관점에서 차이가 보이도록 상세페이지의 비주얼 방향과 구성 설정</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">영상으로 표현할 수 있는 효과(노이즈·역광·해상도 등)를 사전에 조사하고 촬영 콘셉트 설계</div><div class="badge">직접 수행</div></div>
-        <div class="case-contrib-row"><div class="area">촬영·영상 제작</div><div class="detail">현장 촬영 진행, 전후 비교 영상 직접 제작</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">영상으로 표현할 수 있는 효과(<span style="white-space:nowrap">노이즈·역광·해상도</span> 등)를 사전에 조사하고 촬영 콘셉트 설계</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area"><span style="white-space:nowrap">촬영·영상</span> 제작</div><div class="detail">현장 촬영 진행, 전후 비교 영상 직접 제작</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인 기획</div><div class="detail">상세페이지 구성 및 디자인 리뉴얼</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseHanwha_1_1.jpg" width="600" height="4000" alt="한화비전 키퍼 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseHanwha_1_2.jpg" width="600" height="1918" alt="한화비전 키퍼 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseHanwha_2_1.jpg" width="600" height="4000" alt="한화비전 키퍼 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseHanwha_2_2.jpg" width="600" height="1874" alt="한화비전 키퍼 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseHanwha_3_1.jpg" width="600" height="4000" alt="한화비전 키퍼 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseHanwha_3_2.jpg" width="600" height="1962" alt="한화비전 키퍼 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseHanwha_4_1.jpg" width="600" height="4000" alt="한화비전 키퍼 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseHanwha_4_2.jpg" width="600" height="822" alt="한화비전 키퍼 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseHanwha_5_1.jpg" width="600" height="4000" alt="한화비전 키퍼 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseHanwha_5_2.jpg" width="600" height="3014" alt="한화비전 키퍼 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -4188,7 +4126,7 @@
         <div class="case-flow-row">
           <div class="lab"><span>02</span>해결</div>
           <div class="txt">
-            <p class="t-body">"기술력"을 말이 아니라 <b>소비자가 체감하는 차이</b>로 바꿨습니다. 어떤 효과를 영상으로 보여줄 수 있는지 촬영 기획 단계에서 먼저 조사하고, 현장에서 노이즈·역광·해상도 등의 전후 비교 영상을 직접 촬영·제작해 상세페이지에 넣었습니다.</p>
+            <p class="t-body">"기술력"을 말이 아니라 <b>소비자가 체감하는 차이</b>로 바꿨습니다. 어떤 효과를 영상으로 보여줄 수 있는지 촬영 기획 단계에서 먼저 조사하고, 현장에서 <span style="white-space:nowrap">노이즈·역광·해상도</span> 등의 전후 비교 영상을 직접 <span style="white-space:nowrap">촬영·제작해</span> 상세페이지에 넣었습니다.</p>
             <p class="t-body">상세페이지는 사장님의 고민에서 시작해 비용과 보장까지 판단에 필요한 <b>실질적인 내용을 더해</b> 진입장벽을 낮추는 방향으로 리뉴얼했습니다.</p>
             <div class="case-ba-block">
               <div class="case-ba-title">노이즈 보정</div>
@@ -4210,16 +4148,6 @@
                 <figure><video src="../assets/5d5b0abd7dbb9bca1314acd943e70b90.mp4" autoplay loop muted playsinline></video><span class="tag">BEFORE</span></figure>
                 <figure><video src="../assets/7078ba0059ecf3665f092afb339031d1.mp4" autoplay loop muted playsinline></video><span class="tag after">AFTER</span></figure>
               </div>
-            </div>
-            <div class="case-gallery is-single">
-              <figure>
-                <img src="../assets/c2b11709b28fe1144ce8afa1c3b1bbaa.jpg" alt="한화비전 키퍼 상세페이지 문제 제기 섹션">
-                <figcaption>상세페이지 · 사장님의 고민</figcaption>
-              </figure>
-              <figure>
-                <img src="../assets/11f5b0b284af90552310ed47947c2dd6.jpg" alt="한화비전 키퍼 상세페이지 비용과 보장 섹션">
-                <figcaption>상세페이지 · 비용과 보장</figcaption>
-              </figure>
             </div>
           </div>
         </div>
@@ -4248,21 +4176,26 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/4a9c3b5707654a012f6b1f48826dfea7.jpg" alt="킬로리 유주얌 쉐이크 맛별 패키지"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">킬로리 유주얌 쉐이크</h1>
-      <div class="tags">인플루언서 공구 · 인스타그램 · 콘텐츠 제작</div>
+      <div class="tags">인플루언서 공구&nbsp;· 인스타그램&nbsp;· 콘텐츠 제작</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">킬로리 (유주얌 공구)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">인플루언서 공구 콘텐츠 기획</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">2차·3차 공구로 이어짐</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v"><span style="white-space:nowrap">2차·3차</span> 공구로 이어짐</div></div>
       </div>
     </div>
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">타깃(기존 팔로워, 어린 연령대)에 맞춘 맛별 컬러 콘셉트와 제품·질감·연출 컷 구성</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">타깃(기존 팔로워, 어린 연령대)에 맞춘 맛별 컬러 콘셉트와 <span style="white-space:nowrap">제품·질감·연출</span> 컷 구성</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">디자인 기획</div><div class="detail">공구 콘텐츠의 키치한 비주얼 구성과 디자인 방향 설정</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseKilori_1_1.jpg" width="600" height="4000" alt="킬로리 유주얌 쉐이크 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseKilori_1_2.jpg" width="600" height="1949" alt="킬로리 유주얌 쉐이크 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseKilori_2_1.jpg" width="600" height="4000" alt="킬로리 유주얌 쉐이크 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseKilori_2_2.jpg" width="600" height="2222" alt="킬로리 유주얌 쉐이크 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseKilori_3_1.jpg" width="600" height="4000" alt="킬로리 유주얌 쉐이크 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseKilori_3_2.jpg" width="600" height="1817" alt="킬로리 유주얌 쉐이크 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseKilori_4_1.jpg" width="600" height="4000" alt="킬로리 유주얌 쉐이크 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseKilori_4_2.jpg" width="600" height="2224" alt="킬로리 유주얌 쉐이크 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseKilori_5_1.jpg" width="600" height="4000" alt="킬로리 유주얌 쉐이크 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseKilori_5_2.jpg" width="600" height="1769" alt="킬로리 유주얌 쉐이크 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -4284,24 +4217,6 @@
             <p class="t-body">타깃을 두 갈래로 잡았습니다. 하나는 <b>유주얌을 좋아하고 건강을 신경 쓰는 현재 팔로워</b>가 공감해 구매로 이어지는 콘텐츠 흐름이고, 다른 하나는 디자인에 민감한 <b>어린 연령대를 위한 키치한 비주얼</b>입니다.</p>
             <p class="t-body"><b>맛을 컬러로 먼저 전달</b>했습니다. 초코는 오렌지, 말차는 민트, 바나나는 옐로, 딸기는 핑크로 맛마다 선명한 배경 컬러를 정해, 제품을 보는 순간 어떤 맛인지 떠오르면서 키치한 감성이 살아나도록 촬영을 기획했습니다.</p>
             <p class="t-body">패키지 단독 컷과 함께 쉐이크의 층과 토핑, 질감을 보여주는 컷, 손으로 들고 있는 연출 컷을 구성해 먹는 장면이 상상되도록 하고, 이를 공구 콘텐츠 디자인으로 이어갔습니다.</p>
-              <div class="case-gallery is-tall">
-                <figure>
-                  <img src="../assets/bac4ae269d1f260c75b3659cb2ef2fad.jpg" alt="킬로리 유주얌 쉐이크 상세페이지 도입부" loading="lazy">
-                  <figcaption>상세페이지 · 문제 제기</figcaption>
-                </figure>
-                <figure>
-                  <video src="../assets/a115ffb074a48a2b8331ef850573b1a1.mp4" autoplay loop muted playsinline></video>
-                  <figcaption>상세페이지 · 5가지 쾌락</figcaption>
-                </figure>
-                <figure>
-                  <video src="../assets/ab67b877c0679a71df390a430def571b.mp4" autoplay loop muted playsinline></video>
-                  <figcaption>상세페이지 · 크런치볼 ASMR</figcaption>
-                </figure>
-                <figure>
-                  <img src="../assets/cc8745d69c27ab10b24d4ffca54e8994.jpg" alt="킬로리 유주얌 쉐이크 상세페이지 POINT 구성" loading="lazy">
-                  <figcaption>상세페이지 · POINT 구성</figcaption>
-                </figure>
-              </div>
           </div>
         </div>
       </div>
@@ -4329,19 +4244,19 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-portrait"><img src="../assets/2b30e0feb24a46d3383c16c891de78c5.jpg" alt="카부토 헬멧 AI 생성 모델 컷"></div>
-      <div class="eyebrow">Case Study · AI Creative</div>
-      <h1 class="t-display">카부토 헬멧 · AI 모델 컷</h1>
-      <div class="tags">AI 생성 모델 컷 · 브랜드 콘셉트 기획 · Gemini · Flow</div>
+      <div class="eyebrow">Case Study&nbsp;· AI Creative</div>
+      <h1 class="t-display">카부토 헬멧&nbsp;· AI 모델 컷</h1>
+      <div class="tags">AI 생성 모델 컷&nbsp;· 브랜드 콘셉트 기획&nbsp;· Gemini&nbsp;· Flow</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">카부토 (Kabuto)</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">콘셉트 기획 (Gemini · Flow 활용) · 공동 작업</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">콘셉트 기획 (Gemini&nbsp;· Flow 활용)&nbsp;· 공동 작업</div></div>
         <div class="cell"><div class="k">Result</div><div class="v">클라이언트 긍정 피드백</div></div>
       </div>
     </div>
     <div class="case-sec">
       <div class="eyebrow">기여도 (What I Did)</div>
       <div class="case-contrib">
-        <div class="case-contrib-row"><div class="area">콘셉트 기획</div><div class="detail">팀과 함께 브랜드 아이덴티티에 맞는 모델·장면 콘셉트 기획</div><div class="badge badge--collab">공동 작업</div></div>
+        <div class="case-contrib-row"><div class="area">콘셉트 기획</div><div class="detail">팀과 함께 브랜드 아이덴티티에 맞는 <span style="white-space:nowrap">모델·장면</span> 콘셉트 기획</div><div class="badge badge--collab">공동 작업</div></div>
         <div class="case-contrib-row"><div class="area">AI 모델 컷 제작</div><div class="detail">팀과 함께 Gemini와 Flow를 활용해 제품 컷을 바탕으로 모델 컷 구현</div><div class="badge badge--collab">공동 작업</div></div>
       </div>
     </div>
@@ -4408,12 +4323,12 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover is-reel"><video src="../assets/ab41c3592bedabcf7457e82114419de8.mp4" controls loop playsinline></video></div>
-      <div class="eyebrow">Case Study · AI Creative</div>
+      <div class="eyebrow">Case Study&nbsp;· AI Creative</div>
       <h1 class="t-display">어나더브릿지 슬립브릿지 릴스</h1>
-      <div class="tags">AI 영상 · 릴스 · 자사 브랜드 신제품 · Gemini · Flow</div>
+      <div class="tags">AI 영상&nbsp;· 릴스&nbsp;· 자사 브랜드 신제품&nbsp;· Gemini&nbsp;· Flow</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">어나더브릿지 (자사 브랜드)</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">콘셉트 기획 (Gemini · Flow 활용) · 공동 작업</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">콘셉트 기획 (Gemini&nbsp;· Flow 활용)&nbsp;· 공동 작업</div></div>
         <div class="cell"><div class="k">Result</div><div class="v">의도 반영 완성</div></div>
       </div>
     </div>
@@ -4423,6 +4338,11 @@
         <div class="case-contrib-row"><div class="area">콘셉트 기획</div><div class="detail">팀원들과 함께 브랜드 아이덴티티에 맞는 릴스 콘셉트 기획, Gemini와 Flow 활용</div><div class="badge badge--collab">공동 작업</div></div>
         <div class="case-contrib-row"><div class="area">아이디어 통합</div><div class="detail">여러 팀원의 아이디어를 회의로 모아 하나의 릴스로 완성</div><div class="badge badge--collab">공동 작업</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSlipbridge_1_1.jpg" width="600" height="4000" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/caseSlipbridge_1_2.jpg" width="600" height="1136" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSlipbridge_2_1.jpg" width="600" height="4000" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/caseSlipbridge_2_2.jpg" width="600" height="1136" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSlipbridge_3_1.jpg" width="600" height="4000" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/caseSlipbridge_3_2.jpg" width="600" height="1329" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSlipbridge_4_1.jpg" width="600" height="4000" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/caseSlipbridge_4_2.jpg" width="600" height="943" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/caseSlipbridge_5_1.jpg" width="600" height="4000" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/caseSlipbridge_5_2.jpg" width="600" height="1136" alt="어나더브릿지 슬립브릿지 릴스 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -4442,14 +4362,6 @@
           <div class="txt">
             <p class="t-body">여러 팀원의 아이디어를 <b>회의로 모아 콘셉트를 확정</b>하고, 양을 세다 잠드는 흐름을 Gemini와 Flow로 구현했습니다. 제품 상세페이지도 함께 구성했습니다.</p>
             <div class="case-scrollrow">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/12f6924e19cea1314408df882f2a145d.jpg" alt="슬립브릿지 상세페이지 1" loading="lazy"></div>
-                <figcaption>상세페이지 · 1 <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/0a38089ef80b9f5c8b1e8713c85c834a.jpg" alt="슬립브릿지 상세페이지 2" loading="lazy"></div>
-                <figcaption>상세페이지 · 2 <span>↕ 스크롤</span></figcaption>
-              </figure>
             </div>
           </div>
         </div>
@@ -4477,13 +4389,13 @@
   <div class="case-wrap">
     <div class="case-hero">
       <div class="cover"><img src="../assets/1cfb64fdae8d70f89c236d5ceaffee9f.jpg" alt="플레이모빌 세종대왕 피규어 일월오봉도 미디어아트 연출"></div>
-      <div class="eyebrow">Case Study · Portfolio</div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
       <h1 class="t-display">플레이모빌 세종대왕 피규어</h1>
-      <div class="tags">크라우드펀딩 · 와디즈 · 50주년 기념 한국 한정판</div>
+      <div class="tags">크라우드펀딩&nbsp;· 와디즈&nbsp;· 50주년 기념 한국 한정판</div>
       <div class="case-infobar">
         <div class="cell"><div class="k">Client</div><div class="v">플레이모빌 (아이큐박스)</div></div>
         <div class="cell"><div class="k">Role</div><div class="v">연출 촬영 디렉팅, 미디어아트 협업</div></div>
-        <div class="cell"><div class="k">Result</div><div class="v">4주 판매 · 매출 1.2억+</div></div>
+        <div class="cell"><div class="k">Result</div><div class="v">4주 판매&nbsp;· 매출 1.2억+</div></div>
       </div>
     </div>
     <div class="case-sec">
@@ -4492,6 +4404,11 @@
         <div class="case-contrib-row"><div class="area">연출 촬영 디렉팅</div><div class="detail">스튜디오가 아닌 실제 장소에서 피규어의 1인칭 연출 촬영 디렉팅</div><div class="badge">직접 수행</div></div>
         <div class="case-contrib-row"><div class="area">미디어아트 협업</div><div class="detail">일월오봉도 미디어아트 원작가에게 직접 연락해 콜라보레이션 승인, 오픈 후 결과 공유</div><div class="badge">직접 수행</div></div>
       </div>
+    </div>
+    <div class="case-sec dpg-sec">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip"><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePlaymobil_1_1.jpg" width="600" height="4000" alt="플레이모빌 세종대왕 피규어 상세페이지 1" loading="lazy" decoding="async"><img src="work/img/dp/casePlaymobil_1_2.jpg" width="600" height="1790" alt="플레이모빌 세종대왕 피규어 상세페이지 1" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 01 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePlaymobil_2_1.jpg" width="600" height="4000" alt="플레이모빌 세종대왕 피규어 상세페이지 2" loading="lazy" decoding="async"><img src="work/img/dp/casePlaymobil_2_2.jpg" width="600" height="1661" alt="플레이모빌 세종대왕 피규어 상세페이지 2" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 02 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePlaymobil_3_1.jpg" width="600" height="4000" alt="플레이모빌 세종대왕 피규어 상세페이지 3" loading="lazy" decoding="async"><img src="work/img/dp/casePlaymobil_3_2.jpg" width="600" height="1908" alt="플레이모빌 세종대왕 피규어 상세페이지 3" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 03 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePlaymobil_4_1.jpg" width="600" height="4000" alt="플레이모빌 세종대왕 피규어 상세페이지 4" loading="lazy" decoding="async"><img src="work/img/dp/casePlaymobil_4_2.jpg" width="600" height="1409" alt="플레이모빌 세종대왕 피규어 상세페이지 4" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 04 / 05 ↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="work/img/dp/casePlaymobil_5_1.jpg" width="600" height="4000" alt="플레이모빌 세종대왕 피규어 상세페이지 5" loading="lazy" decoding="async"><img src="work/img/dp/casePlaymobil_5_2.jpg" width="600" height="2182" alt="플레이모빌 세종대왕 피규어 상세페이지 5" loading="lazy" decoding="async"></div><figcaption>상세페이지&nbsp;· 05 / 05 ↕ 스크롤</figcaption></figure></div>
     </div>
     <div class="case-sec" style="border-bottom:none;">
       <div class="eyebrow">문제 → 해결 → 결과</div>
@@ -4531,14 +4448,6 @@
               </div>
             </div>
             <div class="case-scrollrow">
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/5358670365ea5fb19924459259da41d9.jpg" alt="플레이모빌 세종대왕 상세페이지 스토리 구간" loading="lazy"></div>
-                <figcaption>상세페이지 · 1인칭 스토리 <span>↕ 스크롤</span></figcaption>
-              </figure>
-              <figure class="case-scroll">
-                <div class="frame"><img src="../assets/05ef09cf789fd36ea734764ab6eed660.jpg" alt="플레이모빌 세종대왕 상세페이지 일월오봉도 구간" loading="lazy"></div>
-                <figcaption>상세페이지 · 일월오봉도와 상징 <span>↕ 스크롤</span></figcaption>
-              </figure>
             </div>
           </div>
         </div>
@@ -4603,7 +4512,7 @@
       img.classList.add('is-fade');
       var t=new Image(); t.onload=function(){ img.src=s; img.alt=name+' '+(i+1)+'쪽'; img.classList.remove('is-fade'); }; t.onerror=function(){ img.classList.remove('is-fade'); }; t.src=s;
       cnt.textContent=(i+1)+' / '+pages.length;
-      if(lab && !fixed){ lab.textContent=labels[i+1]?(('0'+(i+1)).slice(-2)+' · '+labels[i+1]):''; }
+      if(lab && !fixed){ lab.textContent=labels[i+1]?(('0'+(i+1)).slice(-2)+'&nbsp;· '+labels[i+1]):''; }
       new Image().src=src((i+1)%pages.length);
     }
     box.querySelector('.sl-prev').addEventListener('click',function(){ go(i-1); });
