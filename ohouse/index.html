@@ -1555,7 +1555,7 @@
     <!-- .wadiz-track cards are auto-duplicated by script below for a seamless loop; keep only ONE real set here -->
   </div>
   <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('[data-aislider]').forEach(function(box){
     var track=box.querySelector('.ai-track'), tabs=box.querySelectorAll('.ai-dots button');
     var n=track.children.length, i=0, timer=null, hold=false;
@@ -1577,10 +1577,10 @@
     var reduce=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     mark(0); restart();
   });
-})();
+});
 </script>
 <script>
-(function(){
+document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('[data-slider]').forEach(function(box){
     var track=box.querySelector('.track'), dots=box.querySelectorAll('.dots i');
     var slides=track.children, n=slides.length, i=0;
@@ -1597,7 +1597,7 @@
     if('IntersectionObserver' in window){ new IntersectionObserver(function(es){ visible=es[0].isIntersecting; }).observe(box); }
     setInterval(function(){ if(document.hidden||!visible) return; go(i+1); }, 3200);
   });
-})();
+});
 </script>
 <script>
     (function(){
@@ -2100,7 +2100,7 @@
       <p class="t-body">이커머스와 브랜드 콘텐츠 분야에서 약 14년간 브랜드의 방향을 시각적인 결과물로 구현해 왔습니다.</p>
       <p class="t-body">신규 브랜드 너리싱은 네이밍과 브랜드 스타일을 직접 기획하고, 디자인 방향부터 촬영, 상세페이지, 광고 소재까지 팀과 함께 이어 갔습니다. G마켓 G9에서는 내부 디자이너가 쓰는 디자인 가이드를 직접 만들었고, 11번가 우아픽에서는 서비스 콘셉트에 맞춰 페이지를 기획하고 디자인했습니다.</p>
       <p class="t-body">위메프에서는 약 30인, 5개 파트 디자인 조직의 팀장으로 주간 리뷰, 교육, 보상을 운영했습니다. 비티와이플러스에서는 기획자·디자이너·포토그래퍼 6~8명과 매월 20~30개 프로젝트를 이끌며 주요 프로젝트를 직접 디자인했고, 디자이너 교육도 이어 갔습니다.</p>
-      <p class="t-body">최근에는 생성형 AI로 모델·제품 이미지와 영상을 만드는 방법을 직접 테스트하고, 찾은 방법을 포토그래퍼에게 전달해 생성 이미지 제작에 적용했습니다. 디자인 조직 전체의 공통 규칙으로 만드는 단계까지는 가지 못했습니다.</p>
+      <p class="t-body">최근에는 생성형 AI로 모델·제품 이미지와 영상을 만드는 방법을 직접 테스트하고, 찾은 방법을 포토그래퍼에게 전달해 생성 이미지 제작에 적용했습니다.</p>
     </div>
 
     <div class="resume-sec" style="break-inside:avoid;">
@@ -2192,7 +2192,6 @@
           <ul class="resume-bullets">
             <li class="t-body">모델 촬영 예산에 부담을 느끼는 MD의 고민에서 시작해, Midjourney로 만든 인물에 실제 제품을 결합하고 NanoBanana·Flow로 합성과 영상까지 만드는 방법을 직접 테스트했습니다.</li>
             <li class="t-body">찾은 방법을 포토그래퍼에게 전달했고, 이후 생성 이미지는 포토그래퍼가 이 방법을 적용해 제작했습니다.</li>
-            <li class="t-body">디자인 조직 전체의 공통 규칙으로 만드는 단계까지는 진행하지 못했습니다.</li>
           </ul>
         </div>
 <div class="resume-entry">
