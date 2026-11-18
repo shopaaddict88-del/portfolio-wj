@@ -1035,6 +1035,38 @@
   @media (prefers-reduced-motion: reduce){#shoot .sh-track{animation:none;} #shoot .sh-strip{overflow-x:auto;}}
   @media (max-width:760px){#shoot .sh-in{padding:0 40px;}}
   @media (max-width:640px){#shoot .sh-band{margin-top:-64px; padding:64px 0 56px;} #shoot .sh-in{padding:0 20px;} #shoot .sh-track img{height:260px;} #shoot .sh-track{gap:6px;} #shoot .sh-rows{gap:6px;}}
+
+  /*DETAIL-CSS*/
+  #detail{position:relative; background:#0c0d11; color:#f3f4f6; overflow:hidden;}
+  #detail .dt-band{position:relative; padding:104px 0 96px;}
+  #detail .dt-band::before{content:""; position:absolute; left:50%; top:48%; width:1200px; height:700px; transform:translate(-50%,-50%); background:radial-gradient(closest-side,rgba(120,100,150,.16),rgba(12,13,17,0)); pointer-events:none;}
+  #detail .dt-in{position:relative; max-width:1120px; margin:0 auto; padding:0 40px;}
+  #detail .t-title{color:#fff;}
+  #detail .t-body{color:#a9adb8; max-width:620px;}
+  #detail .dt-stage{display:flex; justify-content:center; gap:36px; margin-top:72px;}
+  #detail .dt-unit{width:316px; flex:none;}
+  #detail .dt-unit:nth-child(odd){margin-top:64px;}
+  #detail .dt-phone{position:relative; padding:8px; border-radius:38px; background:linear-gradient(150deg,#2b2e37,#15171c 55%,#23252c); box-shadow:0 50px 90px -20px rgba(0,0,0,.65), inset 0 0 0 1px rgba(255,255,255,.09);}
+  #detail .dt-screen{position:relative; height:640px; border-radius:30px; overflow:hidden; background:#fff;}
+  #detail .dt-slide{position:absolute; inset:0; opacity:0; transition:opacity .9s ease;}
+  #detail .dt-slide.on{opacity:1;}
+  #detail .dt-pg{will-change:transform;}
+  #detail .dt-pg > *{display:block; width:100%; height:auto; background:#fff;}
+  #detail .dt-cap{margin-top:22px; text-align:center; min-height:62px;}
+  #detail .dt-cap .t, #detail .dt-cap .s{transition:opacity .3s ease;}
+  #detail .dt-cap.sw .t, #detail .dt-cap.sw .s{opacity:0;}
+  #detail .dt-cap .t{display:block; font-size:.92rem; font-weight:700; color:#fff; line-height:1.4;}
+  #detail .dt-cap .s{display:block; font-size:.78rem; color:#8b909c; margin-top:2px; min-height:1.2em;}
+  #detail .dt-dots{display:flex; justify-content:center; gap:6px; margin-top:12px; flex-wrap:wrap;}
+  #detail .dt-dots i{width:18px; height:2px; background:rgba(255,255,255,.18); border-radius:2px; overflow:hidden; position:relative;}
+  #detail .dt-dots i.on::after{content:""; position:absolute; inset:0; background:#fff; transform-origin:left; animation:dtFill var(--dur,15s) linear forwards;}
+  #detail .dt-dots i.done{background:rgba(255,255,255,.7);}
+  #detail .dt-unit.paused .dt-dots i.on::after{animation-play-state:paused;}
+  @keyframes dtFill{from{transform:scaleX(0);}to{transform:scaleX(1);}}
+  @media (max-width:900px){#detail .dt-stage{gap:18px;} #detail .dt-unit{width:254px;} #detail .dt-screen{height:540px;} #detail .dt-unit:nth-child(odd){margin-top:36px;}}
+  @media (max-width:760px){#detail .dt-unit.m{width:min(300px,78vw); margin-top:0;} #detail .dt-stage{margin-top:48px;} #detail .dt-screen{height:560px;} #detail .dt-dots i{width:10px;}}
+  @media (max-width:640px){#detail .dt-band{padding:72px 0 72px;} #detail .dt-in{padding:0 20px;}}
+  /*/DETAIL-CSS*/
 </style>
 <style>
   .spk-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);}
@@ -1088,6 +1120,7 @@
   <div class="nav__links">
     <a href="#about">소개</a>
     <a href="#work">메시지·상세페이지</a>
+    <!--DETAIL-NAV--><a href="#detail">상세 디자인</a><!--/DETAIL-NAV-->
     <a href="#direct">카피·키비주얼</a>
     <a href="#brand">브랜드</a>
     <a href="#guide">기준·가이드</a>
@@ -1265,6 +1298,78 @@
   </div>
 </section>
 
+<!--DETAIL-START-->
+<section class="r" id="detail" style="padding:0; max-width:none; border-top:0;">
+  <div class="dt-band"><div class="dt-in">
+    <div class="eyebrow">Detail Page Design</div>
+    <h2 class="t-title">상세페이지 디자인</h2>
+    <p class="t-body" style="margin-top:18px;">뷰티 브랜드의 상세페이지는 디자인을 직접 진행했고, 일본어 버전은 전문 번역가가 준 번역 원고를 받아 디자인을 직접 수정했습니다.</p>
+    <div class="dt-stage" id="dtStage" role="group" aria-label="상세페이지 디자인 예시"></div>
+  </div></div>
+</section>
+<script>
+(function(){
+  var BASE='../detail/',D={"P": {"1": ["헤어케어 · 앰플형 토닉", "국문"], "2": ["헤어케어 · 트리트먼트", "국문"], "3": ["헤어케어 · 트리트먼트", "일본어 버전"], "4": ["헤어케어 · 앰플형 토닉", "일본어 버전"], "5": ["스킨케어 · 크림", ""], "6": ["스킨케어 · 토너", ""], "7": ["샴푸바", ""], "8": ["건강 차", ""], "9": ["펫푸드", ""], "10": ["체중계", "리뉴얼"], "11": ["사이클 헬멧", ""], "12": ["신발", ""], "13": ["골프 패션", ""], "14": ["자동차 케어", ""], "15": ["남성 셋업 의류", ""]}, "SEG": {"2": [{"t": "v", "src": "v_02_1.mp4", "poster": "v_02_1.jpg", "h": 1702}, {"t": "v", "src": "v_02_2.mp4", "poster": "v_02_2.jpg", "h": 1188}, {"t": "v", "src": "v_02_3.mp4", "poster": "v_02_3.jpg", "h": 810}], "3": [{"t": "v", "src": "v_03_1.mp4", "poster": "v_03_1.jpg", "h": 1702}, {"t": "v", "src": "v_03_2.mp4", "poster": "v_03_2.jpg", "h": 1188}, {"t": "v", "src": "v_03_3.mp4", "poster": "v_03_3.jpg", "h": 810}], "4": [{"t": "v", "src": "v_04_1.mp4", "poster": "v_04_1.jpg", "h": 834}, {"t": "v", "src": "v_04_2.mp4", "poster": "v_04_2.jpg", "h": 834}, {"t": "v", "src": "v_04_3.mp4", "poster": "v_04_3.jpg", "h": 834}, {"t": "v", "src": "v_04_4.mp4", "poster": "v_04_4.jpg", "h": 834}], "14": [{"t": "i", "src": "i_14_1.jpg", "h": 1218}, {"t": "v", "src": "v_14_2.mp4", "poster": "v_14_2.jpg", "h": 654}, {"t": "v", "src": "v_14_3.mp4", "poster": "v_14_3.jpg", "h": 804}, {"t": "v", "src": "v_14_4.mp4", "poster": "v_14_4.jpg", "h": 1024}], "15": [{"t": "v", "src": "v_15_1.mp4", "poster": "v_15_1.jpg", "h": 2830}, {"t": "v", "src": "v_15_2.mp4", "poster": "v_15_2.jpg", "h": 870}]}, "TOT": {"2": 3700, "3": 3700, "4": 3336, "14": 3700, "15": 3700}, "F": [[4, 9, 13, 3, 8], [12, 2, 7, 14, 5], [6, 10, 11, 1, 15]], "MOB": [1, 14, 3, 15, 5, 8, 6, 12, 4, 10, 2, 9, 11, 7, 13], "MAXD": {"11": 1090}, "START": [0, 5000, 10000], "T0": 36000},P=D.P,SEG=D.SEG,TOT=D.TOT,MAXD=D.MAXD,DUR=15000;
+  var sec=document.getElementById('detail'),stage=document.getElementById('dtStage'); if(!sec||!stage)return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var mq=window.matchMedia('(max-width:760px)'),units=[],loaded=false,visible=false;
+  function pad(n){return n<10?'0'+n:''+n;}
+  function makeUnit(ids,mobile,start,T0){
+    var u=document.createElement('div'); u.className='dt-unit'+(mobile?' m':'');
+    u.innerHTML='<div class="dt-phone"><div class="dt-screen"></div></div><div class="dt-cap"><span class="t"></span><span class="s"></span><div class="dt-dots"></div></div>';
+    stage.appendChild(u);
+    var screen=u.querySelector('.dt-screen'),t=u.querySelector('.t'),s=u.querySelector('.s'),dots=u.querySelector('.dt-dots'),cap=u.querySelector('.dt-cap');
+    var slides=[],anim=null,cur=-1,timers=[],started=false,vis=false,hov=false,self={};
+    ids.forEach(function(id){
+      var d=document.createElement('div'); d.className='dt-slide'; var pg=document.createElement('div'); pg.className='dt-pg'; var media=[];
+      var segs=SEG[id]||[{t:'i',src:'s_'+pad(id)+'.jpg',h:TOT[id]||3700}];
+      segs.forEach(function(g){var el;
+        if(g.t==='v'){el=document.createElement('video'); el.muted=true; el.defaultMuted=true; el.loop=true; el.playsInline=true; el.preload='none'; el.setAttribute('muted',''); el.setAttribute('playsinline',''); el.setAttribute('aria-hidden','true'); if(g.poster)el.dataset.poster=BASE+g.poster;}
+        else{el=new Image(); el.alt=''; el.decoding='async';}
+        el.dataset.src=BASE+g.src; el.dataset.kind=g.t; el.style.aspectRatio='680 / '+g.h; pg.appendChild(el); media.push(el);});
+      d.appendChild(pg); screen.appendChild(d); slides.push({el:d,pg:pg,id:id,media:media});
+      dots.appendChild(document.createElement('i'));
+    });
+    function later(fn,ms){var h=setTimeout(fn,ms); timers.push(h);}
+    function setText(sl){t.textContent=P[sl.id][0]; s.textContent=P[sl.id][1];}
+    function playVids(x,on){x.media.forEach(function(m){if(m.dataset.kind!=='v')return; if(on){var p=m.play(); if(p&&p.catch)p.catch(function(){});}else m.pause();});}
+    function run(){return vis&&!hov&&!document.hidden&&!reduce;}
+    self.update=function(){
+      if(anim){ if(run())anim.play(); else anim.pause(); }
+      u.classList.toggle('paused',!run());
+      var on=vis&&!document.hidden; slides.forEach(function(x,i){ if(i===cur)playVids(x,on); else if(!on)playVids(x,false); });
+    };
+    function show(n,still,skip){
+      cur=(n+ids.length)%ids.length; var sl=slides[cur];
+      slides.forEach(function(x,i){x.el.classList.toggle('on',i===cur); if(!still){ if(i===cur)playVids(x,vis&&!document.hidden); else later(function(){if(slides[cur]!==x)playVids(x,false);},1100);} });
+      var dd=dots.children; for(var i=0;i<dd.length;i++){dd[i].className=i<cur?'done':(i===cur?'on':''); dd[i].style.setProperty('--dur',DUR+'ms'); if(i===cur&&!still){dd[i].classList.remove('on'); void dd[i].offsetWidth; dd[i].classList.add('on'); dd[i].style.animationDelay=skip?(-skip+'ms'):'0ms';}}
+      if(still){setText(sl);} else {cap.classList.add('sw'); later(function(){setText(sl); cap.classList.remove('sw');},400);}
+      var w=screen.offsetWidth,vh=screen.offsetHeight,h=(TOT[sl.id]||3700)*(w/680),dist=Math.max(0,Math.min(h-vh,(MAXD[sl.id]||2100)*(w/680)));
+      if(anim)anim.cancel(); if(still)return;
+      anim=sl.pg.animate([{transform:'translateY(0)'},{transform:'translateY('+(-dist)+'px)'}],{duration:DUR,easing:'cubic-bezier(.45,.05,.55,.95)',fill:'forwards'});
+      if(skip)anim.currentTime=skip; anim.onfinish=function(){show(cur+1);}; self.update();
+    }
+    var tt0=T0+start,i0=Math.floor(tt0/DUR)%ids.length; show(i0,true);
+    self.load=function(){slides.forEach(function(x){x.media.forEach(function(m){ if(m.dataset.loaded)return; m.dataset.loaded='1'; if(m.dataset.kind==='v'){ if(m.dataset.poster)m.poster=m.dataset.poster; m.preload='auto'; } m.src=m.dataset.src; });});};
+    self.setVisible=function(v){vis=v; if(v&&!started&&!reduce){started=true; show(i0,false,tt0%DUR);} self.update();};
+    u.addEventListener('mouseenter',function(){hov=true; self.update();}); u.addEventListener('mouseleave',function(){hov=false; self.update();});
+    self.destroy=function(){timers.forEach(clearTimeout); if(anim)anim.cancel(); u.remove();};
+    return self;
+  }
+  function build(){
+    units.forEach(function(x){x.destroy();}); units=[]; stage.innerHTML='';
+    var mobile=mq.matches,F=mobile?[D.MOB]:D.F,START=mobile?[0]:D.START,T0=mobile?0:D.T0;
+    F.forEach(function(ids,k){units.push(makeUnit(ids,mobile,START[k],T0));});
+    if(loaded)units.forEach(function(x){x.load();}); units.forEach(function(x){x.setVisible(visible);});
+  }
+  build();
+  if(mq.addEventListener)mq.addEventListener('change',build); else if(mq.addListener)mq.addListener(build);
+  document.addEventListener('visibilitychange',function(){units.forEach(function(x){x.update();});});
+  if(!window.IntersectionObserver){loaded=true; visible=true; units.forEach(function(x){x.load(); x.setVisible(true);}); return;}
+  new IntersectionObserver(function(e){visible=e[0].isIntersecting; if(visible&&!loaded){loaded=true; units.forEach(function(x){x.load();});} units.forEach(function(x){x.setVisible(visible);});},{rootMargin:'300px 0px'}).observe(sec);
+})();
+</script>
+<!--DETAIL-END-->
 <section class="r" id="direct">
   <div class="sec-head">
     <div class="eyebrow">Key Visual &amp; Copy</div>
