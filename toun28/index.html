@@ -1035,6 +1035,45 @@
   @media (prefers-reduced-motion: reduce){#shoot .sh-track{animation:none;} #shoot .sh-strip{overflow-x:auto;}}
   @media (max-width:760px){#shoot .sh-in{padding:0 40px;}}
   @media (max-width:640px){#shoot .sh-band{margin-top:-64px; padding:64px 0 56px;} #shoot .sh-in{padding:0 20px;} #shoot .sh-track img{height:260px;} #shoot .sh-track{gap:6px;} #shoot .sh-rows{gap:6px;}}
+
+  /*BEAUTY-CSS*/
+  .case-infobar.two{grid-template-columns:repeat(2,1fr);}
+  @media (max-width:640px){ .case-infobar.two{grid-template-columns:1fr;} }
+  .dps{display:flex; flex-direction:column; align-items:center; gap:44px;}
+  .dps figure{margin:0; width:100%; max-width:600px;}
+  .dps .dps-lab{display:flex; align-items:baseline; gap:12px; margin-bottom:12px; font-family:var(--mono); font-size:11px; color:var(--muted-2); letter-spacing:.04em;}
+  .dps .dps-lab b{font-family:var(--sans); font-size:.92rem; font-weight:700; color:var(--paper); letter-spacing:-.01em;}
+  .dps .dps-pg{border:1px solid var(--line); background:#fff;}
+  .dps .dps-pg img, .dps .dps-pg video{display:block; width:100%; height:auto; background:#fff;}
+  .pfs{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; width:min(1120px,calc(100vw - 56px)); position:relative; left:50%; transform:translateX(-50%);}
+  .pfs figure{margin:0; min-width:0;}
+  .pfs .dps-lab{display:flex; align-items:baseline; gap:12px; margin-bottom:12px; font-family:var(--mono); font-size:11px; color:var(--muted-2); letter-spacing:.04em;}
+  .pfs .dps-lab b{font-family:var(--sans); font-size:.92rem; font-weight:700; color:var(--paper); letter-spacing:-.01em;}
+  .pfs .dps-lab em{margin-left:auto; font-style:normal; font-size:10px;}
+  .pf{height:min(80vh,860px); overflow-y:auto; overscroll-behavior:contain; border:1px solid var(--line); background:#fff; scrollbar-width:thin;}
+  .pf img, .pf video{display:block; width:100%; height:auto; background:#fff;}
+  @media (max-width:900px){ .pfs{grid-template-columns:1fr; width:100%; left:0; transform:none; gap:40px;} .pf{height:min(74vh,720px);} }
+  .dps-sub{margin-top:48px; padding-top:26px; margin-bottom:16px; border-top:1px solid var(--line); width:min(1120px,calc(100vw - 56px)); position:relative; left:50%; transform:translateX(-50%); font-family:var(--mono); font-size:11px; color:var(--muted-2); letter-spacing:.04em;}
+  .pfs.sm{grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px;}
+  .pfs.sm .pf{height:min(58vh,540px);}
+  @media (max-width:900px){ .pfs.sm{grid-template-columns:1fr; gap:36px;} .pfs.sm .pf{height:min(66vh,620px);} .pfs.sm figure{width:100%; max-width:480px; margin:0 auto;} .dps-sub{width:100%; left:0; transform:none;} }
+  .case-hero .cover.is-banner{aspect-ratio:2/1; max-width:none; width:min(1120px,calc(100vw - 56px)); position:relative; left:50%; transform:translateX(-50%); margin:0;}
+  .case-hero .cover.is-banner img{object-fit:cover;}
+  @media (max-width:900px){ .case-hero .cover.is-banner{width:100%; left:0; transform:none;} }
+  .work-grid.fill .work-card[data-case="caseMernel"] .thumb img{object-position:center 22%;}
+  /* 메르넬: 로지텍 사례와 같은 가로 스크롤 갤러리. 원본 폭이 900~1200이라 280px로 줄이면 글자가 작아져 340px로 키움 */
+  .dpg-strip.mer{grid-auto-columns:340px; align-items:start;}
+  .dpg-strip.mer .dpg-frame{height:auto; aspect-ratio:900/1296; scrollbar-width:thin;}
+  .dpg-strip.mer .dpg-frame.fit{overflow:hidden;}
+  .dpg-strip.mer .dpg-frame.fit img{height:100%; object-fit:cover;}
+  .dpg-strip.mer figcaption{line-height:1.6;}
+  .dpg-strip.mer figcaption b{color:var(--paper); font-weight:700;}
+  @media (max-width:760px){ .dpg-strip.mer{grid-auto-columns:78vw;} }
+  .work-grid.fill .work-card[data-case="caseSaranara"] .thumb img{object-position:center 30%;}
+  /* 카드 12개: 데스크톱 줄 배치 / 모바일 2열 */
+  @media (min-width:761px){ #work .work-grid.fill > .work-card:nth-child(n){flex-basis:calc(25% - 1px);} }
+  @media (max-width:760px){  }
+  /*/BEAUTY-CSS*/
 </style>
 <style>
   .spk-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);}
@@ -1965,6 +2004,24 @@ document.addEventListener('DOMContentLoaded', function(){
     <p class="t-body" style="margin-top:18px;">기획자·디자이너와 초반 기획부터 함께하며 타깃과 구매 이유를 정하고, 그 이유를 헤드라인과 페이지 구조로 옮겼습니다.<br>카드를 누르면 사례별로 맡은 역할과 과정을 볼 수 있습니다.</p>
   </div>
   <div class="work-grid fill">
+    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseSaranara">
+      <div class="thumb"><img src="../beauty-img/saranara/cover.jpg" alt="사라나라 샴푸를 든 모델 컷" loading="lazy"></div>
+      <div class="cap">
+        <b>머릿결부터 피부결까지, 사라나라</b>
+        <span>모델 섭외, 촬영 기획, 상세페이지 디자인 <span style="white-space:nowrap">· 직접 수행</span></span>
+        <p class="ctx">헤어케어와 스킨케어 5개 제품의 상세페이지를 진행했습니다. 헤어케어 제품은 애프터 컷을 기준으로 모델 섭외와 하루 촬영 순서를 설계했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseMernel">
+      <div class="thumb"><img src="../beauty-img/mernel/mernel_01.jpg" alt="메르넬 화이트닝 크림 모델·제품 키비주얼" loading="lazy"></div>
+      <div class="cap">
+        <b>메르넬 화이트닝 크림</b>
+        <span>상세페이지 기획 · 디자인 · 최종 검수</span>
+        <p class="ctx">모델 컷에 이어 실제 사용자 후기를 먼저 보여줘, 고객이 사용 후 느낀 변화에 공감한 뒤 주요 성분과 효능을 살펴볼 수 있도록 상세페이지를 기획·디자인했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
     <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseK380">
       <div class="thumb"><img src="../assets/2e47fa12b75cca3a69fbd6a99239dcd2.jpg" alt="로지텍 K380 & Pebble M350" loading="lazy"></div>
       <div class="cap">
@@ -3309,6 +3366,135 @@ document.addEventListener('DOMContentLoaded', function(){
   </div>
 </div>
 
+<div class="case-page" id="caseSaranara">
+  <div class="case-topbar">
+    <button class="back" data-case-close>← 포트폴리오로 돌아가기</button>
+    <button class="close" data-case-close aria-label="닫기">✕</button>
+  </div>
+  <div class="case-wrap">
+    <div class="case-hero">
+      <div class="cover is-banner"><img src="../beauty-img/saranara/banner.jpg" alt="사라나라 5개 제품 대표 컷: 샴푸, 콜라겐 크림, 스트레이트 트리트먼트, 크림 토너, 헤어크림"></div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
+      <h1 class="t-display">머릿결부터 피부결까지,<br>사라나라</h1>
+      <div class="tags">헤어케어&nbsp;· 스킨케어&nbsp;· 상세페이지</div>
+      <div class="case-infobar two">
+        <div class="cell"><div class="k">Client</div><div class="v">사라나라</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">모델 섭외, 촬영 기획, 상세페이지 디자인 <span style="white-space:nowrap">· 직접 수행</span></div></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <div class="eyebrow">기여도 (What I Did)</div>
+      <p class="t-body" style="margin-bottom:22px;">사라나라 5개 제품의 상세페이지를 진행했습니다. 그중 샴푸·트리트먼트·헤어크림은 라인업이 동시에 출시되는 시점이라 같은 일정으로 함께 진행했습니다.</p>
+      <div class="case-contrib">
+        <div class="case-contrib-row"><div class="area">모델 섭외</div><div class="detail">헤어케어 촬영: 모발 상태를 첫 기준으로, 헤어 촬영 경력자 중 얼굴 포함 촬영이 가능한 모델 섭외</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">촬영 기획</div><div class="detail">헤어케어 촬영: 3개 제품 동시 출시에 맞춘 하루 촬영 순서 설계, 애프터 컷을 첫 순서에 두고 가장 많은 시간 배정</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">5개 제품 상세페이지 디자인</div><div class="badge">직접 수행</div></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <div class="eyebrow">제작 히스토리 (헤어케어)</div>
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>01</span>촬영 방향</div>
+          <div class="txt"><p class="t-body"><b>사용 후 머릿결을 어떻게 보여줄 것인가</b></p><p class="t-body">사라나라 샴푸·트리트먼트·헤어크림 3종은 사용 후 보여주고 싶은 머릿결이 비슷했습니다. “나도 쓰면 저런 머릿결이 될까?”라는 기대가 들도록, 고개를 돌릴 때 자연스럽게 찰랑이는 모습, 빛을 받을 때 드러나는 윤기, 엉킴 없이 매끄럽게 흘러내리는 모발을 담고자 했습니다. 한 컷만으로도 제품을 쓰고 싶은 이유가 전해지는지를 기준으로, 상세페이지와 광고 소재에 두루 활용할 수 있는 장면을 기획했습니다.</p></div>
+        </div>
+      </div>
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>02</span>모델 섭외</div>
+          <div class="txt"><p class="t-body"><b>모발 상태와 촬영 가능한 구도</b></p><p class="t-body">모델 선정에서 가장 중요하게 본 기준은 모발 자체의 상태였습니다. 머릿결과 움직임을 자연스럽게 표현할 수 있는 헤어 촬영 경력자를 찾았고, 얼굴을 포함한 촬영이 가능한지도 확인했습니다. 그래야 머리카락이 움직이는 방향에 맞춰 포즈와 카메라 각도를 다양하게 잡을 수 있었습니다. 얼굴과 상반신이 함께 나오는 컷은 후보정에 드는 시간까지 고려해 피부 상태도 함께 살폈습니다.</p></div>
+        </div>
+      </div>
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>03</span>촬영 기획</div>
+          <div class="txt"><p class="t-body"><b>애프터 컷을 먼저 촬영한 이유</b></p><p class="t-body">세 제품의 동시 출시에 맞춰 하루 안에 촬영을 마쳐야 했습니다. 모발이 가장 잘 정돈된 상태에서 윤기와 움직임을 충분히 담을 수 있도록, 애프터 컷을 첫 순서에 놓고 가장 많은 시간을 배정했습니다. 머리를 적시거나 거품을 내면 처음의 모발 상태를 유지하기 어려워, 물과 거품이 필요한 사용 장면은 마지막에 모아 촬영했습니다.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="case-sec dpg-sec" style="border-bottom:none;">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint" style="margin:-6px 0 18px;">5개 제품의 상세페이지를 처음부터 끝까지 담았습니다. 위아래로 스크롤해 보세요. 사진 속 움직이는 부분은 자동 재생됩니다.</div>
+      <div class="pfs">
+      <figure><div class="dps-lab"><span>01</span><b>샴푸 & 트리트먼트</b><em>↕ 스크롤</em></div><div class="pf" tabindex="0"><video muted loop playsinline preload="none" aria-label="사라나라 샴푸 & 트리트먼트 상세페이지" width="800" height="2058" style="aspect-ratio:800/2058" poster="../beauty-img/saranara/sh00.jpg" data-src="../beauty-img/saranara/sh00.mp4"></video><img src="../beauty-img/saranara/sh01_p00.jpg" width="800" height="1984" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh02_p00.jpg" width="800" height="2304" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh03_p00.jpg" width="800" height="1728" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh04_p00.jpg" width="800" height="2310" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh05_p00.jpg" width="800" height="2817" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh06_p00.jpg" width="800" height="2017" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh07_p00.jpg" width="800" height="3366" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh08_p00.jpg" width="800" height="3600" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh08_p01.jpg" width="800" height="976" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh09_p00.jpg" width="800" height="3600" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh09_p01.jpg" width="800" height="1537" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><video muted loop playsinline preload="none" aria-label="사라나라 샴푸 & 트리트먼트 상세페이지" width="800" height="982" style="aspect-ratio:800/982" poster="../beauty-img/saranara/sh10.jpg" data-src="../beauty-img/saranara/sh10.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 샴푸 & 트리트먼트 상세페이지" width="800" height="982" style="aspect-ratio:800/982" poster="../beauty-img/saranara/sh11.jpg" data-src="../beauty-img/saranara/sh11.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 샴푸 & 트리트먼트 상세페이지" width="800" height="982" style="aspect-ratio:800/982" poster="../beauty-img/saranara/sh12.jpg" data-src="../beauty-img/saranara/sh12.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 샴푸 & 트리트먼트 상세페이지" width="800" height="982" style="aspect-ratio:800/982" poster="../beauty-img/saranara/sh13.jpg" data-src="../beauty-img/saranara/sh13.mp4"></video><img src="../beauty-img/saranara/sh14_p00.jpg" width="800" height="3600" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh14_p01.jpg" width="800" height="3600" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh14_p02.jpg" width="800" height="3074" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh15_p00.jpg" width="800" height="2945" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><video muted loop playsinline preload="none" aria-label="사라나라 샴푸 & 트리트먼트 상세페이지" width="720" height="480" style="aspect-ratio:720/480" poster="../beauty-img/saranara/sh16.jpg" data-src="../beauty-img/saranara/sh16.mp4"></video><img src="../beauty-img/saranara/sh17_p00.jpg" width="800" height="4292" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh18_p00.jpg" width="800" height="3600" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh18_p01.jpg" width="800" height="1258" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh19_p00.jpg" width="800" height="3600" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/sh19_p01.jpg" width="800" height="1550" alt="사라나라 샴푸 & 트리트먼트 상세페이지" loading="lazy" decoding="async"></div></figure>
+      <figure><div class="dps-lab"><span>02</span><b>콜라겐 크림</b><em>↕ 스크롤</em></div><div class="pf" tabindex="0"><img src="../beauty-img/saranara/co00_p00.jpg" width="800" height="3600" alt="사라나라 콜라겐 크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/co00_p01.jpg" width="800" height="3600" alt="사라나라 콜라겐 크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/co00_p02.jpg" width="800" height="3600" alt="사라나라 콜라겐 크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/co00_p03.jpg" width="800" height="3600" alt="사라나라 콜라겐 크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/co00_p04.jpg" width="800" height="3600" alt="사라나라 콜라겐 크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/co00_p05.jpg" width="800" height="802" alt="사라나라 콜라겐 크림 상세페이지" loading="lazy" decoding="async"></div></figure>
+      </div>
+      <div class="dps-sub">함께 진행한 제품 3개</div>
+      <div class="pfs sm">
+      <figure><div class="dps-lab"><span>03</span><b>스트레이트 트리트먼트</b><em>↕ 스크롤</em></div><div class="pf" tabindex="0"><video muted loop playsinline preload="none" aria-label="사라나라 스트레이트 트리트먼트 상세페이지" width="560" height="1402" style="aspect-ratio:560/1402" poster="../beauty-img/saranara/st00.jpg" data-src="../beauty-img/saranara/st00.mp4"></video><img src="../beauty-img/saranara/st01_p00.jpg" width="560" height="2059" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st02_p00.jpg" width="560" height="1730" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st03_p00.jpg" width="560" height="2722" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><video muted loop playsinline preload="none" aria-label="사라나라 스트레이트 트리트먼트 상세페이지" width="560" height="978" style="aspect-ratio:560/978" poster="../beauty-img/saranara/st04.jpg" data-src="../beauty-img/saranara/st04.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 스트레이트 트리트먼트 상세페이지" width="560" height="800" style="aspect-ratio:560/800" poster="../beauty-img/saranara/st05.jpg" data-src="../beauty-img/saranara/st05.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 스트레이트 트리트먼트 상세페이지" width="560" height="780" style="aspect-ratio:560/780" poster="../beauty-img/saranara/st06.jpg" data-src="../beauty-img/saranara/st06.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 스트레이트 트리트먼트 상세페이지" width="560" height="852" style="aspect-ratio:560/852" poster="../beauty-img/saranara/st07.jpg" data-src="../beauty-img/saranara/st07.mp4"></video><img src="../beauty-img/saranara/st08_p00.jpg" width="560" height="2391" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st09_p00.jpg" width="560" height="3600" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st09_p01.jpg" width="560" height="4111" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st10_p00.jpg" width="560" height="3151" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st11_p00.jpg" width="560" height="2499" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st12_p00.jpg" width="560" height="2651" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st13_p00.jpg" width="560" height="2179" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st14_p00.jpg" width="560" height="3302" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st15_p00.jpg" width="560" height="1138" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st16_p00.jpg" width="560" height="239" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st17_p00.jpg" width="560" height="501" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st18_p00.jpg" width="560" height="1206" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/st19_p00.jpg" width="560" height="1494" alt="사라나라 스트레이트 트리트먼트 상세페이지" loading="lazy" decoding="async"></div></figure>
+      <figure><div class="dps-lab"><span>04</span><b>스피루리나 크림 토너</b><em>↕ 스크롤</em></div><div class="pf" tabindex="0"><img src="../beauty-img/saranara/tn00_p00.jpg" width="560" height="3600" alt="사라나라 스피루리나 크림 토너 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/tn00_p01.jpg" width="560" height="3600" alt="사라나라 스피루리나 크림 토너 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/tn00_p02.jpg" width="560" height="3600" alt="사라나라 스피루리나 크림 토너 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/tn00_p03.jpg" width="560" height="3600" alt="사라나라 스피루리나 크림 토너 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/tn00_p04.jpg" width="560" height="1764" alt="사라나라 스피루리나 크림 토너 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/tn01_p00.jpg" width="560" height="2327" alt="사라나라 스피루리나 크림 토너 상세페이지" loading="lazy" decoding="async"></div></figure>
+      <figure><div class="dps-lab"><span>05</span><b>헤어크림</b><em>↕ 스크롤</em></div><div class="pf" tabindex="0"><img src="../beauty-img/saranara/cr00_p00.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr00_p01.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr00_p02.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr00_p03.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr00_p04.jpg" width="560" height="1199" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr01_p00.jpg" width="560" height="3974" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><video muted loop playsinline preload="none" aria-label="사라나라 헤어크림 상세페이지" width="560" height="686" style="aspect-ratio:560/686" poster="../beauty-img/saranara/cr02.jpg" data-src="../beauty-img/saranara/cr02.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 헤어크림 상세페이지" width="560" height="686" style="aspect-ratio:560/686" poster="../beauty-img/saranara/cr03.jpg" data-src="../beauty-img/saranara/cr03.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 헤어크림 상세페이지" width="560" height="686" style="aspect-ratio:560/686" poster="../beauty-img/saranara/cr04.jpg" data-src="../beauty-img/saranara/cr04.mp4"></video><img src="../beauty-img/saranara/cr05_p00.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr05_p01.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr05_p02.jpg" width="560" height="2014" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr06_p00.jpg" width="560" height="1645" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><video muted loop playsinline preload="none" aria-label="사라나라 헤어크림 상세페이지" width="560" height="372" style="aspect-ratio:560/372" poster="../beauty-img/saranara/cr07.jpg" data-src="../beauty-img/saranara/cr07.mp4"></video><video muted loop playsinline preload="none" aria-label="사라나라 헤어크림 상세페이지" width="560" height="372" style="aspect-ratio:560/372" poster="../beauty-img/saranara/cr08.jpg" data-src="../beauty-img/saranara/cr08.mp4"></video><img src="../beauty-img/saranara/cr09_p00.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr09_p01.jpg" width="560" height="3600" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"><img src="../beauty-img/saranara/cr09_p02.jpg" width="560" height="2910" alt="사라나라 헤어크림 상세페이지" loading="lazy" decoding="async"></div></figure>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="case-page" id="caseMernel">
+  <div class="case-topbar">
+    <button class="back" data-case-close>← 포트폴리오로 돌아가기</button>
+    <button class="close" data-case-close aria-label="닫기">✕</button>
+  </div>
+  <div class="case-wrap">
+    <div class="case-hero">
+      <div class="cover is-portrait"><img src="../beauty-img/mernel/mernel_01.jpg" alt="메르넬 화이트닝 크림 모델·제품 키비주얼"></div>
+      <div class="eyebrow">Case Study&nbsp;· Portfolio</div>
+      <h1 class="t-display">메르넬 화이트닝 크림</h1>
+      <div class="tags">뷰티&nbsp;· 스킨케어&nbsp;· 상세페이지</div>
+      <div class="case-infobar two">
+        <div class="cell"><div class="k">Client</div><div class="v">메르넬</div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">상세페이지 기획 · 디자인 · 최종 검수</div></div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <div class="eyebrow">문제 → 해결 → 결과</div>
+
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>01</span>과제</div>
+          <div class="txt">
+            <p class="t-body">브랜드 모델인 강다니엘의 팬들이 가장 먼저 구매에 관심을 보일 것으로 예상했습니다. 과제는 모델을 보고 들어온 고객이 <b>‘이 크림이 내 피부 고민에도 맞을까?’</b>라는 질문에 답을 찾도록 페이지를 구성하는 것이었습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>02</span>해결</div>
+          <div class="txt">
+            <p class="t-body">첫 화면에는 브랜드가 제공한 이미지 중 강다니엘이 크림을 얼굴 가까이 든 컷을 배치해 모델과 제품이 한눈에 들어오도록 했습니다. 그다음에 보여줄 내용으로는 <b>실제 사용자의 후기</b>를 선택했습니다. 기미·잡티로 고민하는 고객에게는 복잡한 성분 설명보다 비슷한 고민을 가진 사람이 사용 후 어떤 변화를 느꼈는지가 더 쉽게 와닿을 것이라고 판단했습니다.</p>
+            <p class="t-body">구매 후기에 이어 인플루언서의 사용 전후 사진을 나란히 배치했습니다. 고객이 자신의 피부 고민과 연결해 본 뒤에는 주요 성분과 인체적용시험 결과를 살펴볼 수 있도록 흐름을 잡았습니다. 후기까지는 첫 화면의 블루 톤을 이어가고, 제품 설명부터는 흰 배경을 사용해 경험담에서 제품 정보로 넘어가는 지점을 시각적으로 구분했습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>03</span>결과</div>
+          <div class="txt">
+            <div class="case-result t-body">
+              <p><b>모델에 대한 관심에서 출발해 사용 경험과 제품 선택의 근거까지 한 페이지에서 확인할 수 있는 상세페이지를 완성했습니다.</b> 마지막에는 권장 대상과 스킨케어 사용 순서를 담아, 구매를 고려하는 고객이 자신의 루틴에 어떻게 활용할지도 살펴볼 수 있도록 했습니다.</p>
+              <p>최종 검수와 수정을 거쳐 브랜드에 납품했습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <div class="eyebrow">기여도 (What I Did)</div>
+      <div class="case-contrib">
+        <div class="case-contrib-row"><div class="area">기획</div><div class="detail">초기 구매층 설정, 고객이 궁금해할 내용의 우선순위 결정, 상세페이지 스토리와 섹션 구성</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">브랜드 제공 모델·제품 이미지 활용, 키비주얼 구성, 후기·전후 비교·제품 정보 영역의 레이아웃 및 최종 디자인</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">검수·납품</div><div class="detail">최종 시안 검수, 수정 사항 반영 및 납품</div><div class="badge">직접 수행</div></div>
+      </div>
+    </div>
+    <div class="case-sec dpg-sec" style="border-bottom:none;">
+      <div class="eyebrow">상세페이지 (Detail Page)</div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip mer"><figure><div class="dpg-frame fit" tabindex="0"><img src="../beauty-img/mernel/mernel_01.jpg" width="900" height="1296" alt="메르넬 화이트닝 크림 상세페이지 모델·제품 키비주얼" loading="lazy" decoding="async"></div><figcaption><b>01&nbsp;모델·제품 키비주얼</b></figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="../beauty-img/mernel/mernel_02.jpg" width="900" height="2110" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_03.jpg" width="900" height="1115" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_04.jpg" width="900" height="614" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_05.jpg" width="900" height="752" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"></div><figcaption><b>02&nbsp;사용 후기·전후 비교</b><br>↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="../beauty-img/mernel/mernel_06.jpg" width="900" height="1806" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_07.jpg" width="900" height="1525" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_08.jpg" width="900" height="1162" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_09.jpg" width="900" height="1522" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_10.jpg" width="900" height="2175" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_11.jpg" width="900" height="1371" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_01.jpg" width="900" height="1670" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_02.jpg" width="900" height="1307" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_03.jpg" width="900" height="1672" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_04.jpg" width="900" height="1363" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_05.jpg" width="900" height="1276" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_06.jpg" width="900" height="1225" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"></div><figcaption><b>03&nbsp;성분·시험 결과·사용법</b><br>↕ 스크롤</figcaption></figure></div>
+    </div>
+  </div>
+</div>
+
 <div class="case-page" id="caseK380">
   <div class="case-topbar">
     <button class="back" data-case-close>← 포트폴리오로 돌아가기</button>
@@ -4625,6 +4811,19 @@ document.addEventListener('DOMContentLoaded', function(){
       if(page && sec){ setTimeout(function(){ page.scrollTop = sec.offsetTop - 70; }, 30); }
     });
   });
+})();
+</script>
+<script>
+(function(){
+  var vs=document.querySelectorAll('.dps video, .pf video'); if(!vs.length||!window.IntersectionObserver)return;
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    var v=e.target;
+    if(e.isIntersecting&&!reduce&&!document.hidden){ if(!v.getAttribute('src'))v.src=v.dataset.src; var p=v.play(); if(p&&p.catch)p.catch(function(){}); }
+    else v.pause();
+  });},{rootMargin:'160px 0px'});
+  vs.forEach(function(v){io.observe(v);});
+  document.addEventListener('visibilitychange',function(){ if(document.hidden)vs.forEach(function(v){v.pause();}); });
 })();
 </script>
 </body>
