@@ -1082,6 +1082,14 @@
   .case-hero .cover.is-banner img{object-fit:cover;}
   @media (max-width:900px){ .case-hero .cover.is-banner{width:100%; left:0; transform:none;} }
   .work-grid.fill .work-card[data-case="caseMernel"] .thumb img{object-position:center 22%;}
+  /* 메르넬: 로지텍 사례와 같은 가로 스크롤 갤러리. 원본 폭이 900~1200이라 280px로 줄이면 글자가 작아져 340px로 키움 */
+  .dpg-strip.mer{grid-auto-columns:340px; align-items:start;}
+  .dpg-strip.mer .dpg-frame{height:auto; aspect-ratio:900/1296; scrollbar-width:thin;}
+  .dpg-strip.mer .dpg-frame.fit{overflow:hidden;}
+  .dpg-strip.mer .dpg-frame.fit img{height:100%; object-fit:cover;}
+  .dpg-strip.mer figcaption{line-height:1.6;}
+  .dpg-strip.mer figcaption b{color:var(--paper); font-weight:700;}
+  @media (max-width:760px){ .dpg-strip.mer{grid-auto-columns:78vw;} }
   .work-grid.fill .work-card[data-case="caseSaranara"] .thumb img{object-position:center 30%;}
   /* 카드 12개: 데스크톱 줄 배치 / 모바일 2열 */
   @media (min-width:761px){ #work .work-grid.fill > .work-card:nth-child(n){flex-basis:calc(25% - 1px);} }
@@ -1237,8 +1245,8 @@
       <div class="thumb"><img src="../beauty-img/mernel/mernel_01.jpg" alt="메르넬 화이트닝 크림 모델·제품 키비주얼" loading="lazy"></div>
       <div class="cap">
         <b>메르넬 화이트닝 크림</b>
-        <span>상세페이지 기획, 디자인, 검수 <span style="white-space:nowrap">· 직접 수행</span></span>
-        <p class="ctx">브랜드에서 제공한 모델·제품 이미지를 바탕으로, 후기와 전후 비교를 앞에 배치해 상세페이지를 구성했습니다.</p>
+        <span>상세페이지 기획 · 디자인 · 최종 검수</span>
+        <p class="ctx">모델 컷에 이어 실제 사용자 후기를 먼저 보여줘, 고객이 사용 후 느낀 변화에 공감한 뒤 주요 성분과 효능을 살펴볼 수 있도록 상세페이지를 기획·디자인했습니다.</p>
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
@@ -3524,21 +3532,55 @@ document.addEventListener('DOMContentLoaded', function(){
       <div class="tags">뷰티&nbsp;· 스킨케어&nbsp;· 상세페이지</div>
       <div class="case-infobar two">
         <div class="cell"><div class="k">Client</div><div class="v">메르넬</div></div>
-        <div class="cell"><div class="k">Role</div><div class="v">상세페이지 기획, 디자인, 검수 <span style="white-space:nowrap">· 직접 수행</span></div></div>
+        <div class="cell"><div class="k">Role</div><div class="v">상세페이지 기획 · 디자인 · 최종 검수</div></div>
       </div>
     </div>
     <div class="case-sec">
-      <div class="eyebrow">역할과 구성</div>
-      <p class="t-body">브랜드에서 이미지를 제공받아 상세페이지 기획과 디자인을 직접 맡았습니다. 첫 화면에는 모델과 제품을 함께 보여주고, 이어서 구매 후기와 피부 전후 비교를 배치했습니다.</p>
-      <p class="t-body">고객이 사용 경험을 먼저 살펴본 뒤 제품의 특징을 읽을 수 있도록 순서를 잡았습니다. 최종 검수와 수정, 납품까지 진행했습니다.</p>
+      <div class="eyebrow">문제 → 해결 → 결과</div>
+
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>01</span>과제</div>
+          <div class="txt">
+            <p class="t-body">브랜드 모델인 강다니엘의 팬들이 가장 먼저 구매에 관심을 보일 것으로 예상했습니다. 과제는 모델을 보고 들어온 고객이 <b>‘이 크림이 내 피부 고민에도 맞을까?’</b>라는 질문에 답을 찾도록 페이지를 구성하는 것이었습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>02</span>해결</div>
+          <div class="txt">
+            <p class="t-body">첫 화면에는 브랜드가 제공한 이미지 중 강다니엘이 크림을 얼굴 가까이 든 컷을 배치해 모델과 제품이 한눈에 들어오도록 했습니다. 그다음에 보여줄 내용으로는 <b>실제 사용자의 후기</b>를 선택했습니다. 기미·잡티로 고민하는 고객에게는 복잡한 성분 설명보다 비슷한 고민을 가진 사람이 사용 후 어떤 변화를 느꼈는지가 더 쉽게 와닿을 것이라고 판단했습니다.</p>
+            <p class="t-body">구매 후기에 이어 인플루언서의 사용 전후 사진을 나란히 배치했습니다. 독자가 자신의 피부 고민과 연결해 본 뒤에는 주요 성분과 인체적용시험 결과를 살펴볼 수 있도록 흐름을 잡았습니다. 후기까지는 첫 화면의 블루 톤을 이어가고, 제품 설명부터는 흰 배경을 사용해 경험담에서 제품 정보로 넘어가는 지점을 시각적으로 구분했습니다.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-flow-step">
+        <div class="case-flow-row">
+          <div class="lab"><span>03</span>결과</div>
+          <div class="txt">
+            <div class="case-result t-body">
+              <p><b>모델에 대한 관심에서 출발해 사용 경험과 제품 선택의 근거까지 한 페이지에서 확인할 수 있는 상세페이지를 완성했습니다.</b> 마지막에는 권장 대상과 스킨케어 사용 순서를 담아, 구매를 고려하는 고객이 자신의 루틴에 어떻게 활용할지도 살펴볼 수 있도록 했습니다.</p>
+              <p>최종 검수와 수정을 거쳐 브랜드에 납품했습니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="case-sec">
+      <div class="eyebrow">기여도 (What I Did)</div>
+      <div class="case-contrib">
+        <div class="case-contrib-row"><div class="area">기획</div><div class="detail">초기 구매층 설정, 고객이 궁금해할 내용의 우선순위 결정, 상세페이지 스토리와 섹션 구성</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">디자인</div><div class="detail">브랜드 제공 모델·제품 이미지 활용, 키비주얼 구성, 후기·전후 비교·제품 정보 영역의 레이아웃 및 최종 디자인</div><div class="badge">직접 수행</div></div>
+        <div class="case-contrib-row"><div class="area">검수·납품</div><div class="detail">최종 시안 검수, 수정 사항 반영 및 납품</div><div class="badge">직접 수행</div></div>
+      </div>
     </div>
     <div class="case-sec dpg-sec" style="border-bottom:none;">
       <div class="eyebrow">상세페이지 (Detail Page)</div>
-      <div class="dps">
-      <figure><div class="dps-lab"><span>01</span><b>첫 화면</b></div><div class="dps-pg"><img src="../beauty-img/mernel/mernel_01.jpg" width="900" height="1296" alt="메르넬 화이트닝 크림 상세페이지 첫 화면 1" decoding="async"></div></figure>
-      <figure><div class="dps-lab"><span>02</span><b>후기 · 전후 비교</b></div><div class="dps-pg"><img src="../beauty-img/mernel/mernel_02.jpg" width="900" height="2110" alt="메르넬 화이트닝 크림 상세페이지 후기 · 전후 비교 1" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_03.jpg" width="900" height="1115" alt="메르넬 화이트닝 크림 상세페이지 후기 · 전후 비교 2" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_04.jpg" width="900" height="614" alt="메르넬 화이트닝 크림 상세페이지 후기 · 전후 비교 3" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_05.jpg" width="900" height="752" alt="메르넬 화이트닝 크림 상세페이지 후기 · 전후 비교 4" loading="lazy" decoding="async"></div></figure>
-      <figure><div class="dps-lab"><span>03</span><b>제품 소개</b></div><div class="dps-pg"><img src="../beauty-img/mernel/mernel_06.jpg" width="900" height="1806" alt="메르넬 화이트닝 크림 상세페이지 제품 소개 1" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_07.jpg" width="900" height="1525" alt="메르넬 화이트닝 크림 상세페이지 제품 소개 2" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_08.jpg" width="900" height="1162" alt="메르넬 화이트닝 크림 상세페이지 제품 소개 3" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_09.jpg" width="900" height="1522" alt="메르넬 화이트닝 크림 상세페이지 제품 소개 4" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_10.jpg" width="900" height="2175" alt="메르넬 화이트닝 크림 상세페이지 제품 소개 5" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_11.jpg" width="900" height="1371" alt="메르넬 화이트닝 크림 상세페이지 제품 소개 6" loading="lazy" decoding="async"></div></figure>
-      </div>
+      <div class="dpg-hint">옆으로 넘기고, 각 화면은 위아래로 스크롤해 보세요 →</div>
+      <div class="dpg-strip mer"><figure><div class="dpg-frame fit" tabindex="0"><img src="../beauty-img/mernel/mernel_01.jpg" width="900" height="1296" alt="메르넬 화이트닝 크림 상세페이지 모델·제품 키비주얼" loading="lazy" decoding="async"></div><figcaption><b>01&nbsp;모델·제품 키비주얼</b></figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="../beauty-img/mernel/mernel_02.jpg" width="900" height="2110" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_03.jpg" width="900" height="1115" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_04.jpg" width="900" height="614" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_05.jpg" width="900" height="752" alt="메르넬 화이트닝 크림 상세페이지 사용 후기·전후 비교" loading="lazy" decoding="async"></div><figcaption><b>02&nbsp;사용 후기·전후 비교</b><br>↕ 스크롤</figcaption></figure><figure><div class="dpg-frame" tabindex="0"><img src="../beauty-img/mernel/mernel_06.jpg" width="900" height="1806" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_07.jpg" width="900" height="1525" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_08.jpg" width="900" height="1162" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_09.jpg" width="900" height="1522" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_10.jpg" width="900" height="2175" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_11.jpg" width="900" height="1371" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_01.jpg" width="900" height="1670" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_02.jpg" width="900" height="1307" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_03.jpg" width="900" height="1672" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_04.jpg" width="900" height="1363" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_05.jpg" width="900" height="1276" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"><img src="../beauty-img/mernel/mernel_t_06.jpg" width="900" height="1225" alt="메르넬 화이트닝 크림 상세페이지 성분·시험 결과·사용법" loading="lazy" decoding="async"></div><figcaption><b>03&nbsp;성분·시험 결과·사용법</b><br>↕ 스크롤</figcaption></figure></div>
     </div>
   </div>
 </div>
