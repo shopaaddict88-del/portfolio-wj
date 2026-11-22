@@ -86,6 +86,12 @@
   .hero .hero__desc{max-width:none; text-wrap:balance;}
 
   #career{border-top:none; padding-top:44px; padding-bottom:48px;}
+  #direct{padding-top:0; border-top:none;}
+  #direct .sec-head{background:#0c0d11; max-width:none; margin:0 calc(50% - 50vw); padding:48px max(40px, calc(50vw - 520px)) 0;}
+  #direct .sec-head .t-title{color:#fff;}
+  #direct .sec-head .t-body{color:#a9adb8; max-width:68ch;}
+  #direct .kv-band{background:#0c0d11; margin-top:0; padding-top:56px;}
+  @media (max-width:700px){ #direct .sec-head{padding:40px 20px 0;} #direct .kv-band{padding-top:40px;} }
   /* 같은 묶음의 섹션이 이어질 때 아래·위 여백이 합쳐져 과하게 벌어지지 않도록 */
   section:has(+ section.sub), section.tight{padding-bottom:28px;}
   @media (max-width:560px){ section:has(+ section.sub), section.tight{padding-bottom:20px;} }
@@ -96,7 +102,8 @@
 
 
   /* ---------- HERO ---------- */
-  .hero{min-height:0; display:flex; flex-direction:column; justify-content:flex-start; padding-top:100px; padding-bottom:0;}
+  .hero{min-height:0; display:flex; flex-direction:column; justify-content:flex-start; padding-top:100px; padding-bottom:80px;}
+  @media (max-width:560px){ .hero{padding-bottom:56px;} }
   .hero__label{font-family:var(--mono); font-weight:700; font-size:13px; color:var(--gold); letter-spacing:.08em; margin-bottom:22px;}
   .hero h1{text-wrap:balance; max-width:20ch;}
   .hero__desc{margin-top:28px; max-width:52ch;}
