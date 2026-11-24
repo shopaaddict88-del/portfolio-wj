@@ -855,7 +855,8 @@
   .dw-h{display:flex; align-items:baseline; gap:14px;}
   .dw-h .no{font-family:var(--mono); font-size:11px; font-weight:700; color:var(--gold-bright); letter-spacing:.08em;}
   .dw-h h3{margin:0; font-size:1.2rem; font-weight:800; letter-spacing:-.02em;}
-  .dw-n{margin-top:10px; max-width:62ch; color:var(--muted); font-size:.92rem; line-height:1.8; word-break:keep-all;}
+  .dw-n{margin-top:10px; max-width:62ch; color:var(--muted); font-size:.92rem; line-height:2; word-break:keep-all;}
+  #direct{padding-bottom:0;}
   body{overflow-x:clip;}
   .kv-band{background:#0f1013; color:#f2f3f5; margin:44px calc(50% - 50vw) 0; padding:64px max(40px, calc(50vw - 520px)) 72px;}
   .kv-band .dw-h h3{color:#fff;} .kv-band .dw-n{color:#a3a7b3;}
@@ -1092,7 +1093,7 @@
   @media (max-width:760px){ .dpg-strip.mer{grid-auto-columns:78vw;} }
   .work-grid.fill .work-card[data-case="caseSaranara"] .thumb img{object-position:center 30%;}
   /* 카드 12개: 데스크톱 줄 배치 / 모바일 2열 */
-  @media (min-width:761px){ #work .work-grid.fill > .work-card:nth-child(n){flex-basis:calc(25% - 1px);} }
+  @media (min-width:761px){ #work .work-grid.fill > .work-card:nth-child(n){flex-basis:calc(33.333% - 1px);} }
   @media (max-width:760px){  }
   /*/BEAUTY-CSS*/
 </style>
@@ -1233,24 +1234,6 @@
     <p class="t-body" style="margin-top:18px;">기획자·디자이너와 초반 기획부터 함께하며 타깃과 구매 이유를 정하고, 그 이유를 헤드라인과 페이지 구조로 옮겼습니다.<br>카드를 누르면 사례별로 맡은 역할과 과정을 볼 수 있습니다.</p>
   </div>
   <div class="work-grid fill">
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseSaranara">
-      <div class="thumb"><img src="../beauty-img/saranara/cover.jpg" alt="사라나라 샴푸를 든 모델 컷" loading="lazy"></div>
-      <div class="cap">
-        <b>머릿결부터 피부결까지, 사라나라</b>
-        <span>모델 섭외, 촬영 기획, 상세페이지 디자인 <span style="white-space:nowrap">· 직접 수행</span></span>
-        <p class="ctx">헤어케어와 스킨케어 5개 제품의 상세페이지를 진행했습니다. 헤어케어 제품은 애프터 컷을 기준으로 모델 섭외와 하루 촬영 순서를 설계했습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseMernel">
-      <div class="thumb"><img src="../beauty-img/mernel/mernel_01.jpg" alt="메르넬 화이트닝 크림 모델·제품 키비주얼" loading="lazy"></div>
-      <div class="cap">
-        <b>메르넬 화이트닝 크림</b>
-        <span>상세페이지 기획 · 디자인 · 최종 검수</span>
-        <p class="ctx">모델 컷에 이어 실제 사용자 후기를 먼저 보여줘, 고객이 사용 후 느낀 변화에 공감한 뒤 주요 성분과 효능을 살펴볼 수 있도록 상세페이지를 기획·디자인했습니다.</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
     <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseK380">
       <div class="thumb"><img src="../assets/2e47fa12b75cca3a69fbd6a99239dcd2.jpg" alt="로지텍 K380 & Pebble M350" loading="lazy"></div>
       <div class="cap">
@@ -1260,25 +1243,7 @@
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseMX">
-      <div class="thumb"><img src="../assets/bb2d697e10ae268d2a2516b058a97a11.jpg" alt="로지텍 MX Master 3S" loading="lazy"></div>
-      <div class="cap">
-        <b>로지텍 MX Master 3S</b>
-        <span>스토리·비주얼 기획, 디자인</span>
-        <p class="ctx">로지텍 대표 프리미엄 마우스 MX Master 3S와 무선 충전 도킹 스테이션으로 효율적인 데스크테리어를 표현</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseBookpleasure">
-      <div class="thumb"><img src="../assets/b06d2a25a5e8fad7c2e8517a7cdeb8f3.jpg" alt="북플레저 삼국지" loading="lazy"></div>
-      <div class="cap">
-        <b>북플레저 삼국지</b>
-        <span>스토리·비주얼 기획, 디자인</span>
-        <p class="ctx">원작에 가장 가까운 삼국지를 만들기 위해 20년을 쏟은 작가의 스토리에, 리뉴얼 디자인의 톤앤매너를 일관되게 살려 감도 있는 비주얼로 표현</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseSilverfox">
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseSilverfox">
       <div class="thumb"><img src="../assets/e238dae532ecef9df763761767cdd598.jpg" alt="실버팍스 스핀키드PRO" loading="lazy"></div>
       <div class="cap">
         <b>실버팍스 스핀키드PRO</b>
@@ -1287,44 +1252,7 @@
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseBeaverd">
-      <div class="thumb"><img src="../assets/726de8dd1c45a8f9dfcaaf6f015aa0c2.jpg" alt="비버드 이어스캐너" loading="lazy"></div>
-      <div class="cap">
-        <b>비버드 이어스캐너</b>
-        <span>비주얼 기획, 디자인</span>
-        <p class="ctx">전 세계 크라우드펀딩 누적 62억 원을 달성한 비버드 이어스캐너의 비주얼 리뉴얼을 제품 디자인과 어울리는 깔끔한 페이지 구성으로 표현</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseBibigo">
-      <div class="thumb"><img src="../assets/ddc100498d45f042bc70da8de131a8d9.jpg" alt="CJ제일제당 비비고 치킨고수만두 플레이팅" loading="lazy"></div>
-      <div class="cap">
-        <b>CJ제일제당 비비고</b>
-        <span>비주얼 기획, 디자인</span>
-        <p class="ctx">해외에서 먼저 선보인 신제품을 국내 최초로 소개하는 크라우드펀딩으로, LA 레이커스 콜라보레이션의 톤앤매너를 유지하며 CJ제일제당 디자인 가이드라인을 준수해 진행</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseHanwha">
-      <div class="thumb"><img src="../assets/1eb68a308a3aec970a5f615d32347207.jpg" alt="한화비전 키퍼 앱 화면" loading="lazy" style="object-position:26% center;"></div>
-      <div class="cap">
-        <b>한화비전 키퍼</b>
-        <span>비주얼 기획, 촬영 기획, 디자인 기획</span>
-        <p class="ctx">소비자 진입장벽을 낮추기 위해 실질적인 내용을 더한 CCTV 렌털 서비스 상세페이지 디자인 리뉴얼</p>
-        <p class="result">전후 비교 영상 직접 기획 <span class="dot">·</span> <b>B2B 제품을 B2C로 전환</b></p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseKilori">
-      <div class="thumb"><img src="../assets/4a9c3b5707654a012f6b1f48826dfea7.jpg" alt="킬로리 유주얌 쉐이크 맛별 패키지" loading="lazy"></div>
-      <div class="cap">
-        <b>킬로리 유주얌 쉐이크</b>
-        <span>인플루언서 공구 콘텐츠 기획</span>
-        <p class="ctx">웰니스 인플루언서의 충성 팔로워와 어린 연령대를 겨냥해, 키치한 맛별 컬러 비주얼로 공구 콘텐츠 제작</p>
-        <p class="case-cta">자세히 보기 →</p>
-      </div>
-    </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseNepa">
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseNepa">
       <div class="thumb"><img src="../assets/a9f916a510d1c2000f0a28b974cd01b4.jpg" alt="네파 사나래 등산화 제품 촬영" loading="lazy"></div>
       <div class="cap">
         <b>네파 사나래 등산화</b>
@@ -1333,7 +1261,71 @@
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
-    <figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseRockport">
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseMX">
+      <div class="thumb"><img src="../assets/bb2d697e10ae268d2a2516b058a97a11.jpg" alt="로지텍 MX Master 3S" loading="lazy"></div>
+      <div class="cap">
+        <b>로지텍 MX Master 3S</b>
+        <span>스토리·비주얼 기획, 디자인</span>
+        <p class="ctx">로지텍 대표 프리미엄 마우스 MX Master 3S와 무선 충전 도킹 스테이션으로 효율적인 데스크테리어를 표현</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseBeaverd">
+      <div class="thumb"><img src="../assets/726de8dd1c45a8f9dfcaaf6f015aa0c2.jpg" alt="비버드 이어스캐너" loading="lazy"></div>
+      <div class="cap">
+        <b>비버드 이어스캐너</b>
+        <span>비주얼 기획, 디자인</span>
+        <p class="ctx">전 세계 크라우드펀딩 누적 62억 원을 달성한 비버드 이어스캐너의 비주얼 리뉴얼을 제품 디자인과 어울리는 깔끔한 페이지 구성으로 표현</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseKilori">
+      <div class="thumb"><img src="../assets/4a9c3b5707654a012f6b1f48826dfea7.jpg" alt="킬로리 유주얌 쉐이크 맛별 패키지" loading="lazy"></div>
+      <div class="cap">
+        <b>킬로리 유주얌 쉐이크</b>
+        <span>인플루언서 공구 콘텐츠 기획</span>
+        <p class="ctx">웰니스 인플루언서의 충성 팔로워와 어린 연령대를 겨냥해, 키치한 맛별 컬러 비주얼로 공구 콘텐츠 제작</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseBookpleasure">
+      <div class="thumb"><img src="../assets/b06d2a25a5e8fad7c2e8517a7cdeb8f3.jpg" alt="북플레저 삼국지" loading="lazy"></div>
+      <div class="cap">
+        <b>북플레저 삼국지</b>
+        <span>스토리·비주얼 기획, 디자인</span>
+        <p class="ctx">원작에 가장 가까운 삼국지를 만들기 위해 20년을 쏟은 작가의 스토리에, 리뉴얼 디자인의 톤앤매너를 일관되게 살려 감도 있는 비주얼로 표현</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseHanwha">
+      <div class="thumb"><img src="../assets/1eb68a308a3aec970a5f615d32347207.jpg" alt="한화비전 키퍼 앱 화면" loading="lazy" style="object-position:26% center;"></div>
+      <div class="cap">
+        <b>한화비전 키퍼</b>
+        <span>비주얼 기획, 촬영 기획, 디자인 기획</span>
+        <p class="ctx">소비자 진입장벽을 낮추기 위해 실질적인 내용을 더한 CCTV 렌털 서비스 상세페이지 디자인 리뉴얼</p>
+        <p class="result">전후 비교 영상 직접 기획</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseSaranara">
+      <div class="thumb"><img src="../beauty-img/saranara/cover.jpg" alt="사라나라 샴푸를 든 모델 컷" loading="lazy"></div>
+      <div class="cap">
+        <b>머릿결부터 피부결까지, 사라나라</b>
+        <span>모델 섭외, 촬영 기획, 상세페이지 디자인 <span style="white-space:nowrap">· 직접 수행</span></span>
+        <p class="ctx">헤어케어와 스킨케어 5개 제품의 상세페이지를 진행했습니다. 헤어케어 제품은 애프터 컷을 기준으로 모델 섭외와 하루 촬영 순서를 설계했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseBibigo">
+      <div class="thumb"><img src="../assets/ddc100498d45f042bc70da8de131a8d9.jpg" alt="CJ제일제당 비비고 치킨고수만두 플레이팅" loading="lazy"></div>
+      <div class="cap">
+        <b>CJ제일제당 비비고</b>
+        <span>비주얼 기획, 디자인</span>
+        <p class="ctx">해외에서 먼저 선보인 신제품을 국내 최초로 소개하는 크라우드펀딩으로, LA 레이커스 콜라보레이션의 톤앤매너를 유지하며 CJ제일제당 디자인 가이드라인을 준수해 진행</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseRockport">
       <div class="thumb"><img src="../assets/e7de489964d237d33eb6089e4b84782f.jpg" alt="락포트 50주년 기념 캠페인 연출컷" loading="lazy"></div>
       <div class="cap">
         <b>락포트 50주년 기념 캠페인</b>
@@ -1342,27 +1334,15 @@
         <p class="case-cta">자세히 보기 →</p>
       </div>
     </figure>
-  </div>
-</section>
-
-<!--DETAIL-START-->
-<section class="r" id="direct">
-  <div class="sec-head">
-    <div class="eyebrow">Key Visual &amp; Copy</div>
-    <h2 class="t-title">첫 화면 한 장과 문구로,<br>구매 이유를 먼저 전했습니다</h2>
-    <p class="t-body" style="margin-top:18px;">기획과 디자인을 직접 수행한 작업입니다.<br>키비주얼은 구도와 문구까지 함께 기획했고, 온라인 콘텐츠를 오프라인 인쇄물로도 옮겼습니다.</p>
-  </div>
-  <div class="kv-band">
-    <div class="dw-h"><span class="no">01</span><h3>한 장으로 먼저 말하는 키비주얼</h3></div>
-    <p class="dw-n">키비주얼은 상세페이지의 첫 화면에서 제품이 선택받는 이유를 한 장으로 먼저 전하는 장면입니다.<br>제품의 핵심을 고르고 구도와 문구까지 함께 기획해 디자인했습니다.</p>
-    <div class="kv-grid"><figure class="is-static"><img src="../ohouse/work/img/k01.jpg" alt="수피어" loading="lazy"><div class="kvc"><b>01 · 수피어</b> · 스포츠 신발</div></figure><figure class="is-static"><img src="../ohouse/work/img/k02.jpg" alt="얼티브 플랜트유" loading="lazy"><div class="kvc"><b>02 · 얼티브 플랜트유</b> · CJ제일제당</div></figure><figure class="is-static"><img src="../ohouse/work/img/k03.jpg" alt="로지텍 MX Mechanical × 드래곤볼Z" loading="lazy"><div class="kvc"><b>03 · 로지텍 × 드래곤볼Z</b> · IP 콜라보 에디션</div></figure><figure class="is-static"><img src="../ohouse/work/img/k04.jpg" alt="락포트" loading="lazy"><div class="kvc"><b>04 · 락포트</b> · 슈즈 브랜드</div></figure><figure class="is-static"><img src="../ohouse/work/img/k05.jpg" alt="센트룸" loading="lazy"><div class="kvc"><b>05 · 센트룸</b> · 건강기능식품</div></figure><figure class="is-static"><img src="../ohouse/work/img/k06.jpg" alt="로지텍 K380 · M350" loading="lazy"><div class="kvc"><b>06 · 로지텍 K380 · M350</b> · 컬러 신제품</div></figure></div>
-  </div>
-  <div class="dw-sec" style="display:none" aria-hidden="true">
-    <div class="dw-h"><span class="no">02</span><h3>리빙과 인쇄물: 온라인에서 오프라인까지</h3></div>
-    <p class="dw-n">집꾸미기 상세페이지 20~30건을 약 1년 반 동안 디자인했습니다.<br>소프라움 침구는 신상품 POP와 쿠폰북을, 플럼아이웨어는 3개 국어 브로슈어를 인쇄 규격에 맞춰 만들었습니다.</p>
-    <div class="oh-gallery">
-      <figure><img src="../ohouse/work/img/pop01.jpg" alt="소프라움 침구 신상품 POP" loading="lazy"><figcaption><b>소프라움</b> · 신상품 POP</figcaption></figure>
-      <figure><img src="../ohouse/work/img/c01.jpg" alt="소프라움 3단 접지 쿠폰북" loading="lazy"><figcaption><b>소프라움</b> · 3단 접지 쿠폰북</figcaption></figure>
+<figure class="work-card case-trigger" tabindex="0" role="button" aria-haspopup="dialog" data-case="caseMernel">
+      <div class="thumb"><img src="../beauty-img/mernel/mernel_01.jpg" alt="메르넬 화이트닝 크림 모델·제품 키비주얼" loading="lazy"></div>
+      <div class="cap">
+        <b>메르넬 화이트닝 크림</b>
+        <span>상세페이지 기획 · 디자인 · 최종 검수</span>
+        <p class="ctx">모델 컷에 이어 실제 사용자 후기를 먼저 보여줘, 고객이 사용 후 느낀 변화에 공감한 뒤 주요 성분과 효능을 살펴볼 수 있도록 상세페이지를 기획·디자인했습니다.</p>
+        <p class="case-cta">자세히 보기 →</p>
+      </div>
+    </figure>
     </div>
     <div class="dw-print" style="margin-top:22px;">
       <div class="dw-slider dw-slider-print" data-pages="pl01,pl02,pl03,pl04,pl05,pl06,pl07,pl08,pl09,pl10,pl11,pl12,pl13,pl14,pl15,pl16,pl17,pl18,pl19,pl20" data-name="플럼아이웨어 3개 국어 브로슈어"><div class="sl-stage" tabindex="0" aria-label="플럼아이웨어 3개 국어 브로슈어"><img src="../ohouse/work/img/pl01.jpg" alt="플럼아이웨어 3개 국어 브로슈어 1쪽"></div><div class="sl-bar"><button type="button" class="sl-prev" aria-label="이전 쪽">‹</button><span class="sl-count"></span><button type="button" class="sl-next" aria-label="다음 쪽">›</button><button type="button" class="sl-play" aria-label="자동 재생 일시정지">❚❚</button><span class="sl-label">플럼아이웨어 · 3개 국어 브로슈어 20쪽</span></div></div>
@@ -1975,23 +1955,47 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="eyebrow" style="margin:34px 0 8px;">어떤 데이터를 보고, 무엇을 바꿨나</div>
   <p class="t-body" style="max-width:62ch;">단계마다 결과를 먼저 보여 드리고, 카드를 누르면 데이터와 판단, 반영 내용이 펼쳐집니다.</p>
   <div class="flowline"><span class="c">목표에서 거꾸로 세팅</span><span class="a">→</span><span class="c">소재별 효율 분석</span><span class="a">→</span><span class="c">소재 피로도 진단</span><span class="a">→</span><span class="c">목표 달성 확인</span><span class="a">→</span><span class="c">가정과 실제 차이 진단</span><span class="a">→</span><span class="c is-end">매체별 ROAS 비교</span></div><div class="dl-step">
-<div class="dl-h"><span class="no">STEP 1</span><b>세팅 · 목표 수량에서 거꾸로 계산</b><span class="when">오픈예정 전</span></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>알림신청 1건당 비용 <b>945~996원</b> — 가정(2,000원)의 절반 이하로 형성</dd></div><div class="dl-row"><dt>데이터</dt><dd>와디즈 평균 클릭률 3%·전환율 28%·전환당 2,800원 / 펀딩가 46.9만 원(정가 100만 원)</dd></div><div class="dl-row"><dt>판단</dt><dd>고가 제품이라 구매 전 고민이 길어 핵심 변수는 <b>전환율</b>. 첫날 40% 판매 목표, 전환율 3% 가정 시 필요 알림신청자 약 <b>1,433명</b></dd></div><div class="dl-row"><dt>반영</dt><dd>1건당 2,000원을 가정해 예산 설계(목표 매출의 약 17%). 비용에 따라 신청자 확대·소재 교체·증액 검토 기준을 사전 공유</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">STEP 1</span><b>세팅 · 목표 수량에서 거꾸로 계산</b><span class="when">오픈예정 전</span><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>알림신청 1건당 비용 <b>945~996원</b> — 가정(2,000원)의 절반 이하로 형성</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>와디즈 평균 클릭률 3%·전환율 28%·전환당 2,800원 / 펀딩가 46.9만 원(정가 100만 원)</dd></div><div class="dl-row"><dt>판단</dt><dd>고가 제품이라 구매 전 고민이 길어 핵심 변수는 <b>전환율</b>. 첫날 40% 판매 목표, 전환율 3% 가정 시 필요 알림신청자 약 <b>1,433명</b></dd></div><div class="dl-row"><dt>반영</dt><dd>1건당 2,000원을 가정해 예산 설계(목표 매출의 약 17%). 비용에 따라 신청자 확대·소재 교체·증액 검토 기준을 사전 공유</dd></div>
+</details>
             </div><div class="dl-step">
-<div class="dl-h"><span class="no">STEP 2</span><b>소재별 효율 분석 · 정리</b><span class="when">운영 1~3일차 (12/29~12/31)</span></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>12/31~1/4까지 <b>전환수·전환율 감소 없이 유지</b></dd></div><div class="dl-row"><dt>데이터</dt><dd>첫 이틀 클릭률 6.72%·5.82%, 전환율 34.4%·39.5%, 전환당 996원·945원. 소재 5종 중 1종만 압도적 성과, 3종은 반응 없음</dd></div><div class="dl-row"><dt>판단</dt><dd>광고비가 정해져 있어 반응 없는 소재는 빨리 정리하고 효율 높은 소재에 집중. 앱 추적 거부 이용자가 많아 세부 타깃은 머신러닝에 맡김</dd></div><div class="dl-row"><dt>반영</dt><dd>인스타그램을 리타겟·논타겟으로 나눠 운영, 반응 없는 <b>3종 중단</b>하고 2종에 광고비 집중</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">STEP 2</span><b>소재별 효율 분석 · 정리</b><span class="when">운영 1~3일차 (12/29~12/31)</span><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>12/31~1/4까지 <b>전환수·전환율 감소 없이 유지</b></dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>첫 이틀 클릭률 6.72%·5.82%, 전환율 34.4%·39.5%, 전환당 996원·945원. 소재 5종 중 1종만 압도적 성과, 3종은 반응 없음</dd></div><div class="dl-row"><dt>판단</dt><dd>광고비가 정해져 있어 반응 없는 소재는 빨리 정리하고 효율 높은 소재에 집중. 앱 추적 거부 이용자가 많아 세부 타깃은 머신러닝에 맡김</dd></div><div class="dl-row"><dt>반영</dt><dd>인스타그램을 리타겟·논타겟으로 나눠 운영, 반응 없는 <b>3종 중단</b>하고 2종에 광고비 집중</dd></div>
+</details>
             </div><div class="dl-step">
-<div class="dl-h"><span class="no">STEP 3</span><b>소재 피로도 진단 · 변형 소재 추가</b><span class="when">운영 약 1주 (1/4~1/5)</span></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>주말 클릭률이 이전 금·토·일보다 상승, 전환수도 증가 — <b>신규 소재 추가 없이 유지</b>, 증액은 검토 사항으로 보고</dd></div><div class="dl-row"><dt>데이터</dt><dd>전환수는 줄기 시작했지만 전환율은 큰 차이 없이 클릭률만 하락</dd></div><div class="dl-row"><dt>판단</dt><dd>전환율 유지·전환수만 감소는 클릭 감소 신호 — 인기 소재의 신선함이 떨어진 <b>소재 피로도</b>로 진단, 새 소재 필요</dd></div><div class="dl-row"><dt>반영</dt><dd>효율 좋은 소재의 메시지는 유지하고 이미지만 바꾼 변형 소재 2종 추가</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">STEP 3</span><b>소재 피로도 진단 · 변형 소재 추가</b><span class="when">운영 약 1주 (1/4~1/5)</span><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>주말 클릭률이 이전 금·토·일보다 상승, 전환수도 증가 — <b>신규 소재 추가 없이 유지</b>, 증액은 검토 사항으로 보고</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>전환수는 줄기 시작했지만 전환율은 큰 차이 없이 클릭률만 하락</dd></div><div class="dl-row"><dt>판단</dt><dd>전환율 유지·전환수만 감소는 클릭 감소 신호 — 인기 소재의 신선함이 떨어진 <b>소재 피로도</b>로 진단, 새 소재 필요</dd></div><div class="dl-row"><dt>반영</dt><dd>효율 좋은 소재의 메시지는 유지하고 이미지만 바꾼 변형 소재 2종 추가</dd></div>
+</details>
             </div><div class="dl-step">
-<div class="dl-h"><span class="no">STEP 4</span><b>목표 달성 확인 · 본펀딩 직전 판단</b><span class="when">본펀딩 오픈 직전</span></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>알림신청자 <b>2,997명</b> — 계획(약 1,433명)의 약 <b>2.1배</b> 달성</dd></div><div class="dl-row"><dt>데이터</dt><dd>일 평균 90명 이상 유입, 추이는 감소 중이지만 오픈까지 1주 남음</dd></div><div class="dl-row"><dt>판단</dt><dd>목표는 이미 달성, 고단가 제품인데도 유입이 꾸준해 추가 증액 불필요</dd></div><div class="dl-row"><dt>반영</dt><dd>오픈예정 광고는 현 상태 유지, 본펀딩 첫날 반응을 보고 추가 부스팅 여부 결정 제안</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">STEP 4</span><b>목표 달성 확인 · 본펀딩 직전 판단</b><span class="when">본펀딩 오픈 직전</span><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>알림신청자 <b>2,997명</b> — 계획(약 1,433명)의 약 <b>2.1배</b> 달성</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>일 평균 90명 이상 유입, 추이는 감소 중이지만 오픈까지 1주 남음</dd></div><div class="dl-row"><dt>판단</dt><dd>목표는 이미 달성, 고단가 제품인데도 유입이 꾸준해 추가 증액 불필요</dd></div><div class="dl-row"><dt>반영</dt><dd>오픈예정 광고는 현 상태 유지, 본펀딩 첫날 반응을 보고 추가 부스팅 여부 결정 제안</dd></div>
+</details>
             </div><div class="dl-step">
-<div class="dl-h"><span class="no">STEP 5</span><b>가정과 실제 차이 진단 · 매체 제안</b><span class="when">본펀딩 첫날 (1/19)</span></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>매체별 효율을 비교할 수 있는 구조를 만들어 <b>다음 단계 근거</b>로 확보</dd></div><div class="dl-row"><dt>데이터</dt><dd>알림신청 2,997명 중 결제 전환 약 1.5%(가정 3%), 목표 수량의 약 40%는 첫날 판매</dd></div><div class="dl-row"><dt>판단</dt><dd>알림신청은 충분한데 전환이 낮음 — 인스타그램 노출 확대보다 <b>앱 내 배너 노출</b>이 맞다고 판단, 낮은 전환율도 그대로 보고</dd></div><div class="dl-row"><dt>반영</dt><dd>기존 1안 외에 인스타그램·와디즈 펀딩 패키지·카카오 캐러셀을 각 1회 집행 후 반응 좋은 매체에 추가 집행하는 2안 제안</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">STEP 5</span><b>가정과 실제 차이 진단 · 매체 제안</b><span class="when">본펀딩 첫날 (1/19)</span><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>매체별 효율을 비교할 수 있는 구조를 만들어 <b>다음 단계 근거</b>로 확보</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>알림신청 2,997명 중 결제 전환 약 1.5%(가정 3%), 목표 수량의 약 40%는 첫날 판매</dd></div><div class="dl-row"><dt>판단</dt><dd>알림신청은 충분한데 전환이 낮음 — 인스타그램 노출 확대보다 <b>앱 내 배너 노출</b>이 맞다고 판단, 낮은 전환율도 그대로 보고</dd></div><div class="dl-row"><dt>반영</dt><dd>기존 1안 외에 인스타그램·와디즈 펀딩 패키지·카카오 캐러셀을 각 1회 집행 후 반응 좋은 매체에 추가 집행하는 2안 제안</dd></div>
+</details>
             </div><div class="dl-step">
-<div class="dl-h"><span class="no">STEP 6</span><b>매체별 ROAS 비교 · 효율 매체 선택</b><span class="when">본펀딩 4일 (1/30~2/2)</span></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>4일 집행 <b>ROAS 773%</b>(광고 집행 매출 기준) — 메인 배너 351%, 멀티 콘텐츠 1,125%·1,292%</dd></div><div class="dl-row"><dt>데이터</dt><dd>메인 배너 ROAS 351%(전환당 133,333원), 멀티 콘텐츠 1,125%(41,667원)·1,292%(20,000원)</dd></div><div class="dl-row"><dt>판단</dt><dd>같은 4일 안에서도 매체별 격차가 컸고, <b>멀티 콘텐츠</b>가 메인 배너보다 효율 높음</dd></div><div class="dl-row"><dt>반영</dt><dd>효율 높은 멀티 콘텐츠를 이어서 집행, 앱푸시는 광고비 없이 일요일 유입 보조로 활용</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">STEP 6</span><b>매체별 ROAS 비교 · 효율 매체 선택</b><span class="when">본펀딩 4일 (1/30~2/2)</span><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>4일 집행 <b>ROAS 773%</b>(광고 집행 매출 기준) — 메인 배너 351%, 멀티 콘텐츠 1,125%·1,292%</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>메인 배너 ROAS 351%(전환당 133,333원), 멀티 콘텐츠 1,125%(41,667원)·1,292%(20,000원)</dd></div><div class="dl-row"><dt>판단</dt><dd>같은 4일 안에서도 매체별 격차가 컸고, <b>멀티 콘텐츠</b>가 메인 배너보다 효율 높음</dd></div><div class="dl-row"><dt>반영</dt><dd>효율 높은 멀티 콘텐츠를 이어서 집행, 앱푸시는 광고비 없이 일요일 유입 보조로 활용</dd></div>
+</details>
             </div>
   <div class="eyebrow" style="margin:30px 0 12px;">운영한 광고 소재 (비공개 처리)</div>
   <div class="rf-assets">
@@ -2024,26 +2028,54 @@ document.addEventListener('DOMContentLoaded', function(){
   <div class="eyebrow" style="margin:30px 0 4px;">데이터를 보고 내린 판단과 반영</div>
   <p class="t-body" style="max-width:62ch; margin-top:8px;">카드를 누르면 데이터와 판단, 반영 내용이 펼쳐집니다.</p>
   <div class="dl-step">
-<div class="dl-h"><span class="no">CASE 1</span><b>증액 전에 리스크부터 점검</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>증액 일정보다 <b>소재 확보·상세페이지 개선</b>이 먼저 오도록 우선순위 변경</dd></div><div class="dl-row"><dt>데이터</dt><dd>목표 ROAS는 넘었지만 낮은 예산에서 나온 수치, 전환 대부분이 단일 소재에 집중</dd></div><div class="dl-row"><dt>판단</dt><dd>지금 효율은 증액하면 유지되지 않을 수 있음, <b>소재 1개에 기대는 구조</b> 자체가 리스크</dd></div><div class="dl-row"><dt>반영</dt><dd>소재 포트폴리오 다각화를 우선 과제로. 인플루언서 추가 컨택·광고권 협의, 공구용 영상을 범용 후기 영상으로 재가공</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 1</span><b>증액 전에 리스크부터 점검</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>증액 일정보다 <b>소재 확보·상세페이지 개선</b>이 먼저 오도록 우선순위 변경</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>목표 ROAS는 넘었지만 낮은 예산에서 나온 수치, 전환 대부분이 단일 소재에 집중</dd></div><div class="dl-row"><dt>판단</dt><dd>지금 효율은 증액하면 유지되지 않을 수 있음, <b>소재 1개에 기대는 구조</b> 자체가 리스크</dd></div><div class="dl-row"><dt>반영</dt><dd>소재 포트폴리오 다각화를 우선 과제로. 인플루언서 추가 컨택·광고권 협의, 공구용 영상을 범용 후기 영상으로 재가공</dd></div>
+</details>
   </div><div class="dl-step">
-<div class="dl-h"><span class="no">CASE 2</span><b>클릭은 되는데 구매가 안 되는 병목</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>개선안이 막연한 의견이 아니라 <b>담당·일정이 있는 실행 항목</b>으로 구체화</dd></div><div class="dl-row"><dt>데이터</dt><dd>클릭률은 양호한데 구매 전환이 낮음 — 옵션 선택 단계에서 상단 복귀, 리뷰는 페이지 최하단에만 노출</dd></div><div class="dl-row"><dt>판단</dt><dd>병목은 광고가 아니라 상세페이지의 <b>옵션 복잡성과 리뷰 시인성</b></dd></div><div class="dl-row"><dt>반영</dt><dd>클릭 깊이를 줄인 동적 옵션창 개편, 리뷰·평점 상단 노출, 포토·영상 리뷰 적립금 프로모션 제안 후 내부·외부로 담당 분배</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 2</span><b>클릭은 되는데 구매가 안 되는 병목</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>개선안이 막연한 의견이 아니라 <b>담당·일정이 있는 실행 항목</b>으로 구체화</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>클릭률은 양호한데 구매 전환이 낮음 — 옵션 선택 단계에서 상단 복귀, 리뷰는 페이지 최하단에만 노출</dd></div><div class="dl-row"><dt>판단</dt><dd>병목은 광고가 아니라 상세페이지의 <b>옵션 복잡성과 리뷰 시인성</b></dd></div><div class="dl-row"><dt>반영</dt><dd>클릭 깊이를 줄인 동적 옵션창 개편, 리뷰·평점 상단 노출, 포토·영상 리뷰 적립금 프로모션 제안 후 내부·외부로 담당 분배</dd></div>
+</details>
   </div><div class="dl-step">
-<div class="dl-h"><span class="no">CASE 3</span><b>증액 후 효율 하락: 구조 문제로 판단</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>조치 이후 효율이 <b>안정권으로 복귀</b></dd></div><div class="dl-row"><dt>데이터</dt><dd>예산 증액·캠페인 이원화 이후 효율 하락, 테스트 캠페인 효율이 특히 낮음</dd></div><div class="dl-row"><dt>판단</dt><dd>소재 소구력 문제가 아니라 두 캠페인이 <b>학습 신호를 나눠 가진 구조 문제</b></dd></div><div class="dl-row"><dt>반영</dt><dd>테스트 캠페인 종료하고 단일 구조로 집중, 비효율 소재 제거, 당일 추가 투입·on-off 변경은 지양해 안정화 우선</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 3</span><b>증액 후 효율 하락: 구조 문제로 판단</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>조치 이후 효율이 <b>안정권으로 복귀</b></dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>예산 증액·캠페인 이원화 이후 효율 하락, 테스트 캠페인 효율이 특히 낮음</dd></div><div class="dl-row"><dt>판단</dt><dd>소재 소구력 문제가 아니라 두 캠페인이 <b>학습 신호를 나눠 가진 구조 문제</b></dd></div><div class="dl-row"><dt>반영</dt><dd>테스트 캠페인 종료하고 단일 구조로 집중, 비효율 소재 제거, 당일 추가 투입·on-off 변경은 지양해 안정화 우선</dd></div>
+</details>
   </div><div class="dl-step">
-<div class="dl-h"><span class="no">CASE 4</span><b>클릭은 유지, 전환 급락: 원인은 광고가 아니라 재고</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>소재 교체 대신 <b>원인에 맞는 조치만 실행</b>해 불필요한 비용 낭비 방지</dd></div><div class="dl-row"><dt>데이터</dt><dd>클릭률은 그대로인데 구매 전환 급감 — 수요 1위 사이즈 품절</dd></div><div class="dl-row"><dt>판단</dt><dd>원인은 광고가 아니라 <b>핵심 수요 옵션 품절</b>, 광고 성과 문제와 분리해서 판단</dd></div><div class="dl-row"><dt>반영</dt><dd>광고 지출 유지 타당성 재검토, 재입고 예정 안내 추가, 남은 리소스는 신규 콘텐츠 가이드·소재 확보로 전환</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 4</span><b>클릭은 유지, 전환 급락: 원인은 광고가 아니라 재고</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>소재 교체 대신 <b>원인에 맞는 조치만 실행</b>해 불필요한 비용 낭비 방지</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>클릭률은 그대로인데 구매 전환 급감 — 수요 1위 사이즈 품절</dd></div><div class="dl-row"><dt>판단</dt><dd>원인은 광고가 아니라 <b>핵심 수요 옵션 품절</b>, 광고 성과 문제와 분리해서 판단</dd></div><div class="dl-row"><dt>반영</dt><dd>광고 지출 유지 타당성 재검토, 재입고 예정 안내 추가, 남은 리소스는 신규 콘텐츠 가이드·소재 확보로 전환</dd></div>
+</details>
   </div><div class="dl-step">
-<div class="dl-h"><span class="no">CASE 5</span><b>행동 데이터로 소재와 상세페이지 확장</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>소재·상세페이지를 같은 기준(<b>체형 고민</b>)으로 확장하는 방향 확정</dd></div><div class="dl-row"><dt>데이터</dt><dd>상세페이지 완독 경향, 리뷰 확인 후 사이즈 가이드에 재방문해 오래 머무는 행동, 체중 기준 사이즈 문의 다수</dd></div><div class="dl-row"><dt>판단</dt><dd>구매 결정의 핵심은 제품 효과보다 <b>사이즈 확신 단계</b></dd></div><div class="dl-row"><dt>반영</dt><dd>체중 기준 사이즈 가이드 확장 제안, 체형 고민을 직접 건드리는 메시지로 신규 소재 기획 시작</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 5</span><b>행동 데이터로 소재와 상세페이지 확장</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>소재·상세페이지를 같은 기준(<b>체형 고민</b>)으로 확장하는 방향 확정</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>상세페이지 완독 경향, 리뷰 확인 후 사이즈 가이드에 재방문해 오래 머무는 행동, 체중 기준 사이즈 문의 다수</dd></div><div class="dl-row"><dt>판단</dt><dd>구매 결정의 핵심은 제품 효과보다 <b>사이즈 확신 단계</b></dd></div><div class="dl-row"><dt>반영</dt><dd>체중 기준 사이즈 가이드 확장 제안, 체형 고민을 직접 건드리는 메시지로 신규 소재 기획 시작</dd></div>
+</details>
   </div><div class="dl-step">
-<div class="dl-h"><span class="no">CASE 6</span><b>수비와 공격의 2-Track 운영</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>매출 흐름을 지키면서 <b>다음 소재를 발굴</b>하는 구조 확보</dd></div><div class="dl-row"><dt>데이터</dt><dd>성과가 단일 소재에 집중된 상태</dd></div><div class="dl-row"><dt>판단</dt><dd>잘 되는 구조는 보존하되, 쏠림을 없애기보다 <b>쏠릴 후보를 늘리는 방향</b>이 맞다고 판단</dd></div><div class="dl-row"><dt>반영</dt><dd>메인 캠페인은 수정 없이 유지(수비), 별도 소액 테스트 캠페인으로 새 소재 검증(공격)</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 6</span><b>수비와 공격의 2-Track 운영</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>매출 흐름을 지키면서 <b>다음 소재를 발굴</b>하는 구조 확보</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>성과가 단일 소재에 집중된 상태</dd></div><div class="dl-row"><dt>판단</dt><dd>잘 되는 구조는 보존하되, 쏠림을 없애기보다 <b>쏠릴 후보를 늘리는 방향</b>이 맞다고 판단</dd></div><div class="dl-row"><dt>반영</dt><dd>메인 캠페인은 수정 없이 유지(수비), 별도 소액 테스트 캠페인으로 새 소재 검증(공격)</dd></div>
+</details>
   </div><div class="dl-step">
-<div class="dl-h"><span class="no">CASE 7</span><b>고객 상황에 맞춘 혜택으로 구매 전환 돕기</b></div>
-<div class="dl-row is-res"><dt>결과</dt><dd>문의 단계에서 바로 <b>구매 전환을 돕는 수단</b>으로 운영</dd></div><div class="dl-row"><dt>데이터</dt><dd>채널톡 고객 문의와 구매 직전 고객 상황</dd></div><div class="dl-row"><dt>판단</dt><dd>구매를 망설이는 상황이 고객마다 달라 일괄 할인보다 <b>상황별 혜택</b>이 전환에 더 도움</dd></div><div class="dl-row"><dt>반영</dt><dd>채널톡으로 할인 쿠폰·무료 반품 쿠폰·추천인 할인 코드를 상황별 발행(팀 공동 작업)</dd></div>
+<details class="dl-acc"><summary>
+<div class="dl-h"><span class="no">CASE 7</span><b>고객 상황에 맞춘 혜택으로 구매 전환 돕기</b><span class="dl-tog">내용 자세히 보기<i aria-hidden="true"></i></span></div>
+<div class="dl-row is-res"><dt>결과</dt><dd>문의 단계에서 바로 <b>구매 전환을 돕는 수단</b>으로 운영</dd></div>
+</summary>
+<div class="dl-row"><dt>데이터</dt><dd>채널톡 고객 문의와 구매 직전 고객 상황</dd></div><div class="dl-row"><dt>판단</dt><dd>구매를 망설이는 상황이 고객마다 달라 일괄 할인보다 <b>상황별 혜택</b>이 전환에 더 도움</dd></div><div class="dl-row"><dt>반영</dt><dd>채널톡으로 할인 쿠폰·무료 반품 쿠폰·추천인 할인 코드를 상황별 발행(팀 공동 작업)</dd></div>
+</details>
   </div>
   <p class="aio-case__note">보고서는 팀이 작성했고, 위 판단과 반영 항목은 전사가 함께 참여한 회의에서 의견을 내고 해결책을 같이 만든 내용입니다.</p>
 </div>
