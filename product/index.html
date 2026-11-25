@@ -2731,13 +2731,19 @@ document.addEventListener('DOMContentLoaded', function(){
   var frames=Array.prototype.slice.call(strip.querySelectorAll(".dpg-frame")), syncing=false;
   // 2026-11-25 7차 지시: 프로젝트마다 상세페이지 길이가 달라 각자 스크롤하면 진행 속도가 어긋나 보임
   // -> 비율(%) 동기화: 한 프레임을 스크롤하면 나머지 14개도 같은 비율 위치로 맞춘다.
+  // 2026-11-25 8차: 스크롤 이벤트마다 즉시 14개를 다시 쓰면 버벅여서(사용자 지적) rAF로 1프레임에 한 번만 적용.
+  var ticking=false, pendingPct=0, sourceFrame=null;
+  function apply(){
+    ticking=false; syncing=true;
+    frames.forEach(function(o){ if(o===sourceFrame) return; var omax=o.scrollHeight-o.clientHeight; o.scrollTop=pendingPct*omax; });
+    syncing=false;
+  }
   frames.forEach(function(f){
     f.addEventListener("scroll", function(){
       if(syncing) return;
-      var max=f.scrollHeight-f.clientHeight, pct=max>0?f.scrollTop/max:0;
-      syncing=true;
-      frames.forEach(function(o){ if(o===f) return; var omax=o.scrollHeight-o.clientHeight; o.scrollTop=pct*omax; });
-      syncing=false;
+      var max=f.scrollHeight-f.clientHeight;
+      pendingPct=max>0?f.scrollTop/max:0; sourceFrame=f;
+      if(!ticking){ ticking=true; requestAnimationFrame(apply); }
     }, {passive:true});
   });
 })();
