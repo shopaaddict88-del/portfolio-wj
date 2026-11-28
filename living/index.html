@@ -1100,19 +1100,6 @@
   @media (max-width:760px){  }
   /*/BEAUTY-CSS*/
 
-  /*LIVING-CSS*/
-  .work-grid.fill .work-card[data-case="caseKooza"] .thumb img,
-  .work-grid.fill .work-card[data-case="caseSOT"] .thumb img,
-  .work-grid.fill .work-card[data-case="caseSpoon"] .thumb img{object-position:center 42%;}
-  .dpg-frame video{display:block; width:100%; height:auto; background:#fff;}
-  /* 카드 15개: 기존 12개는 그대로 2줄(25%), 신규 3개는 마지막 줄(33.333%) */
-  @media (min-width:761px){
-    #work .work-grid.fill > .work-card:nth-child(-n+12){flex-basis:calc(25% - 1px);}
-    #work .work-grid.fill > .work-card:nth-child(n+13){flex-basis:calc(33.333% - 1px);}
-  }
-  @media (max-width:760px){ #work .work-grid.fill > .work-card:first-child{flex-basis:calc(100% - 1px);} }
-  /*/LIVING-CSS*/
-
   /*DESIGN-1128*/
   /* ① 첫 화면 */
   .hero__label{font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0; color:var(--muted);}
@@ -1133,13 +1120,26 @@
   .bx-three, .proof-grid, .ld-flow, .oh-steps{background:none !important; border:0 !important; gap:0 28px !important;}
   .bx-three > *, .proof-cell, .ld-flow > *, .oh-steps > *{background:none !important; border:0 !important; border-top:1px solid var(--paper) !important; padding:18px 0 8px !important;}
   @media (max-width:760px){ .bx-three, .proof-grid, .ld-flow, .oh-steps{gap:24px !important;} }
-  /* 어두운 띠 안 01 키비주얼 / 02 상세페이지 디자인: 같은 위계, 사이에 가는 선 */
+  /* ④ 어두운 띠 안 01 키비주얼 / 02 상세페이지 디자인: 같은 위계, 사이에 가는 선 */
   #detail .dt-band{padding-top:0 !important;}
   #detail .dt-in{border-top:1px solid rgba(255,255,255,.14); padding-top:64px !important;}
   #detail .dw-n{color:#a3a7b3; margin-top:14px;}
   #detail .dw-h h3{color:#fff;}
   @media (max-width:760px){ #detail .dt-in{padding-top:48px !important; margin:0 20px; padding-left:0 !important; padding-right:0 !important;} }
   /*/DESIGN-1128*/
+
+  /*LIVING-CSS*/
+  .work-grid.fill .work-card[data-case="caseKooza"] .thumb img,
+  .work-grid.fill .work-card[data-case="caseSOT"] .thumb img,
+  .work-grid.fill .work-card[data-case="caseSpoon"] .thumb img{object-position:center 42%;}
+  .dpg-frame video{display:block; width:100%; height:auto; background:#fff;}
+  /* 카드 15개: 기존 12개는 그대로 2줄(25%), 신규 3개는 마지막 줄(33.333%) */
+  @media (min-width:761px){
+    #work .work-grid.fill > .work-card:nth-child(-n+12){flex-basis:calc(25% - 1px);}
+    #work .work-grid.fill > .work-card:nth-child(n+13){flex-basis:calc(33.333% - 1px);}
+  }
+  @media (max-width:760px){ #work .work-grid.fill > .work-card:first-child{flex-basis:calc(100% - 1px);} }
+  /*/LIVING-CSS*/
 </style>
 <style>
   .spk-grid{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line);}
